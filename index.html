@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koh Phangan Today — what's on, every day</title>
+<meta name="description" id="metaDesc" content="Classes, ceremonies, jams, markets and parties across Koh Phangan, collected every morning.">
+<meta name="theme-color" content="#0A2C31">
+<meta name="robots" content="index, follow">
+
+<!-- Social preview: what WhatsApp, Facebook and Telegram show when the link is pasted.
+     og.jpg must be 1200x630 and sit next to this file. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Koh Phangan Today">
+<meta property="og:title" id="ogTitle" content="Koh Phangan Today — what's on, every day">
+<meta property="og:description" id="ogDesc" content="Classes, ceremonies, jams, markets and parties across Koh Phangan, collected every morning.">
+<meta property="og:image" id="ogImg" content="og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" id="ogUrl" content="/">
+<meta property="og:locale" id="ogLocale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twTitle" content="Koh Phangan Today — what's on, every day">
+<meta name="twitter:description" id="twDesc" content="Classes, ceremonies, jams, markets and parties across Koh Phangan, collected every morning.">
+<meta name="twitter:image" id="twImg" content="og.jpg">
+
+<link rel="canonical" id="canonical" href="/">
+<link rel="alternate" hreflang="en" id="altEn" href="/?lang=en">
+<link rel="alternate" hreflang="he" id="altHe" href="/?lang=he">
+<link rel="alternate" hreflang="x-default" id="altX" href="/">
+
+<!-- Favicon: inline so there is never a blank tab icon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A2C31'/%3E%3Ccircle cx='32' cy='26' r='11' fill='%23FFC247'/%3E%3Cpath d='M6 45c6-5 11-5 17 0s11 5 17 0 11-5 18 0' stroke='%2357D8C4' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter+Tight:wght@400;500;600&family=Rubik:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sea:#0A2C31;--deep:#072024;--line:#1C4A50;--sand:#F1E6D2;--dim:#A8B8B4;
+  --coral:#FF6B5A;--lagoon:#57D8C4;--mango:#FFC247;
+  --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --body:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+}
+html[lang="he"]{
+  --display:"Rubik","Arial Hebrew",sans-serif;
+  --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sea);color:var(--sand);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+html[lang="he"] body{line-height:1.62}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(90% 50% at 85% -5%,rgba(255,107,90,.18),transparent 62%),
+             radial-gradient(70% 45% at -5% 60%,rgba(87,216,196,.13),transparent 62%)}
+.wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--mango);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--display);margin:0;letter-spacing:-.025em;line-height:1.02}
+h1{font-size:clamp(44px,6.4vw,86px);font-weight:800}
+h2{font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-.03em}
+h3{font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+html[lang="he"] h1,html[lang="he"] h2,html[lang="he"] h3,html[lang="he"] h4,html[lang="he"] .feel{letter-spacing:normal}
+html[lang="he"] h1{line-height:1.12}
+html[lang="he"] h2{line-height:1.18}
+html[lang="he"] h3{line-height:1.3}
+p{margin:0}
+.dim{color:var(--dim)}
+.sm{font-size:14px}
+.xs{font-size:12.5px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:20;background:rgba(10,44,49,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.logo{font-family:"Bricolage Grotesque","Trebuchet MS",sans-serif;font-weight:800;font-size:19px;letter-spacing:-.04em;display:flex;align-items:baseline;gap:8px;flex:0 0 auto;direction:ltr}
+.logo span{font-family:var(--body);font-weight:400;font-size:12px;color:var(--lagoon);letter-spacing:0}
+.links{display:flex;gap:26px;font-size:14.5px;color:var(--dim)}
+.links a:hover{color:var(--sand)}
+.bar-end{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.cta{background:var(--coral);color:#180705;font-weight:600;padding:9px 17px;border-radius:9px;font-size:14px;white-space:nowrap}
+.cta:hover{filter:brightness(1.08)}
+.cta.ghost{background:none;border:1px solid var(--line);color:var(--sand);font-weight:500}
+
+/* language switch */
+.lang{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;flex:0 0 auto}
+.lang button{padding:7px 11px;font-size:13px;font-weight:600;color:var(--dim);line-height:1;transition:.15s}
+.lang button:hover{color:var(--sand)}
+.lang button[aria-pressed="true"]{background:var(--lagoon);color:var(--deep)}
+.lang button+button{border-inline-start:1px solid var(--line)}
+
+@media(max-width:900px){.links{display:none}}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .bar .wrap{gap:9px}
+  .logo{font-size:15px;gap:5px}
+  .logo span{font-size:11px}
+  .bar-end{gap:7px}
+  .lang button{padding:6px 8px;font-size:11.5px}
+  .bar-end .cta{padding:8px 11px;font-size:12.5px}
+}
+/* the hero has its own call to action right below — the bar one can go */
+@media(max-width:430px){.bar-end .cta{display:none}}
+
+/* hero */
+.hero{padding:76px 0 8px;display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:end}
+.hero h1{max-width:11ch}
+html[lang="he"] .hero h1{max-width:14ch}
+.hero .sub{margin-top:22px;font-size:18px;color:var(--dim);max-width:44ch}
+.hero .row{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:34px;padding-top:52px}}
+
+/* live panel */
+.live{border:1px solid var(--line);border-radius:16px;background:var(--deep);padding:20px 20px 12px}
+.live .top{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px;gap:10px}
+.live .top b{font-family:var(--display);font-size:15px}
+.live .top span{font-size:12px;color:var(--mango);white-space:nowrap}
+.pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--coral);margin-inline-end:6px;vertical-align:1px}
+.now{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid rgba(28,74,80,.55)}
+.now:last-of-type{border-bottom:0}
+.now b{font-family:var(--display);font-size:14px;min-width:42px;color:var(--mango)}
+.now p{font-size:14px;line-height:1.3}
+.now span{font-size:12px;color:var(--dim)}
+
+/* feeling band */
+.band{margin-top:74px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 0}
+.band .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.feels{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:baseline}
+.feel{font-family:var(--display);font-weight:700;letter-spacing:-.03em;border-bottom:2px solid transparent;padding:1px 2px;transition:.15s}
+.feel:hover{color:var(--mango);border-color:var(--mango)}
+.feel[aria-pressed="true"]{background:var(--mango);color:var(--deep);border-radius:7px;padding:1px 10px;border-color:transparent}
+.s1{font-size:42px}.s2{font-size:33px}.s3{font-size:26px}
+html[lang="he"] .s1{font-size:36px}
+html[lang="he"] .s2{font-size:29px}
+html[lang="he"] .s3{font-size:24px}
+#feelOut{margin-top:20px;font-size:14.5px;color:var(--dim);min-height:44px}
+@media(max-width:900px){.band .grid{grid-template-columns:1fr;gap:26px}}
+
+/* sections */
+section{padding:70px 0;scroll-margin-top:82px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:26px}
+.head p{color:var(--dim);font-size:15px;max-width:46ch;margin-top:10px}
+
+.topics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.topics{grid-template-columns:repeat(2,1fr)}}
+.tile{position:relative;overflow:hidden;text-align:start;border:1px solid var(--line);background:var(--deep);
+  border-radius:15px;padding:18px 17px 16px;min-height:132px;display:flex;flex-direction:column;justify-content:space-between;
+  transition:border-color .18s,transform .18s}
+.tile:hover{border-color:var(--tc);transform:translateY(-2px)}
+.tile::after{content:"";position:absolute;inset-inline-end:-30px;top:-30px;width:92px;height:92px;border-radius:50%;background:var(--tc);opacity:.17}
+.tile .g{font-size:26px}
+.tile h3{margin-top:14px}
+.tile .n{font-size:12.5px;margin-top:5px}
+
+.evgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.evgrid{grid-template-columns:1fr}}
+.ev{border:1px solid var(--line);border-inline-start:3px solid var(--tc);background:var(--deep);border-radius:13px;padding:16px 17px;display:flex;flex-direction:column;gap:7px}
+.ev .t{font-family:var(--display);font-weight:700;font-size:15px;color:var(--mango)}
+html[dir="rtl"] .ev .t{direction:ltr;text-align:right}
+.ev .m{font-size:12.5px;color:var(--dim)}
+.ev .f{display:flex;align-items:center;gap:9px;margin-top:6px;flex-wrap:wrap}
+.pill{font-size:11.5px;border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.free{border-color:#2f7a4a;color:#8FD46A}
+.avs{display:flex}
+.av{width:22px;height:22px;border-radius:50%;margin-inline-start:-7px;border:2px solid var(--deep);display:grid;place-items:center;font-size:9.5px;font-weight:700;color:var(--deep)}
+.av:first-child{margin-inline-start:0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);background:var(--deep);border-radius:15px;padding:24px}
+.card h3{font-size:21px}
+.card p{margin-top:10px;color:var(--dim);font-size:14.5px}
+.card ul{margin:14px 0 0;padding-inline-start:18px;color:var(--dim);font-size:14.5px}
+.card li{margin-bottom:7px}
+
+.school{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;
+  border:1px solid var(--line);border-radius:20px;padding:40px;background:linear-gradient(140deg,rgba(255,107,90,.13),transparent 62%),var(--deep)}
+@media(max-width:900px){.school{grid-template-columns:1fr;padding:28px;gap:26px}}
+.sched{display:flex;flex-direction:column;gap:0}
+.sched div{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.sched div:last-child{border-bottom:0}
+.sched b{font-weight:500}
+.sched span{color:var(--dim);font-size:13px;text-align:end}
+
+.digest{border:1px solid var(--line);border-radius:20px;padding:40px;text-align:center;background:var(--deep)}
+.chans{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.chan{border:1px solid var(--line);border-radius:11px;padding:13px 20px;font-size:14px;display:flex;align-items:center;gap:9px}
+.chan:hover{border-color:var(--lagoon)}
+.chan b{font-weight:600}
+.chan em{font-style:normal;color:var(--dim);font-size:12px}
+
+footer{border-top:1px solid var(--line);padding:44px 0 60px;font-size:13.5px;color:var(--dim)}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:28px}
+@media(max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
+footer h4{font-size:13px;font-weight:600;margin-bottom:10px;color:var(--sand)}
+footer a{display:block;padding:3px 0}
+footer a:hover{color:var(--sand)}
+.note{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:12px}
+.banner{background:rgba(255,194,71,.1);border:1px solid rgba(255,194,71,.35);border-radius:11px;
+  padding:12px 16px;font-size:13px;color:#FFD98A;margin:0 auto;max-width:760px;text-align:center}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+
+/* accessibility: keyboard users land here first */
+.skip{position:fixed;inset-inline-start:0;top:0;z-index:100;background:var(--mango);color:var(--deep);
+  padding:12px 18px;border-radius:0 0 10px 0;font-weight:600;transform:translateY(-200%);transition:transform .14s}
+.skip:focus{transform:translateY(0)}
+
+/* no-JS fallback */
+noscript .nojs{display:block;background:rgba(255,138,91,.12);border:1px solid rgba(255,138,91,.45);
+  border-radius:11px;padding:14px 18px;font-size:14px;color:#FFB08A;margin:22px auto;max-width:760px;text-align:center}
+
+/* demo-only figures — hidden once DEMO is switched off */
+body.live .demo-only{display:none!important}
+
+/* contact block */
+.contact{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:13px}
+.contact a{color:var(--lagoon)}
+.contact a:hover{text-decoration:underline}
+@media print{
+  body::before,.bar,.lang,.banner{display:none!important}
+  body{background:#fff;color:#000}
+  .card,.tile,.ev,.live,.school,.digest{border-color:#ccc;background:#fff}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#top" data-i18n="a11y.skip">Skip to content</a>
+
+<noscript><div class="wrap"><p class="nojs" data-i18n="nojs">This page needs JavaScript to show today's listings. The island guide works without it.</p></div></noscript>
+
+<div class="bar"><div class="wrap">
+  <a class="logo" href="#top" data-i18n="brand">KOH PHANGAN <span>TODAY</span></a>
+  <nav class="links">
+    <a href="#today" data-i18n="nav.today">Today</a>
+    <a href="#topics" data-i18n="nav.topics">Topics</a>
+    <a href="#school" data-i18n="nav.school">Dance school</a>
+    <a href="guide.html" data-i18n="nav.guide">Island guide</a>
+    <a href="#host" data-i18n="nav.host">For hosts</a>
+    <a href="#digest" data-i18n="nav.digest">Daily digest</a>
+  </nav>
+  <div class="bar-end">
+    <div class="lang" id="lang" role="group" aria-label="Language / שפה">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="he" aria-pressed="false">עב</button>
+    </div>
+    <a class="cta" href="#digest" data-i18n="nav.cta">Get today's list</a>
+  </div>
+</div></div>
+
+<div class="wrap" id="top">
+  <header class="hero">
+    <div>
+      <h1 data-i18n="hero.h1">Everything happening on the island, today.</h1>
+      <p class="sub" data-i18n="hero.sub">Classes, ceremonies, jams, markets and parties across Koh Phangan — collected every morning, sorted by topic, and searchable by how you want to feel.</p>
+      <div class="row">
+        <a class="cta" href="#digest" data-i18n="hero.cta1">Join the daily digest</a>
+        <a class="cta ghost" href="#topics" data-i18n="hero.cta2">Browse by topic</a>
+      </div>
+      <p class="xs dim demo-only" style="margin-top:18px" data-i18n="hero.note">Free. 47 events listed this week across 11 topics.</p>
+    </div>
+    <div class="live">
+      <div class="top"><b data-i18n="live.now"><span class="pulse"></span>On right now</b><span id="clock">—</span></div>
+      <div id="nowList"></div>
+      <p class="xs dim" style="padding:10px 0 4px" data-i18n="live.foot">Updates through the day. Island time.</p>
+    </div>
+  </header>
+</div>
+
+<div class="wrap"><div class="band"><div class="grid">
+  <div>
+    <h2 data-i18n="feel.h2">Or start from how you want to feel</h2>
+    <p class="sm dim" style="margin-top:12px;max-width:38ch" data-i18n="feel.lead">Most people don't know they want a cacao ceremony. They know they feel flat, or lonely, or wired. Start there instead.</p>
+  </div>
+  <div>
+    <div class="feels" id="feels"></div>
+    <p id="feelOut">Pick a word.</p>
+  </div>
+</div></div></div>
+
+<div class="wrap">
+<section id="topics">
+  <div class="head"><div><h2 data-i18n="topics.h2">Browse by topic</h2>
+    <p data-i18n="topics.lead">Eleven topics, each with its own sub-categories, hosts and WhatsApp group.</p></div></div>
+  <div class="topics" id="topicGrid"></div>
+</section>
+
+<section id="today" style="padding-top:0">
+  <div class="head"><div><h2 data-i18n="today.h2">Today on the island</h2>
+    <p data-i18n="today.lead">A sample of what a normal Tuesday looks like here.</p></div>
+    <a class="cta ghost" href="#digest" data-i18n="today.cta">See the full day</a></div>
+  <div class="evgrid" id="evGrid"></div>
+</section>
+
+<section id="better" style="padding-top:20px">
+  <div class="head"><div><h2 data-i18n="better.h2">What this does that a listings page doesn't</h2></div></div>
+  <div class="two">
+    <div class="card"><h3 data-i18n="better.c1h">You can see who's going</h3>
+      <p data-i18n="better.c1p">Every event shows who else is coming and who ticked "open to meeting someone". Travelling alone stops being a reason not to go.</p>
+      <ul data-i18n="better.c1l"><li>Join the event's own WhatsApp group in one tap</li><li>Say hi before you arrive</li><li>Organisers see real numbers instead of guessing</li></ul></div>
+    <div class="card"><h3 data-i18n="better.c2h">Teachers can teach you from anywhere</h3>
+      <p data-i18n="better.c2p">Anyone listed here can run live classes online and sell recorded courses. You keep learning after you leave, and they keep earning in low season.</p>
+      <ul data-i18n="better.c2l"><li>Live classes with island times and replays</li><li>Solo courses that need no partner and no studio</li><li>One profile covers the studio and the screen</li></ul></div>
+  </div>
+</section>
+
+<section id="school" style="padding-top:20px">
+  <div class="school">
+    <div>
+      <p class="sm" style="color:var(--coral);font-weight:600" data-i18n="school.eyebrow">The dance school behind it</p>
+      <h2 style="margin-top:10px">Phangan Paradise</h2>
+      <p class="sm dim" style="margin-top:14px;max-width:42ch" data-i18n="school.p">Brazilian Zouk in Srithanu, open all year. Beginner courses start every Thursday. Come alone — we rotate partners, and half the room arrived on the island last week.</p>
+      <div class="row" style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
+        <a class="cta" href="#digest" data-link="schoolBooking" data-i18n="school.cta1">Book a free taster</a>
+        <a class="cta ghost" href="#digest" data-link="onlineCourses" data-i18n="school.cta2">See online courses</a>
+      </div>
+    </div>
+    <div class="sched" id="sched"></div>
+  </div>
+</section>
+
+<section id="host" style="padding-top:20px">
+  <div class="head"><div><h2 data-i18n="host.h2">Running something here?</h2>
+    <p data-i18n="host.lead">Listing is free, forever. It takes about a minute.</p></div></div>
+  <div class="two">
+    <div class="card"><h3 data-i18n="host.c1h">Add your event</h3>
+      <p data-i18n="host.c1p">Name it, place it, price it, and say how people should feel afterwards. Approved events appear in tomorrow morning's digest and in the app.</p>
+      <p style="margin-top:18px"><a class="cta" href="#digest" data-link="submitEvent" data-i18n="host.c1b">Add an event</a></p></div>
+    <div class="card"><h3 data-i18n="host.c2h">Sell your classes</h3>
+      <p data-i18n="host.c2p">Take bookings and payments through your own page, run live classes online, and keep a mailing list of everyone who ever danced with you.</p>
+      <p style="margin-top:18px"><a class="cta ghost" href="#digest" data-i18n="host.c2b">How it works for hosts</a></p></div>
+  </div>
+</section>
+
+<section id="digest" style="padding-top:20px">
+  <div class="digest">
+    <h2 data-i18n="digest.h2">One message every morning</h2>
+    <p class="sm dim" style="margin-top:14px;max-width:46ch;margin-inline:auto" data-i18n="digest.p">Today's list, sent at 8am island time. No chat, no forwards, no spam. Leave whenever you like.</p>
+    <div class="chans" id="chans"></div>
+  </div>
+</section>
+</div>
+
+<div class="wrap"><div class="banner" data-i18n="banner">Demo site. Every event, number and person here is invented to show how the product works.</div></div>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><div class="logo" style="margin-bottom:12px" data-i18n="brand">KOH PHANGAN <span>TODAY</span></div>
+      <p style="max-width:34ch" data-i18n="foot.about">Made on the island by the people who run Phangan Paradise. If something's missing, send it to us and it'll be in tomorrow's list.</p>
+      <div class="contact">
+        <a id="cEmail" href="#" data-link="email"></a>
+        <a id="cPhone" href="#" data-link="phone"></a>
+        <span id="cAddr"></span>
+      </div></div>
+    <div><h4 data-i18n="foot.h1">Explore</h4>
+      <a href="#today" data-i18n="nav.today">Today</a><a href="#topics" data-i18n="nav.topics">Topics</a>
+      <a href="#school" data-i18n="nav.school">Dance school</a><a href="guide.html" data-i18n="nav.guide">Island guide</a><a href="#digest" data-i18n="nav.digest">Daily digest</a></div>
+    <div><h4 data-i18n="foot.h2">For hosts</h4>
+      <a href="#host" data-i18n="foot.l1">Add an event</a><a href="#host" data-i18n="foot.l2">Sell classes</a>
+      <a href="#host" data-i18n="foot.l3">Teach online</a></div>
+    <div><h4 data-i18n="foot.h3">Follow</h4>
+      <a href="#digest" data-link="instagram">Instagram</a>
+      <a href="#digest" data-link="facebook">Facebook</a>
+      <a href="#digest" data-link="whatsappChannel" data-i18n="foot.l4">WhatsApp channel</a>
+      <a href="#digest" data-link="telegram" data-i18n="foot.l5">Telegram</a></div>
+  </div>
+  <p class="note" data-i18n="foot.note">© 2026 Koh Phangan Today · Surat Thani, Thailand · Privacy · Terms</p>
+</div></footer>
+
+<script>
+/* ---------- static strings ---------- */
+const T={
+en:{
+ "meta.title":"Koh Phangan Today — what's on, every day",
+ "meta.desc":"Classes, ceremonies, jams, markets and parties across Koh Phangan, collected every morning.",
+ "brand":"KOH PHANGAN <span>TODAY</span>",
+ "nav.today":"Today","nav.topics":"Topics","nav.school":"Dance school","nav.host":"For hosts",
+ "nav.digest":"Daily digest","nav.cta":"Get today's list",
+ "hero.h1":"Everything happening on the island, today.",
+ "hero.sub":"Classes, ceremonies, jams, markets and parties across Koh Phangan — collected every morning, sorted by topic, and searchable by how you want to feel.",
+ "hero.cta1":"Join the daily digest","hero.cta2":"Browse by topic",
+ "hero.note":"Free. 47 events listed this week across 11 topics.",
+ "live.now":"<span class=\"pulse\"></span>On right now",
+ "live.foot":"Updates through the day. Island time.",
+ "clock.suffix":"island time",
+ "feel.h2":"Or start from how you want to feel",
+ "feel.lead":"Most people don't know they want a cacao ceremony. They know they feel flat, or lonely, or wired. Start there instead.",
+ "feel.pick":"Pick a word.",
+ "topics.h2":"Browse by topic",
+ "topics.lead":"Eleven topics, each with its own sub-categories, hosts and WhatsApp group.",
+ "topics.count":"{n} this week",
+ "today.h2":"Today on the island","today.lead":"A sample of what a normal Tuesday looks like here.",
+ "today.cta":"See the full day","today.going":"{n} going","today.free":"Free",
+ "better.h2":"What this does that a listings page doesn't",
+ "better.c1h":"You can see who's going",
+ "better.c1p":"Every event shows who else is coming and who ticked “open to meeting someone”. Travelling alone stops being a reason not to go.",
+ "better.c1l":"<li>Join the event's own WhatsApp group in one tap</li><li>Say hi before you arrive</li><li>Organisers see real numbers instead of guessing</li>",
+ "better.c2h":"Teachers can teach you from anywhere",
+ "better.c2p":"Anyone listed here can run live classes online and sell recorded courses. You keep learning after you leave, and they keep earning in low season.",
+ "better.c2l":"<li>Live classes with island times and replays</li><li>Solo courses that need no partner and no studio</li><li>One profile covers the studio and the screen</li>",
+ "school.eyebrow":"The dance school behind it",
+ "school.p":"Brazilian Zouk in Srithanu, open all year. Beginner courses start every Thursday. Come alone — we rotate partners, and half the room arrived on the island last week.",
+ "school.cta1":"Book a free taster","school.cta2":"See online courses",
+ "host.h2":"Running something here?","host.lead":"Listing is free, forever. It takes about a minute.",
+ "host.c1h":"Add your event",
+ "host.c1p":"Name it, place it, price it, and say how people should feel afterwards. Approved events appear in tomorrow morning's digest and in the app.",
+ "host.c1b":"Add an event",
+ "host.c2h":"Sell your classes",
+ "host.c2p":"Take bookings and payments through your own page, run live classes online, and keep a mailing list of everyone who ever danced with you.",
+ "host.c2b":"How it works for hosts",
+ "digest.h2":"One message every morning",
+ "digest.p":"Today's list, sent at 8am island time. No chat, no forwards, no spam. Leave whenever you like.",
+ "banner":"Demo site. Every event, number and person here is invented to show how the product works.",
+ "foot.about":"Made on the island by the people who run Phangan Paradise. If something's missing, send it to us and it'll be in tomorrow's list.",
+ "foot.h1":"Explore","foot.h2":"For hosts","foot.h3":"Follow",
+ "foot.l1":"Add an event","foot.l2":"Sell classes","foot.l3":"Teach online",
+ "foot.l4":"WhatsApp channel","foot.l5":"Telegram",
+ "foot.note":"© 2026 Koh Phangan Today · Surat Thani, Thailand · Privacy · Terms",
+ "nav.guide":"Island guide",
+ "a11y.skip":"Skip to content",
+ "nojs":"This page needs JavaScript to show today's listings.",
+ "a11y.lang":"Language"
+},
+he:{
+ "meta.title":"מה קורה בקופנגן — Koh Phangan Today",
+ "meta.desc":"שיעורים, טקסים, ג'אמים, שווקים ומסיבות מכל רחבי קופנגן, נאספים כל בוקר.",
+ "brand":"KOH PHANGAN <span>TODAY</span>",
+ "nav.today":"היום","nav.topics":"נושאים","nav.school":"בית הספר לריקוד","nav.host":"למארגנים",
+ "nav.digest":"הרשימה היומית","nav.cta":"לרשימה של היום",
+ "hero.h1":"כל מה שקורה באי, היום.",
+ "hero.sub":"שיעורים, טקסים, ג'אמים, שווקים ומסיבות מכל רחבי קופנגן — נאספים כל בוקר, מסודרים לפי נושא, ואפשר לחפש בהם לפי איך שבא לכם להרגיש.",
+ "hero.cta1":"הצטרפו לרשימה היומית","hero.cta2":"עיון לפי נושא",
+ "hero.note":"חינם. 47 אירועים השבוע, ב-11 נושאים.",
+ "live.now":"<span class=\"pulse\"></span>קורה עכשיו",
+ "live.foot":"מתעדכן לאורך היום, לפי שעון האי.",
+ "clock.suffix":"שעון האי",
+ "feel.h2":"או שתתחילו מאיך שבא לכם להרגיש",
+ "feel.lead":"רוב האנשים לא יודעים שהם רוצים טקס קקאו. הם יודעים שהם מרגישים שטוחים, או בודדים, או דרוכים. תתחילו משם.",
+ "feel.pick":"בחרו מילה.",
+ "topics.h2":"עיון לפי נושא",
+ "topics.lead":"אחד-עשר נושאים, ולכל אחד תתי-נושאים, מארגנים וקבוצת וואטסאפ משלו.",
+ "topics.count":"{n} השבוע",
+ "today.h2":"היום באי","today.lead":"טעימה מאיך שנראה יום שלישי רגיל כאן.",
+ "today.cta":"ליום המלא","today.going":"{n} מגיעים","today.free":"חינם",
+ "better.h2":"מה שיש כאן ואין בלוח אירועים רגיל",
+ "better.c1h":"רואים מי מגיע",
+ "better.c1p":"בכל אירוע רואים מי עוד מגיע ומי סימן שהוא פתוח להכיר אנשים. לבוא לבד מפסיק להיות סיבה לא לבוא.",
+ "better.c1l":"<li>להצטרף לקבוצת הוואטסאפ של האירוע בלחיצה אחת</li><li>להגיד שלום עוד לפני שהגעתם</li><li>המארגנים רואים מספרים אמיתיים במקום לנחש</li>",
+ "better.c2h":"המורים יכולים ללמד אתכם מכל מקום",
+ "better.c2p":"כל מי שרשום כאן יכול להעביר שיעורים חיים אונליין ולמכור קורסים מוקלטים. אתם ממשיכים ללמוד גם אחרי שעזבתם, והם ממשיכים להתפרנס בעונה המתה.",
+ "better.c2l":"<li>שיעורים חיים לפי שעון האי, עם הקלטה שנשארת</li><li>קורסים לתרגול לבד — בלי בן/בת זוג ובלי סטודיו</li><li>פרופיל אחד מכסה גם את הסטודיו וגם את המסך</li>",
+ "school.eyebrow":"בית הספר לריקוד שמאחורי זה",
+ "school.p":"זוק ברזילאי בשריתאנו, פתוח כל השנה. קורסי מתחילים נפתחים כל יום חמישי. בואו לבד — אנחנו מחליפים בני זוג, וחצי מהחדר נחת באי בשבוע שעבר.",
+ "school.cta1":"לשיעור טעימה חינם","school.cta2":"לקורסים האונליין",
+ "host.h2":"מארגנים משהו באי?","host.lead":"הרישום חינם, תמיד. זה לוקח בערך דקה.",
+ "host.c1h":"הוסיפו את האירוע שלכם",
+ "host.c1p":"שם, מקום, מחיר, ואיך אנשים אמורים להרגיש אחר כך. אירועים שאושרו מופיעים ברשימה של מחר בבוקר ובאפליקציה.",
+ "host.c1b":"להוספת אירוע",
+ "host.c2h":"מכרו את השיעורים שלכם",
+ "host.c2p":"קבלו הרשמות ותשלומים דרך העמוד שלכם, העבירו שיעורים חיים אונליין, ושמרו רשימת תפוצה של כל מי שאי פעם רקד אתכם.",
+ "host.c2b":"איך זה עובד למארגנים",
+ "digest.h2":"הודעה אחת כל בוקר",
+ "digest.p":"רשימת היום, נשלחת ב-8 בבוקר שעון האי. בלי צ'אט, בלי פורוורדים, בלי ספאם. אפשר לצאת מתי שרוצים.",
+ "banner":"אתר הדגמה. כל אירוע, מספר ואדם כאן מומצאים, כדי להראות איך המוצר עובד.",
+ "foot.about":"נעשה באי, על ידי האנשים שמפעילים את Phangan Paradise. אם משהו חסר — שלחו לנו, וזה יהיה ברשימה של מחר.",
+ "foot.h1":"ניווט","foot.h2":"למארגנים","foot.h3":"עקבו אחרינו",
+ "foot.l1":"הוספת אירוע","foot.l2":"מכירת שיעורים","foot.l3":"ללמד אונליין",
+ "foot.l4":"ערוץ וואטסאפ","foot.l5":"טלגרם",
+ "foot.note":"© 2026 Koh Phangan Today · קופנגן, סוראת תאני · פרטיות · תנאי שימוש",
+ "nav.guide":"מדריך האי",
+ "a11y.skip":"דילוג לתוכן",
+ "nojs":"הדף הזה צריך JavaScript כדי להציג את האירועים של היום.",
+ "a11y.lang":"שפה"
+}};
+
+/* =========================================================
+   CONFIG — fill these in before the site goes live.
+   Anything left empty keeps its on-page anchor instead of
+   sending people to a dead link.
+   ========================================================= */
+const CONFIG={
+  domain:"https://kohphangantoday.com",   // no trailing slash
+  whatsappChannel:"",        // https://whatsapp.com/channel/...
+  telegram:"",               // https://t.me/...
+  instagram:"",              // https://instagram.com/...
+  facebook:"",               // https://facebook.com/...
+  emailSignup:"",            // newsletter signup page
+  installApp:"",             // link to the PWA / app page
+  schoolBooking:"",          // booking link for the free taster
+  onlineCourses:"",          // online courses page
+  submitEvent:"",            // event submission form
+  email:"",                  // e.g. "hello@islandtoday.co"
+  phone:"",                  // e.g. "+66 12 345 6789"
+  address:"Srithanu, Koh Phangan, Surat Thani",
+  DEMO:true                  // set to false once every number on the page is real
+};
+
+/* ---------- bilingual data ---------- */
+const TOPICS=[
+ {g:"💃",c:"#FF6B5A",k:12,en:["Dance","Zouk, salsa, ecstatic, contact"],he:["ריקוד","זוק, סלסה, אקסטטיק, קונטקט"]},
+ {g:"🧘",c:"#B98CFF",k:5, en:["Meditation & breathwork","Sits, breath, sound, cacao"],he:["מדיטציה ונשימה","ישיבות, נשימה, סאונד, קקאו"]},
+ {g:"🪷",c:"#57D8C4",k:4, en:["Yoga","Vinyasa, yin, aerial, trainings"],he:["יוגה","ויניאסה, יין, אווירית, הכשרות"]},
+ {g:"🔊",c:"#FF8DC7",k:3, en:["Music & nightlife","Parties, live bands, open mic"],he:["מוזיקה וחיי לילה","מסיבות, הופעות חיות, במה פתוחה"]},
+ {g:"🤲",c:"#FFC247",k:3, en:["Healing & bodywork","Massage, reiki, ice bath"],he:["ריפוי ובודיוורק","עיסוי, ריקי, אמבט קרח"]},
+ {g:"🏺",c:"#8FD46A",k:4, en:["Workshops & craft","Pottery, cooking, art, jewellery"],he:["סדנאות ואומנות","קרמיקה, בישול, אמנות, תכשיטים"]},
+ {g:"🥊",c:"#6FB6FF",k:5, en:["Sport & movement","Muay Thai, diving, acro, surf"],he:["ספורט ותנועה","מוי תאי, צלילה, אקרו, גלישה"]},
+ {g:"🌴",c:"#4FBF8B",k:4, en:["Nature & outdoors","Hikes, waterfalls, boats, clean-ups"],he:["טבע וטיולים","מסלולים, מפלים, סירות, ניקיון חופים"]},
+ {g:"🥭",c:"#FF9F45",k:3, en:["Food & markets","Night markets, supper clubs, vegan"],he:["אוכל ושווקים","שוקי לילה, ארוחות משותפות, טבעוני"]},
+ {g:"🫱",c:"#9AD0FF",k:4, en:["Community & work","Meetups, language, volunteering, coworking"],he:["קהילה ועבודה","מפגשים, שפות, התנדבות, קוורקינג"]},
+ {g:"🪁",c:"#FFD98A",k:2, en:["Kids & family","Classes and days out with children"],he:["ילדים ומשפחה","חוגים וימי כיף עם הילדים"]},
+ {g:"✳️",c:"#A8B8B4",k:2, en:["Everything else","Talks, film nights, one-offs"],he:["כל השאר","הרצאות, ערבי סרט, אירועים חד-פעמיים"]}
+];
+const EVENTS=[
+ {s:"17:30",e:"19:00",p:400,c:"#FF6B5A",g:9,
+  en:["Brazilian Zouk — beginners","Paradise Studio, Srithanu","Walk in alone, leave with ten new friends. No partner needed."],
+  he:["זוק ברזילאי — מתחילים","Paradise Studio, שריתאנו","נכנסים לבד, יוצאים עם עשרה חברים חדשים. לא צריך בן או בת זוג."]},
+ {s:"07:00",e:"09:00",p:350,c:"#FF6B5A",g:14,
+  en:["Ecstatic dance sunrise","Jungle Temple, Haad Yao","No talking, no shoes, no alcohol. A three-hour wave of music."],
+  he:["אקסטטיק דאנס בזריחה","Jungle Temple, האד יאו","בלי דיבורים, בלי נעליים, בלי אלכוהול. שלוש שעות של גל מוזיקה."]},
+ {s:"19:30",e:"22:00",p:600,c:"#B98CFF",g:11,
+  en:["Cacao & sound journey","Orion Space, Srithanu","Ceremonial cacao, gongs, bowls, and a long lie-down in the dark."],
+  he:["קקאו ומסע סאונד","Orion Space, שריתאנו","קקאו טקסי, גונגים, קערות, ושכיבה ארוכה בחושך."]},
+ {s:"08:00",e:"09:30",p:500,c:"#FFC247",g:6,
+  en:["Ice bath & breath","Cold Current, Srithanu","Breathwork, then three rounds in the barrel. Nobody is pushed."],
+  he:["אמבט קרח ונשימה","Cold Current, שריתאנו","עבודת נשימה, ואז שלושה סבבים בחבית. אף אחד לא נדחף."]},
+ {s:"18:00",e:"23:00",p:0,c:"#FF9F45",g:23,
+  en:["Night market & live band","Walking street, Thong Sala","Every stall on the street, and a band at the far end from 19:30."],
+  he:["שוק לילה והופעה חיה","המדרחוב, תונג סאלה","כל הדוכנים ברחוב, ולהקה בקצה הרחוק מ-19:30."]},
+ {s:"21:00",e:"01:00",p:0,c:"#FF6B5A",g:31,
+  en:["Zouk social — beach floor","Sunset Bar, Haad Yao","Wooden floor on the sand, DJ from 22:00, free taster class at 20:30."],
+  he:["סושיאל זוק — רחבה על החוף","Sunset Bar, האד יאו","רחבת עץ על החול, די-ג'יי מ-22:00, ושיעור טעימה חינם ב-20:30."]}
+];
+const FEELINGS=[
+ {s:"s1",en:["Alive","Sunrise ecstatic dance at 07:00, Muay Thai at 16:00, and the beach social tonight."],
+        he:["מלאי חיים","אקסטטיק דאנס בזריחה ב-07:00, מוי תאי ב-16:00, והסושיאל על החוף הערב."]},
+ {s:"s2",en:["Grounded","The 06:30 sit, the farm morning, or two hours up Khao Ra before sunrise."],
+        he:["מקורקעים","הישיבה של 06:30, הבוקר בחווה, או שעתיים במעלה קאו ראה לפני הזריחה."]},
+ {s:"s1",en:["Connected","Beginner zouk at 17:30, the language exchange at 19:00, or the supper club."],
+        he:["מחוברים","זוק למתחילים ב-17:30, ערב חילופי שפות ב-19:00, או הארוחה המשותפת."]},
+ {s:"s3",en:["Calm","Yin at 17:30, sound healing on the rocks at sunset, or a free evening sit at the temple."],
+        he:["רגועים","יין ב-17:30, ריפוי בסאונד על הסלעים בשקיעה, או ישיבת ערב חינם במקדש."]},
+ {s:"s2",en:["Creative","Pottery at 14:00, the silver ring workshop, or open mic at Little Bird."],
+        he:["יצירתיים","קרמיקה ב-14:00, סדנת טבעות הכסף, או במה פתוחה ב-Little Bird."]},
+ {s:"s3",en:["Strong","Ashtanga Mysore from 07:00, calisthenics in the park, or the free diving intro."],
+        he:["חזקים","אשטנגה מייסור מ-07:00, קליסתניקס בפארק, או היכרות עם צלילה חופשית."]},
+ {s:"s2",en:["Playful","Partner acro, the family beach day, or salsa rotation at Casa Latina."],
+        he:["משוחררים","אקרו בזוגות, יום המשפחות על החוף, או רוטציית סלסה ב-Casa Latina."]},
+ {s:"s3",en:["Held","Cacao ceremony, the Thai massage course, or breathwork with live music."],
+        he:["עטופים","טקס קקאו, קורס העיסוי התאי, או עבודת נשימה עם מוזיקה חיה."]}
+];
+const NOW=[
+ {t:"09:30",en:["Vinyasa & breathwork","Sala Yoga Shala"],he:["ויניאסה ונשימה","Sala Yoga Shala"]},
+ {t:"11:00",en:["Thai cooking class","Mama Noi's kitchen"],he:["סדנת בישול תאילנדי","המטבח של מאמא נוי"]},
+ {t:"16:00",en:["Muay Thai open training","Island Gym"],he:["אימון מוי תאי פתוח","Island Gym"]},
+ {t:"17:30",en:["Brazilian Zouk — beginners","Paradise Studio"],he:["זוק ברזילאי — מתחילים","Paradise Studio"]}
+];
+const SCHED=[
+ {en:["Beginner course","Thu 17:30 · 4 weeks · ฿1,400"],he:["קורס מתחילים","חמישי 17:30 · 4 שבועות · ฿1,400"]},
+ {en:["Technique — styling","Tue 16:00 · ฿450"],he:["טכניקה — סטיילינג","שלישי 16:00 · ฿450"]},
+ {en:["Connection intensive","Wed 10:00 · ฿1,200"],he:["אינטנסיב חיבור","רביעי 10:00 · ฿1,200"]},
+ {en:["Musicality workshop","Sun 15:00 · ฿700"],he:["סדנת מוזיקליות","ראשון 15:00 · ฿700"]},
+ {en:["Beach social","Fri & Sat 21:00 · free"],he:["סושיאל על החוף","שישי ושבת 21:00 · חינם"]},
+ {en:["Online, live from the studio","Mon & Wed 18:00 · ฿250"],he:["אונליין, בשידור מהסטודיו","שני ורביעי 18:00 · ฿250"]}
+];
+const CHANS=[
+ {k:"whatsappChannel",v:"2.4k",en:"WhatsApp channel",he:"ערוץ וואטסאפ"},
+ {k:"telegram",      v:"890", en:"Telegram",he:"טלגרם"},
+ {k:"emailSignup",   v:"1.2k",en:"Email",he:"מייל"},
+ {k:"installApp",    v:"free",en:"Install the app",he:"התקנת האפליקציה"}
+];
+const AVC=["#FFC247","#57D8C4","#FF6B5A","#B98CFF","#8FD46A","#6FB6FF"];
+const NAMES=["Maya","Tom","Lina","Jonas","Ana","Ravi","Sofie","Beni","Noa","Luca"];
+
+/* ---------- render ---------- */
+const $=s=>document.querySelector(s);
+let LANG="en";
+const t=k=>T[LANG][k];
+
+function render(){
+  const L=LANG;
+  $("#topicGrid").innerHTML=TOPICS.map(x=>`<a class="tile" style="--tc:${x.c}" href="#today">
+    <span class="g" aria-hidden="true">${x.g}</span><span><h3>${x[L][0]}</h3><p class="xs dim">${x[L][1]}</p>
+    <p class="n demo-only" style="color:${x.c}">${t("topics.count").replace("{n}",x.k)}</p></span></a>`).join("");
+
+  $("#evGrid").innerHTML=EVENTS.map((e,i)=>`<article class="ev" style="--tc:${e.c}">
+    <p class="t">${e.s} – ${e.e}</p><h3>${e[L][0]}</h3><p class="m">${e[L][1]}</p>
+    <p class="sm dim" style="margin-top:2px">${e[L][2]}</p>
+    <span class="f"><span class="pill ${e.p===0?"free":""}">${e.p===0?t("today.free"):"฿"+e.p}</span>
+    <span class="avs demo-only" aria-hidden="true">${[0,1,2,3].map(n=>{const nm=NAMES[(i*3+n)%10];
+      return `<span class="av" style="background:${AVC[(i+n)%6]}">${nm[0]}</span>`}).join("")}</span>
+    <span class="xs dim demo-only">${t("today.going").replace("{n}",e.g)}</span></span></article>`).join("");
+
+  $("#feels").innerHTML=FEELINGS.map((f,i)=>
+    `<button type="button" class="feel ${f.s}" data-i="${i}" aria-pressed="false">${f[L][0]}</button>`).join("");
+  $("#feelOut").textContent=t("feel.pick");
+  $("#feels").querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{
+    const on=b.getAttribute("aria-pressed")==="true";
+    $("#feels").querySelectorAll("[data-i]").forEach(x=>x.setAttribute("aria-pressed","false"));
+    if(on){$("#feelOut").textContent=t("feel.pick");return}
+    b.setAttribute("aria-pressed","true");
+    $("#feelOut").textContent=FEELINGS[+b.dataset.i][LANG][1];
+  });
+
+  $("#nowList").innerHTML=NOW.map(x=>`<div class="now"><b>${x.t}</b>
+    <span><p>${x[L][0]}</p><span>${x[L][1]}</span></span></div>`).join("");
+
+  $("#sched").innerHTML=SCHED.map(x=>`<div><b>${x[L][0]}</b><span>${x[L][1]}</span></div>`).join("");
+
+  $("#chans").innerHTML=CHANS.map(c=>
+    `<a class="chan" href="#digest" data-link="${c.k}"><b>${c[L]}</b>` +
+    `<em class="${c.v==="free"?"":"demo-only"}">${c.v==="free"?t("today.free"):c.v}</em></a>`).join("");
+}
+
+function tick(){
+  const now=new Date().toLocaleTimeString("en-GB",{timeZone:"Asia/Bangkok",hour:"2-digit",minute:"2-digit"});
+  $("#clock").textContent=now+" "+t("clock.suffix");
+}
+
+/* ---------- links: one place to fix, never a dead button ---------- */
+function wireLinks(){
+  document.querySelectorAll("[data-link]").forEach(el=>{
+    const key=el.dataset.link, v=(CONFIG[key]||"").trim();
+    if(key==="email"){
+      if(!v){el.style.display="none";return}
+      el.href="mailto:"+v; el.textContent=v; return;
+    }
+    if(key==="phone"){
+      if(!v){el.style.display="none";return}
+      el.href="tel:"+v.replace(/[^\d+]/g,""); el.textContent=v; return;
+    }
+    if(!v) return;                       // keep the in-page anchor
+    el.href=v;
+    if(/^https?:/i.test(v)){el.target="_blank"; el.rel="noopener noreferrer"}
+  });
+  const a=$("#cAddr"); if(a) a.textContent=CONFIG.address||"";
+}
+
+/* ---------- head tags that change with the language ---------- */
+function setHead(){
+  const d=(CONFIG.domain||"").replace(/\/$/,"");
+  const url=d?d+"/":"./";
+  const set=(id,attr,val)=>{const e=document.getElementById(id); if(e) e.setAttribute(attr,val)};
+  document.title=t("meta.title");
+  set("metaDesc","content",t("meta.desc"));
+  set("ogTitle","content",t("meta.title"));
+  set("twTitle","content",t("meta.title"));
+  set("ogDesc","content",t("meta.desc"));
+  set("twDesc","content",t("meta.desc"));
+  set("ogImg","content",d?d+"/og.jpg":"og.jpg");
+  set("twImg","content",d?d+"/og.jpg":"og.jpg");
+  set("ogUrl","content",url+(LANG==="he"?"?lang=he":""));
+  set("ogLocale","content",LANG==="he"?"he_IL":"en_US");
+  set("canonical","href",url+(LANG==="he"?"?lang=he":""));
+  set("altEn","href",url+"?lang=en");
+  set("altHe","href",url+"?lang=he");
+  set("altX","href",url);
+}
+
+function setLang(lang,push){
+  LANG=(lang==="he")?"he":"en";
+  const h=document.documentElement;
+  h.lang=LANG; h.dir=(LANG==="he")?"rtl":"ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const v=T[LANG][el.dataset.i18n];
+    if(v!=null) el.innerHTML=v;
+  });
+  const lw=$("#lang"); if(lw) lw.setAttribute("aria-label",t("a11y.lang"));
+  document.querySelectorAll("#lang button").forEach(b=>
+    b.setAttribute("aria-pressed",String(b.dataset.lang===LANG)));
+  setHead(); render(); wireLinks(); tick();
+  try{localStorage.setItem("it_lang",LANG)}catch(e){}
+  if(push){
+    try{
+      const u=new URL(location.href);
+      u.searchParams.set("lang",LANG);
+      history.replaceState(null,"",u);
+    }catch(e){}
+  }
+}
+
+document.querySelectorAll("#lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang,true));
+
+/* demo figures off as soon as CONFIG.DEMO is false */
+if(!CONFIG.DEMO) document.body.classList.add("live");
+
+/* language: ?lang= wins, then a saved choice, then the browser */
+let start=null;
+try{start=new URL(location.href).searchParams.get("lang")}catch(e){}
+if(!start){try{start=localStorage.getItem("it_lang")}catch(e){}}
+if(!start) start=(navigator.language||"").toLowerCase().startsWith("he")?"he":"en";
+setLang(start);
+setInterval(tick,20000);
+
+/* ---------- structured data, so Google understands the page ---------- */
+(function(){
+  const d=(CONFIG.domain||"").replace(/\/$/,"");
+  const sameAs=[CONFIG.instagram,CONFIG.facebook].filter(Boolean);
+  const ld={
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Koh Phangan Today",
+    "description":"What's on in Koh Phangan — classes, ceremonies, markets and parties, collected daily.",
+    "areaServed":"Koh Phangan, Surat Thani, Thailand",
+    "address":{"@type":"PostalAddress","addressLocality":"Koh Phangan","addressRegion":"Surat Thani","addressCountry":"TH"}
+  };
+  if(d) ld.url=d;
+  if(CONFIG.email) ld.email=CONFIG.email;
+  if(CONFIG.phone) ld.telephone=CONFIG.phone;
+  if(sameAs.length) ld.sameAs=sameAs;
+  const s=document.createElement("script");
+  s.type="application/ld+json";
+  s.textContent=JSON.stringify(ld);
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace kohphangantoday.com with the real domain before launch
+Sitemap: https://kohphangantoday.com/sitemap.xml

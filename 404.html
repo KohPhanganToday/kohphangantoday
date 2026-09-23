@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Koh Phangan Today</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A2C31">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A2C31'/%3E%3Ccircle cx='32' cy='26' r='11' fill='%23FFC247'/%3E%3Cpath d='M6 45c6-5 11-5 17 0s11 5 17 0 11-5 18 0' stroke='%2357D8C4' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--sea:#0A2C31;--line:#1C4A50;--sand:#F1E6D2;--dim:#A8B8B4;--coral:#FF6B5A;--lagoon:#57D8C4;--mango:#FFC247}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--sea);color:var(--sand);
+  font-family:"Inter Tight",Arial,sans-serif;display:grid;place-items:center;padding:28px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;
+  background:radial-gradient(70% 45% at 80% 0,rgba(255,107,90,.16),transparent 60%),
+             radial-gradient(60% 40% at 0 100%,rgba(87,216,196,.12),transparent 60%)}
+.box{position:relative;max-width:520px;text-align:center}
+svg.wave{width:96px;height:auto;margin-bottom:22px}
+h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(38px,8vw,64px);
+  margin:0;letter-spacing:-.03em;line-height:1.02}
+p{margin:16px auto 0;color:var(--dim);max-width:34ch}
+p.he{direction:rtl;font-size:14.5px;margin-top:8px}
+.row{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+a.btn{background:var(--coral);color:#180705;font-weight:600;padding:11px 20px;border-radius:9px;
+  text-decoration:none;font-size:14.5px}
+a.btn.ghost{background:none;border:1px solid var(--line);color:var(--sand);font-weight:500}
+a.btn:hover{filter:brightness(1.08)}
+</style>
+</head>
+<body>
+  <div class="box">
+    <svg class="wave" viewBox="0 0 120 64" aria-hidden="true">
+      <circle cx="60" cy="20" r="13" fill="#FFC247"/>
+      <path d="M6 46c9-8 17-8 26 0s17 8 26 0 17-8 26 0 17 8 26 0" stroke="#57D8C4" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <h1>Nothing here.</h1>
+    <p>This page drifted off. The island, however, is still very much on.</p>
+    <p class="he">הדף הזה לא קיים — אבל באי עדיין קורים דברים.</p>
+    <div class="row">
+      <a class="btn" href="index.html">What's on today</a>
+      <a class="btn ghost" href="guide.html">The island guide</a>
+    </div>
+  </div>
+</body>
+</html>
