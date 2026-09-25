@@ -119,6 +119,10 @@ html[lang="he"] .hero h1{max-width:14ch}
 .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--coral);margin-inline-end:6px;vertical-align:1px}
 .now{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid rgba(28,74,80,.55)}
 .now:last-of-type{border-bottom:0}
+.nowempty{padding:6px 0 2px}
+.nowempty p{font-size:14.5px;color:var(--sand);margin-bottom:6px}
+.nowempty span{display:block;font-size:12.5px;color:var(--dim);line-height:1.5;max-width:40ch}
+.nowempty .cta.sm{display:inline-block;margin-top:14px;padding:9px 15px;font-size:13px}
 .now b{font-family:var(--display);font-size:14px;min-width:42px;color:var(--mango)}
 .now p{font-size:14px;line-height:1.3}
 .now span{font-size:12px;color:var(--dim)}
@@ -197,6 +201,8 @@ footer h4{font-size:13px;font-weight:600;margin-bottom:10px;color:var(--sand)}
 footer a{display:block;padding:3px 0}
 footer a:hover{color:var(--sand)}
 .note{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:12px}
+.note a{color:var(--dim);text-decoration:underline;text-underline-offset:2px}
+.note a:hover{color:var(--sand)}
 .banner{background:rgba(255,194,71,.1);border:1px solid rgba(255,194,71,.35);border-radius:11px;
   padding:12px 16px;font-size:13px;color:#FFD98A;margin:0 auto;max-width:760px;text-align:center}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
@@ -391,6 +397,9 @@ en:{
  "topics.count":"{n} this week",
  "today.h2":"Today on the island","today.lead":"A sample of what a normal Tuesday looks like here.",
  "today.cta":"See the full day","today.going":"{n} going","today.free":"Free",
+ "now.e1":"No events collected for today yet.",
+ "now.e2":"We are just starting. The list fills up as island businesses send us what they are running.",
+ "now.e3":"Send us your event — free",
  "better.h2":"What this does that a listings page doesn't",
  "better.c1h":"You can see who's going",
  "better.c1p":"Every event shows who else is coming and who ticked “open to meeting someone”. Travelling alone stops being a reason not to go.",
@@ -415,7 +424,7 @@ en:{
  "foot.h1":"Explore","foot.h2":"For hosts","foot.h3":"Follow",
  "foot.l1":"Add an event","foot.l2":"Sell classes","foot.l3":"Teach online",
  "foot.l4":"WhatsApp channel","foot.l5":"Telegram",
- "foot.note":"© 2026 Koh Phangan Today · Surat Thani, Thailand · Privacy · Terms",
+ "foot.note":"© 2026 Koh Phangan Today · Surat Thani, Thailand · <a href=\"legal.html#privacy\">Privacy</a> · <a href=\"legal.html#terms\">Terms</a>",
  "nav.guide":"Island guide",
  "a11y.skip":"Skip to content",
  "nojs":"This page needs JavaScript to show today's listings.",
@@ -442,6 +451,9 @@ he:{
  "topics.count":"{n} השבוע",
  "today.h2":"היום באי","today.lead":"טעימה מאיך שנראה יום שלישי רגיל כאן.",
  "today.cta":"ליום המלא","today.going":"{n} מגיעים","today.free":"חינם",
+ "now.e1":"עדיין לא נאספו אירועים להיום.",
+ "now.e2":"אנחנו רק מתחילים. הרשימה מתמלאת ככל שעסקים באי שולחים לנו מה הם מריצים.",
+ "now.e3":"שלחו לנו אירוע — בחינם",
  "better.h2":"מה שיש כאן ואין בלוח אירועים רגיל",
  "better.c1h":"רואים מי מגיע",
  "better.c1p":"בכל אירוע רואים מי עוד מגיע ומי סימן שהוא פתוח להכיר אנשים. לבוא לבד מפסיק להיות סיבה לא לבוא.",
@@ -466,7 +478,7 @@ he:{
  "foot.h1":"ניווט","foot.h2":"למארגנים","foot.h3":"עקבו אחרינו",
  "foot.l1":"הוספת אירוע","foot.l2":"מכירת שיעורים","foot.l3":"ללמד אונליין",
  "foot.l4":"ערוץ וואטסאפ","foot.l5":"טלגרם",
- "foot.note":"© 2026 Koh Phangan Today · קופנגן, סוראת תאני · פרטיות · תנאי שימוש",
+ "foot.note":"© 2026 Koh Phangan Today · קופנגן, סוראת תאני · <a href=\"legal.html?lang=he#privacy\">פרטיות</a> · <a href=\"legal.html?lang=he#terms\">תנאי שימוש</a>",
  "nav.guide":"מדריך האי",
  "a11y.skip":"דילוג לתוכן",
  "nojs":"הדף הזה צריך JavaScript כדי להציג את האירועים של היום.",
@@ -480,19 +492,19 @@ he:{
    ========================================================= */
 const CONFIG={
   domain:"https://kohphangantoday.com",   // no trailing slash
-  whatsappChannel:"https://wa.me/8618257916137",        // https://whatsapp.com/channel/...
+  whatsappChannel:"https://wa.me/8618257916137",  // TODO: replace with the real WhatsApp CHANNEL invite link
   telegram:"",               // https://t.me/...
-  instagram:"",              // https://instagram.com/...
-  facebook:"https://www.facebook.com/profile.php?id=61594810315122",               // https://facebook.com/...
+  instagram:"",              // https://instagram.com/phangantoda
+  facebook:"https://www.facebook.com/profile.php?id=61594810315122",
   emailSignup:"",            // newsletter signup page
   installApp:"",             // link to the PWA / app page
   schoolBooking:"",          // booking link for the free taster
   onlineCourses:"",          // online courses page
   submitEvent:"",            // event submission form
-  email:"info@kohphangantoday.com",                  // e.g. "hello@islandtoday.co"
-  phone:"+86 182 5791 6137",                  // e.g. "+66 12 345 6789"
+  email:"info@kohphangantoday.com",
+  phone:"+86 182 5791 6137",
   address:"Srithanu, Koh Phangan, Surat Thani",
-  DEMO:false                  // set to false once every number on the page is real
+  DEMO:false                 // set to false once every number on the page is real
 };
 
 /* ---------- bilingual data ---------- */
@@ -548,12 +560,7 @@ const FEELINGS=[
  {s:"s3",en:["Held","Cacao ceremony, the Thai massage course, or breathwork with live music."],
         he:["עטופים","טקס קקאו, קורס העיסוי התאי, או עבודת נשימה עם מוזיקה חיה."]}
 ];
-const NOW=[
- {t:"09:30",en:["Vinyasa & breathwork","Sala Yoga Shala"],he:["ויניאסה ונשימה","Sala Yoga Shala"]},
- {t:"11:00",en:["Thai cooking class","Mama Noi's kitchen"],he:["סדנת בישול תאילנדי","המטבח של מאמא נוי"]},
- {t:"16:00",en:["Muay Thai open training","Island Gym"],he:["אימון מוי תאי פתוח","Island Gym"]},
- {t:"17:30",en:["Brazilian Zouk — beginners","Paradise Studio"],he:["זוק ברזילאי — מתחילים","Paradise Studio"]}
-];
+const NOW=[];
 const SCHED=[
  {en:["Beginner course","Thu 17:30 · 4 weeks · ฿1,400"],he:["קורס מתחילים","חמישי 17:30 · 4 שבועות · ฿1,400"]},
  {en:["Technique — styling","Tue 16:00 · ฿450"],he:["טכניקה — סטיילינג","שלישי 16:00 · ฿450"]},
@@ -601,8 +608,10 @@ function render(){
     $("#feelOut").textContent=FEELINGS[+b.dataset.i][LANG][1];
   });
 
-  $("#nowList").innerHTML=NOW.map(x=>`<div class="now"><b>${x.t}</b>
-    <span><p>${x[L][0]}</p><span>${x[L][1]}</span></span></div>`).join("");
+  $("#nowList").innerHTML=NOW.length?NOW.map(x=>`<div class="now"><b>${x.t}</b>
+    <span><p>${x[L][0]}</p><span>${x[L][1]}</span></span></div>`).join("")
+    :`<div class="nowempty"><p>${t("now.e1")}</p><span>${t("now.e2")}</span>
+      <a class="cta sm" href="#hosts" data-link="submitEvent">${t("now.e3")}</a></div>`;
 
   $("#sched").innerHTML=SCHED.map(x=>`<div><b>${x[L][0]}</b><span>${x[L][1]}</span></div>`).join("");
 

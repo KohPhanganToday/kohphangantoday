@@ -17,4 +17,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://kohphangantoday.com/legal.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/legal.html?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kohphangantoday.com/legal.html"/>
+  </url>
 </urlset>
