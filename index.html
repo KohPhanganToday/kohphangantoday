@@ -171,6 +171,10 @@ section{padding:70px 0;scroll-margin-top:82px}
 .daypick input{background:var(--deep);border:1px solid var(--line);border-radius:999px;
   color:var(--sand);font:inherit;font-size:12.5px;padding:4px 9px;cursor:pointer;color-scheme:dark}
 .dayhead{font-family:var(--display);font-weight:700;font-size:16px;color:var(--mango);margin:0 0 14px}
+.maplink{display:inline-block;margin-top:6px;font-size:12px;color:var(--lagoon);text-decoration:none;
+  border-bottom:1px solid rgba(87,216,196,.35);padding-bottom:1px}
+.maplink:hover{border-bottom-color:var(--lagoon)}
+.now .maplink{margin-top:3px;font-size:11.5px}
 .evgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:900px){.evgrid{grid-template-columns:1fr}}
 .ev{border:1px solid var(--line);border-inline-start:3px solid var(--tc);background:var(--deep);border-radius:13px;padding:16px 17px;display:flex;flex-direction:column;gap:7px}
@@ -414,7 +418,7 @@ en:{
  "topics.lead":"Eleven topics, each with its own sub-categories, hosts and WhatsApp group.",
  "topics.count":"{n} this week",
  "today.h2":"Today on the island","today.lead":"What runs every week, by day. One-off events appear here as they come in.",
- "day.today":"Today","day.tomorrow":"Tomorrow","day.pick":"Pick a date",
+ "day.today":"Today","day.tomorrow":"Tomorrow","day.pick":"Pick a date","day.map":"Where is it →",
  "day.none":"Nothing on the weekly schedule for this day yet.",
  "day.note":"These repeat every week. For a one-off event, <a href=\"#host\">send it to us</a> and it goes up the same day.",
  "today.cta":"See the full day","today.going":"{n} going","today.free":"Free",
@@ -472,7 +476,7 @@ he:{
  "topics.lead":"אחד-עשר נושאים, ולכל אחד תתי-נושאים, מארגנים וקבוצת וואטסאפ משלו.",
  "topics.count":"{n} השבוע",
  "today.h2":"היום באי","today.lead":"מה שרץ כל שבוע, לפי יום. אירועים חד-פעמיים מופיעים כאן ברגע שהם מגיעים.",
- "day.today":"היום","day.tomorrow":"מחר","day.pick":"בחרו תאריך",
+ "day.today":"היום","day.tomorrow":"מחר","day.pick":"בחרו תאריך","day.map":"איפה זה ←",
  "day.none":"עדיין אין ביום הזה משהו קבוע בלוח.",
  "day.note":"אלה חוזרים כל שבוע. לאירוע חד-פעמי — <a href=\"#host\">שלחו לנו</a> והוא עולה באותו יום.",
  "today.cta":"ליום המלא","today.going":"{n} מגיעים","today.free":"חינם",
@@ -569,20 +573,25 @@ const FEELINGS=[
 /* Recurring events, straight from what the venues told us.
    d = weekday numbers, 0 = Sunday. Times are island time. */
 const WEEKLY=[
- {d:[1,2,3,4,5,6],t:"08:00",en:["Muay Thai group class","Rittisak · Chaysee"],he:["שיעור מוי תאי קבוצתי","Rittisak · Chaysee"]},
- {d:[1,2,3,4,5,6],t:"08:30",en:["Muay Thai group class","Worawut"],he:["שיעור מוי תאי קבוצתי","Worawut"]},
- {d:[0,1,2,3,4,5,6],t:"10:00",en:["Zipline session — book a day ahead","Phangan Zipline"],he:["זיפליין — להזמין יום מראש","Phangan Zipline"]},
- {d:[0],t:"17:00",en:["Sunday market","Chaloklum"],he:["שוק ראשון","צ׳אלוקלום"]},
- {d:[6],t:"17:00",en:["Walking Street market","Thong Sala"],he:["שוק ווקינג סטריט","תונג סאלה"]},
- {d:[6],t:"17:00",en:["Local market","Thong Sala"],he:["השוק המקומי","תונג סאלה"]},
- {d:[1,2,3,4,5,6],t:"16:00",en:["Muay Thai group class","Rittisak · Chaysee · Worawut"],he:["שיעור מוי תאי קבוצתי","Rittisak · Chaysee · Worawut"]},
- {d:[2],t:"18:00",en:["Sunset DJ set and fire show","SAUDADE Sunset Beach Bar"],he:["סנסט עם DJ ומופע אש","SAUDADE Sunset Beach Bar"]},
- {d:[5],t:"18:00",en:["Drum circle","Zen Beach"],he:["מעגל תופים","זן ביץ׳"]},
- {d:[1,5],t:"19:30",en:["Night session","Rasta Home"],he:["ערב מוזיקה","Rasta Home"]}
+ {q:"Rittisak Muay Thai Gym Koh Phangan",d:[1,2,3,4,5,6],t:"08:00",en:["Muay Thai group class","Rittisak · Chaysee"],he:["שיעור מוי תאי קבוצתי","Rittisak · Chaysee"]},
+ {q:"Worawut Muay Thai Gym Koh Phangan",d:[1,2,3,4,5,6],t:"08:30",en:["Muay Thai group class","Worawut"],he:["שיעור מוי תאי קבוצתי","Worawut"]},
+ {q:"Phangan Zipline Koh Phangan",d:[0,1,2,3,4,5,6],t:"10:00",en:["Zipline session — book a day ahead","Phangan Zipline"],he:["זיפליין — להזמין יום מראש","Phangan Zipline"]},
+ {q:"Chaloklum Sunday Market Koh Phangan",d:[0],t:"17:00",en:["Sunday market","Chaloklum"],he:["שוק ראשון","צ׳אלוקלום"]},
+ {q:"Thong Sala Walking Street Koh Phangan",d:[6],t:"17:00",en:["Walking Street market","Thong Sala"],he:["שוק ווקינג סטריט","תונג סאלה"]},
+ {q:"Thong Sala Walking Street Koh Phangan",d:[6],t:"17:00",en:["Local market","Thong Sala"],he:["השוק המקומי","תונג סאלה"]},
+ {q:"Rittisak Muay Thai Gym Koh Phangan",d:[1,2,3,4,5,6],t:"16:00",en:["Muay Thai group class","Rittisak · Chaysee · Worawut"],he:["שיעור מוי תאי קבוצתי","Rittisak · Chaysee · Worawut"]},
+ {q:"SAUDADE Sunset Beach Bar Koh Phangan",d:[2],t:"18:00",en:["Sunset DJ set and fire show","SAUDADE Sunset Beach Bar"],he:["סנסט עם DJ ומופע אש","SAUDADE Sunset Beach Bar"]},
+ {q:"Zen Beach Koh Phangan",d:[5],t:"18:00",en:["Drum circle","Zen Beach"],he:["מעגל תופים","זן ביץ׳"]},
+ {q:"Rasta Home Koh Phangan",d:[1,5],t:"19:30",en:["Night session","Rasta Home"],he:["ערב מוזיקה","Rasta Home"]}
 ];
 function todayOnIsland(){
   const s=new Date().toLocaleString("en-US",{timeZone:"Asia/Bangkok"});
   return new Date(s).getDay();
+}
+function mapLink(e){
+  if(!e.q) return "";
+  const u="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(e.q);
+  return `<a class="maplink" href="${u}" target="_blank" rel="noopener noreferrer">${t("day.map")}</a>`;
 }
 function eventsOn(day){
   return WEEKLY.filter(x=>x.d.indexOf(day)>-1).sort((a,b)=>a.t.localeCompare(b.t));
@@ -630,7 +639,8 @@ function renderDays(){
   const items=eventsOn(SEL.getDay());
   $("#evGrid").innerHTML=items.length
     ? items.map(e=>`<article class="ev" style="--tc:var(--lagoon)">
-        <p class="t">${e.t}</p><h3>${e[LANG][0]}</h3><p class="m">${e[LANG][1]}</p></article>`).join("")
+        <p class="t">${e.t}</p><h3>${e[LANG][0]}</h3><p class="m">${e[LANG][1]}</p>
+        ${mapLink(e)}</article>`).join("")
     : `<p class="sm dim">${t("day.none")}</p>`;
   const n=$("#dayNote"); if(n) n.innerHTML=t("day.note");
 }
@@ -676,7 +686,7 @@ function render(){
   const today=eventsToday();
   $("#nowList").innerHTML=today.length
     ? today.map(x=>`<div class="now"><b>${x.t}</b>
-        <span><p>${x[L][0]}</p><span>${x[L][1]}</span></span></div>`).join("")
+        <span><p>${x[L][0]}</p><span>${x[L][1]}</span>${mapLink(x)}</span></div>`).join("")
       +`<div class="nowmore"><a href="#today" data-i18n="now.more">${t("now.more")}</a></div>`
     :`<div class="nowempty"><p>${t("now.e1")}</p><span>${t("now.e2")}</span>
       <a class="cta sm" href="#hosts" data-link="submitEvent">${t("now.e3")}</a></div>`;
