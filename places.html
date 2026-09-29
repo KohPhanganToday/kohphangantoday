@@ -150,21 +150,15 @@ const $=s=>document.querySelector(s);
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function t(k){return T[LANG][k];}
-// A few stock phrases the businesses use, so Hebrew readers see Hebrew.
-var PHRASE={"Booking required":"\u05d1\u05d4\u05d6\u05de\u05e0\u05d4 \u05de\u05e8\u05d0\u05e9",
-            "Open every day":"\u05e4\u05ea\u05d5\u05d7 \u05db\u05dc \u05d9\u05d5\u05dd",
-            "Open daily":"\u05e4\u05ea\u05d5\u05d7 \u05db\u05dc \u05d9\u05d5\u05dd",
-            "Closed on":"\u05e1\u05d2\u05d5\u05e8 \u05d1","Closed":"\u05e1\u05d2\u05d5\u05e8",
-            "Monday":"\u05e9\u05e0\u05d9","Tuesday":"\u05e9\u05dc\u05d9\u05e9\u05d9",
-            "Wednesday":"\u05e8\u05d1\u05d9\u05e2\u05d9","Thursday":"\u05d7\u05de\u05d9\u05e9\u05d9",
-            "Friday":"\u05e9\u05d9\u05e9\u05d9","Saturday":"\u05e9\u05d1\u05ea",
-            "Sunday":"\u05e8\u05d0\u05e9\u05d5\u05df"};
+// Only whole-string phrases are translated. Translating single words inside an
+// English sentence turns RTL layout into nonsense, so mixed text stays English.
+var PHRASE={"booking required":"\u05d1\u05d4\u05d6\u05de\u05e0\u05d4 \u05de\u05e8\u05d0\u05e9",
+            "open every day":"\u05e4\u05ea\u05d5\u05d7 \u05db\u05dc \u05d9\u05d5\u05dd",
+            "open daily":"\u05e4\u05ea\u05d5\u05d7 \u05db\u05dc \u05d9\u05d5\u05dd"};
 function hrs(s){
   if(LANG!=="he"||!s) return s;
-  var o=s;
-  Object.keys(PHRASE).forEach(function(k){
-    o=o.replace(new RegExp(k,"gi"),PHRASE[k]);});
-  return o;
+  var k=s.trim().toLowerCase().replace(/[.\u00b7]+$/,"");
+  return PHRASE[k] || s;
 }
 
 function chips(){
@@ -187,7 +181,11 @@ function render(){
     if(!items.length) return;
     out.push('<section class="group"><h2>'+c.g+' '+esc(c[LANG])+' <b>'+items.length+'</b></h2><div class="grid">'
       + items.map(function(p){
-          var ht=p.h?'<p>'+esc(hrs(p.h))+'</p>':'<p></p>';
+          var hv=hrs(p.h);
+          // English hours inside an RTL page must keep their own direction,
+          // or the times and day ranges come out scrambled.
+          var hd=/[\u0590-\u05FF]/.test(hv)?'':' dir="ltr"';
+          var ht=p.h?'<p'+hd+'>'+esc(hv)+'</p>':'<p></p>';
           var link=p.u
             ? '<a class="go" href="'+esc(p.u)+'" target="_blank" rel="noopener noreferrer">'+t("go")+' &rarr;</a>'
             : '<span class="nolink">'+t("nolink")+'</span>';
