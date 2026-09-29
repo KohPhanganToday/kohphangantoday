@@ -160,6 +160,17 @@ section{padding:70px 0;scroll-margin-top:82px}
 .tile h3{margin-top:14px}
 .tile .n{font-size:12.5px;margin-top:5px}
 
+.daytabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 0 18px;padding-bottom:2px}
+.daytabs::-webkit-scrollbar{display:none}
+.daytab{flex:0 0 auto;background:none;border:1px solid var(--line);color:var(--dim);font:inherit;
+  font-size:13px;padding:8px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.daytab:hover{border-color:var(--lagoon);color:var(--sand)}
+.daytab[aria-pressed="true"]{background:var(--lagoon);border-color:var(--lagoon);color:var(--deep);font-weight:600}
+.daypick{flex:0 0 auto;display:flex;align-items:center;gap:8px;border:1px solid var(--line);
+  border-radius:999px;padding:5px 8px 5px 14px;color:var(--dim);font-size:12.5px;white-space:nowrap}
+.daypick input{background:var(--deep);border:1px solid var(--line);border-radius:999px;
+  color:var(--sand);font:inherit;font-size:12.5px;padding:4px 9px;cursor:pointer;color-scheme:dark}
+.dayhead{font-family:var(--display);font-weight:700;font-size:16px;color:var(--mango);margin:0 0 14px}
 .evgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:900px){.evgrid{grid-template-columns:1fr}}
 .ev{border:1px solid var(--line);border-inline-start:3px solid var(--tc);background:var(--deep);border-radius:13px;padding:16px 17px;display:flex;flex-direction:column;gap:7px}
@@ -297,9 +308,11 @@ body.live .demo-only{display:none!important}
 
 <section id="today" style="padding-top:0">
   <div class="head"><div><h2 data-i18n="today.h2">Today on the island</h2>
-    <p data-i18n="today.lead">A sample of what a normal Tuesday looks like here.</p></div>
-    <a class="cta ghost" href="#digest" data-i18n="today.cta">See the full day</a></div>
+    <p data-i18n="today.lead">What runs every week, by day. One-off events appear here as they come in.</p></div></div>
+  <div class="daytabs" id="dayTabs" role="group"></div>
+  <h3 class="dayhead" id="dayHead"></h3>
   <div class="evgrid" id="evGrid"></div>
+  <p class="sm dim" id="dayNote" style="margin-top:16px"></p>
 </section>
 
 <section id="better" style="padding-top:20px">
@@ -400,12 +413,15 @@ en:{
  "topics.h2":"Browse by topic",
  "topics.lead":"Eleven topics, each with its own sub-categories, hosts and WhatsApp group.",
  "topics.count":"{n} this week",
- "today.h2":"Today on the island","today.lead":"A sample of what a normal Tuesday looks like here.",
+ "today.h2":"Today on the island","today.lead":"What runs every week, by day. One-off events appear here as they come in.",
+ "day.today":"Today","day.tomorrow":"Tomorrow","day.pick":"Pick a date",
+ "day.none":"Nothing on the weekly schedule for this day yet.",
+ "day.note":"These repeat every week. For a one-off event, <a href=\"#host\">send it to us</a> and it goes up the same day.",
  "today.cta":"See the full day","today.going":"{n} going","today.free":"Free",
  "now.e1":"No events collected for today yet.",
  "now.e2":"We are just starting. The list fills up as island businesses send us what they are running.",
  "now.e3":"Send us your event — free",
- "now.more":"All the places on the island →",
+ "now.more":"The full day →",
  "better.h2":"What this does that a listings page doesn't",
  "better.c1h":"You can see who's going",
  "better.c1p":"Every event shows who else is coming and who ticked “open to meeting someone”. Travelling alone stops being a reason not to go.",
@@ -455,12 +471,15 @@ he:{
  "topics.h2":"עיון לפי נושא",
  "topics.lead":"אחד-עשר נושאים, ולכל אחד תתי-נושאים, מארגנים וקבוצת וואטסאפ משלו.",
  "topics.count":"{n} השבוע",
- "today.h2":"היום באי","today.lead":"טעימה מאיך שנראה יום שלישי רגיל כאן.",
+ "today.h2":"היום באי","today.lead":"מה שרץ כל שבוע, לפי יום. אירועים חד-פעמיים מופיעים כאן ברגע שהם מגיעים.",
+ "day.today":"היום","day.tomorrow":"מחר","day.pick":"בחרו תאריך",
+ "day.none":"עדיין אין ביום הזה משהו קבוע בלוח.",
+ "day.note":"אלה חוזרים כל שבוע. לאירוע חד-פעמי — <a href=\"#host\">שלחו לנו</a> והוא עולה באותו יום.",
  "today.cta":"ליום המלא","today.going":"{n} מגיעים","today.free":"חינם",
  "now.e1":"עדיין לא נאספו אירועים להיום.",
  "now.e2":"אנחנו רק מתחילים. הרשימה מתמלאת ככל שעסקים באי שולחים לנו מה הם מריצים.",
  "now.e3":"שלחו לנו אירוע — בחינם",
- "now.more":"כל המקומות באי ←",
+ "now.more":"היום המלא ←",
  "better.h2":"מה שיש כאן ואין בלוח אירועים רגיל",
  "better.c1h":"רואים מי מגיע",
  "better.c1p":"בכל אירוע רואים מי עוד מגיע ומי סימן שהוא פתוח להכיר אנשים. לבוא לבד מפסיק להיות סיבה לא לבוא.",
@@ -529,26 +548,6 @@ const TOPICS=[
  {g:"🪁",c:"#FFD98A",k:2, en:["Kids & family","Classes and days out with children"],he:["ילדים ומשפחה","חוגים וימי כיף עם הילדים"]},
  {g:"✳️",c:"#A8B8B4",k:2, en:["Everything else","Talks, film nights, one-offs"],he:["כל השאר","הרצאות, ערבי סרט, אירועים חד-פעמיים"]}
 ];
-const EVENTS=[
- {s:"17:30",e:"19:00",p:400,c:"#FF6B5A",g:9,
-  en:["Brazilian Zouk — beginners","Paradise Studio, Srithanu","Walk in alone, leave with ten new friends. No partner needed."],
-  he:["זוק ברזילאי — מתחילים","Paradise Studio, שריתאנו","נכנסים לבד, יוצאים עם עשרה חברים חדשים. לא צריך בן או בת זוג."]},
- {s:"07:00",e:"09:00",p:350,c:"#FF6B5A",g:14,
-  en:["Ecstatic dance sunrise","Jungle Temple, Haad Yao","No talking, no shoes, no alcohol. A three-hour wave of music."],
-  he:["אקסטטיק דאנס בזריחה","Jungle Temple, האד יאו","בלי דיבורים, בלי נעליים, בלי אלכוהול. שלוש שעות של גל מוזיקה."]},
- {s:"19:30",e:"22:00",p:600,c:"#B98CFF",g:11,
-  en:["Cacao & sound journey","Orion Space, Srithanu","Ceremonial cacao, gongs, bowls, and a long lie-down in the dark."],
-  he:["קקאו ומסע סאונד","Orion Space, שריתאנו","קקאו טקסי, גונגים, קערות, ושכיבה ארוכה בחושך."]},
- {s:"08:00",e:"09:30",p:500,c:"#FFC247",g:6,
-  en:["Ice bath & breath","Cold Current, Srithanu","Breathwork, then three rounds in the barrel. Nobody is pushed."],
-  he:["אמבט קרח ונשימה","Cold Current, שריתאנו","עבודת נשימה, ואז שלושה סבבים בחבית. אף אחד לא נדחף."]},
- {s:"18:00",e:"23:00",p:0,c:"#FF9F45",g:23,
-  en:["Night market & live band","Walking street, Thong Sala","Every stall on the street, and a band at the far end from 19:30."],
-  he:["שוק לילה והופעה חיה","המדרחוב, תונג סאלה","כל הדוכנים ברחוב, ולהקה בקצה הרחוק מ-19:30."]},
- {s:"21:00",e:"01:00",p:0,c:"#FF6B5A",g:31,
-  en:["Zouk social — beach floor","Sunset Bar, Haad Yao","Wooden floor on the sand, DJ from 22:00, free taster class at 20:30."],
-  he:["סושיאל זוק — רחבה על החוף","Sunset Bar, האד יאו","רחבת עץ על החול, די-ג'יי מ-22:00, ושיעור טעימה חינם ב-20:30."]}
-];
 const FEELINGS=[
  {s:"s1",en:["Alive","Sunrise ecstatic dance at 07:00, Muay Thai at 16:00, and the beach social tonight."],
         he:["מלאי חיים","אקסטטיק דאנס בזריחה ב-07:00, מוי תאי ב-16:00, והסושיאל על החוף הערב."]},
@@ -585,9 +584,55 @@ function todayOnIsland(){
   const s=new Date().toLocaleString("en-US",{timeZone:"Asia/Bangkok"});
   return new Date(s).getDay();
 }
-function eventsToday(){
-  const day=todayOnIsland();
+function eventsOn(day){
   return WEEKLY.filter(x=>x.d.indexOf(day)>-1).sort((a,b)=>a.t.localeCompare(b.t));
+}
+function eventsToday(){ return eventsOn(todayOnIsland()); }
+
+/* ---------- the day picker under "Today on the island" ---------- */
+const DAYNAMES={en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                he:["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"]};
+function islandToday(){
+  const s=new Date().toLocaleString("en-US",{timeZone:"Asia/Bangkok"});
+  const d=new Date(s); d.setHours(0,0,0,0); return d;
+}
+function ymd(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function addDays(d,n){const x=new Date(d); x.setDate(x.getDate()+n); return x}
+function offsetOf(d){return Math.round((d-islandToday())/86400000)}
+function longDate(d){
+  try{return d.toLocaleDateString(LANG==="he"?"he-IL":"en-GB",{weekday:"long",day:"numeric",month:"long"})}
+  catch(e){return DAYNAMES[LANG][d.getDay()]}
+}
+let SEL=null;   // the day being shown; null until the first render
+
+function dayLabel(off){
+  if(off===0) return t("day.today");
+  if(off===1) return t("day.tomorrow");
+  return DAYNAMES[LANG][addDays(islandToday(),off).getDay()];
+}
+function renderDays(){
+  const tabs=$("#dayTabs"); if(!tabs) return;
+  if(!SEL || offsetOf(SEL)<0) SEL=islandToday();
+  const off=offsetOf(SEL);
+  tabs.innerHTML=[0,1,2,3,4,5,6].map(o=>
+      `<button type="button" class="daytab" data-o="${o}" aria-pressed="${off===o}">${dayLabel(o)}</button>`).join("")
+    +`<label class="daypick">${t("day.pick")}
+       <input type="date" id="dayInput" value="${ymd(SEL)}" min="${ymd(islandToday())}" max="${ymd(addDays(islandToday(),365))}"></label>`;
+  tabs.querySelectorAll("[data-o]").forEach(b=>b.onclick=()=>{SEL=addDays(islandToday(),+b.dataset.o);renderDays();});
+  const inp=$("#dayInput");
+  if(inp) inp.onchange=()=>{
+    const v=inp.value; if(!v) return;
+    const q=v.split("-"), d=new Date(+q[0],+q[1]-1,+q[2]);
+    if(!isNaN(d.getTime())){SEL=d; renderDays();}
+  };
+  const hd=$("#dayHead"); if(hd) hd.textContent=longDate(SEL);
+
+  const items=eventsOn(SEL.getDay());
+  $("#evGrid").innerHTML=items.length
+    ? items.map(e=>`<article class="ev" style="--tc:var(--lagoon)">
+        <p class="t">${e.t}</p><h3>${e[LANG][0]}</h3><p class="m">${e[LANG][1]}</p></article>`).join("")
+    : `<p class="sm dim">${t("day.none")}</p>`;
+  const n=$("#dayNote"); if(n) n.innerHTML=t("day.note");
 }
 const SCHED=[
  {en:["Beginner course","Thu 17:30 · 4 weeks · ฿1,400"],he:["קורס מתחילים","חמישי 17:30 · 4 שבועות · ฿1,400"]},
@@ -603,8 +648,6 @@ const CHANS=[
  {k:"emailSignup",   v:"1.2k",en:"Email",he:"מייל"},
  {k:"installApp",    v:"free",en:"Install the app",he:"התקנת האפליקציה"}
 ];
-const AVC=["#FFC247","#57D8C4","#FF6B5A","#B98CFF","#8FD46A","#6FB6FF"];
-const NAMES=["Maya","Tom","Lina","Jonas","Ana","Ravi","Sofie","Beni","Noa","Luca"];
 
 /* ---------- render ---------- */
 const $=s=>document.querySelector(s);
@@ -617,13 +660,7 @@ function render(){
     <span class="g" aria-hidden="true">${x.g}</span><span><h3>${x[L][0]}</h3><p class="xs dim">${x[L][1]}</p>
     <p class="n demo-only" style="color:${x.c}">${t("topics.count").replace("{n}",x.k)}</p></span></a>`).join("");
 
-  $("#evGrid").innerHTML=EVENTS.map((e,i)=>`<article class="ev" style="--tc:${e.c}">
-    <p class="t">${e.s} – ${e.e}</p><h3>${e[L][0]}</h3><p class="m">${e[L][1]}</p>
-    <p class="sm dim" style="margin-top:2px">${e[L][2]}</p>
-    <span class="f"><span class="pill ${e.p===0?"free":""}">${e.p===0?t("today.free"):"฿"+e.p}</span>
-    <span class="avs demo-only" aria-hidden="true">${[0,1,2,3].map(n=>{const nm=NAMES[(i*3+n)%10];
-      return `<span class="av" style="background:${AVC[(i+n)%6]}">${nm[0]}</span>`}).join("")}</span>
-    <span class="xs dim demo-only">${t("today.going").replace("{n}",e.g)}</span></span></article>`).join("");
+  renderDays();
 
   $("#feels").innerHTML=FEELINGS.map((f,i)=>
     `<button type="button" class="feel ${f.s}" data-i="${i}" aria-pressed="false">${f[L][0]}</button>`).join("");
@@ -640,7 +677,7 @@ function render(){
   $("#nowList").innerHTML=today.length
     ? today.map(x=>`<div class="now"><b>${x.t}</b>
         <span><p>${x[L][0]}</p><span>${x[L][1]}</span></span></div>`).join("")
-      +`<div class="nowmore"><a href="places.html" data-i18n="now.more">${t("now.more")}</a></div>`
+      +`<div class="nowmore"><a href="#today" data-i18n="now.more">${t("now.more")}</a></div>`
     :`<div class="nowempty"><p>${t("now.e1")}</p><span>${t("now.e2")}</span>
       <a class="cta sm" href="#hosts" data-link="submitEvent">${t("now.e3")}</a></div>`;
 
