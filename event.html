@@ -74,6 +74,8 @@ table.facts th{text-align:start;font-weight:600;color:var(--dim);font-size:13.5p
 html[lang="he"] table.facts th{padding:10px 0 10px 14px}
 table.facts td{padding:10px 0;font-size:14.5px;border-bottom:1px solid rgba(28,74,80,.45)}
 table.facts tr:last-child td{border-bottom:0}
+table.price td{font-weight:600;color:var(--sand);white-space:nowrap}
+.venue a{white-space:nowrap}
 .note{margin-top:22px;background:rgba(255,194,71,.07);border:1px solid rgba(255,194,71,.28);
   border-radius:11px;padding:15px 17px;font-size:14px;color:var(--sand)}
 .cbox{margin:40px 0 0;border-top:1px solid var(--line);padding-top:26px}
@@ -114,13 +116,13 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){
 
 var T={
  en:{back:"← All of today", today:"What's on today", map:"Open in maps →",
-     when:"When", about:"About", details:"Details", every:"Every",
+     when:"When", about:"About", details:"Details", price:"Price", every:"Every",
      ctaH:"Is this your event?", ctaP:"Send us a correction, a price or a photo and it goes up the same day. Listing is free.",
      ctaB:"Send an update", ctaB2:"All the places on the island",
      miss:"We don't have that one.", missP:"It may have been renamed or removed.",
      missB:"See what's on today", foot:"© 2026 Koh Phangan Today"},
  he:{back:"← לכל מה שקורה היום", today:"מה קורה היום", map:"לפתוח במפות ←",
-     when:"מתי", about:"על האירוע", details:"פרטים", every:"כל",
+     when:"מתי", about:"על האירוע", details:"פרטים", price:"מחיר", every:"כל",
      ctaH:"זה האירוע שלכם?", ctaP:"שלחו לנו תיקון, מחיר או תמונה וזה עולה באותו יום. הפרסום בחינם.",
      ctaB:"לשלוח עדכון", ctaB2:"כל המקומות באי",
      miss:"את זה אין לנו.", missP:"ייתכן ששונה השם או שהאירוע הוסר.",
@@ -179,9 +181,20 @@ function render(){
     L.sched.forEach(function(x){ h+='<li>'+esc(x)+'</li>' });
     h+='</ul>';
   }
+  // price gets a section of its own — it is the first thing people look for
+  if(L.price && L.price.length){
+    h+='<h2>'+t("price")+'</h2><table class="facts price"><tbody>';
+    L.price.forEach(function(f){ h+='<tr><th>'+esc(f[0])+'</th><td>'+esc(f[1])+'</td></tr>' });
+    h+='</tbody></table>';
+  }
   if(L.facts && L.facts.length){
     h+='<h2>'+t("details")+'</h2><table class="facts"><tbody>';
-    L.facts.forEach(function(f){ h+='<tr><th>'+esc(f[0])+'</th><td>'+esc(f[1])+'</td></tr>' });
+    // a value with no Hebrew in it needs its own direction, or things like
+    // an @handle or a phone number come out reversed inside the RTL page
+    L.facts.forEach(function(f){
+      var d=/[\u0590-\u05FF]/.test(f[1])?'':' dir="ltr"';
+      h+='<tr><th>'+esc(f[0])+'</th><td'+d+'>'+esc(f[1])+'</td></tr>';
+    });
     h+='</tbody></table>';
   }
   if(L.note) h+='<p class="note">'+esc(L.note)+'</p>';

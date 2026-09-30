@@ -10,6 +10,24 @@
         the page renders a clean header on its own without one.
 ------------------------------------------------------------------- */
 
+/* The four Love Space nights — Sunday, Monday, Wednesday, Thursday — all run
+   on the same price list, so it lives in one place and any change is made
+   once. Tuesday's zouk is a different venue and is priced separately; until
+   the organisers give us that number it carries no price at all.
+   price = the table on the detail page.   PLINE = the one-line hint in a day's list. */
+var PRICE = {
+  he:[["שיעור אחד + סושיאל","400 באט"],
+      ["שני שיעורים + סושיאל","600 באט"],
+      ["סושיאל בלבד","200 באט"]],
+  en:[["One class + social","400 THB"],
+      ["Two classes + social","600 THB"],
+      ["Social only","200 THB"]]
+};
+var PLINE = {
+  he:"400–600 באט · סושיאל בלבד 200",
+  en:"400–600 THB · social only 200"
+};
+
 window.EVENTS = {
 
 "muay-thai": {
@@ -124,14 +142,16 @@ window.EVENTS = {
     about:["ערב סלסה שבועי. מתחילים בשיעור למי שלא רקד מעולם, ואחר כך סושיאל פתוח לכולם.",
            "לא צריך להגיע עם בן או בת זוג — מחליפים בני זוג לאורך השיעור, וזה איך שלומדים."],
     sched:["19:00 — שיעור מתחילים","20:00 — מתקדמים וסושיאל"],
+    price:PRICE.he, p:PLINE.he,
     facts:[["המקום","Love Space, לשעבר Sushi Love"],["אינסטגרם","@love_space_phangan"]],
-    note:"המחיר עדיין לא אצלנו." },
+    note:"" },
   en: { t:"Salsa night", v:"Love Space (ex Sushi Love)",
     about:["A weekly salsa night. It opens with a class for people who have never danced, then a social that is open to everyone.",
            "You don't need to bring a partner — partners rotate through the class, and that is how you learn."],
     sched:["19:00 — beginners class","20:00 — improvers and social"],
+    price:PRICE.en, p:PLINE.en,
     facts:[["Venue","Love Space, formerly Sushi Love"],["Instagram","@love_space_phangan"]],
-    note:"We don't have the price yet." }
+    note:"" }
 },
 
 "bachata-monday": {
@@ -140,13 +160,15 @@ window.EVENTS = {
     about:["ערב באצ׳טה שבועי — שיעור למתחילים ואחריו סושיאל.",
            "לא צריך בן או בת זוג."],
     sched:["19:00 — שיעור מתחילים","20:00 — מתקדמים וסושיאל"],
+    price:PRICE.he, p:PLINE.he,
     facts:[["המקום","Love Space, לשעבר Sushi Love"],["אינסטגרם","@love_space_phangan"]],
-    note:"המחיר עדיין לא אצלנו." },
+    note:"" },
   en: { t:"Bachata night", v:"Love Space (ex Sushi Love)",
     about:["A weekly bachata night — a beginners class followed by a social.","You don't need to bring a partner."],
     sched:["19:00 — beginners class","20:00 — improvers and social"],
+    price:PRICE.en, p:PLINE.en,
     facts:[["Venue","Love Space, formerly Sushi Love"],["Instagram","@love_space_phangan"]],
-    note:"We don't have the price yet." }
+    note:"" }
 },
 
 "zouk-tuesday": {
@@ -168,17 +190,19 @@ window.EVENTS = {
 "kizomba-wednesday": {
   q: "Love Space Koh Phangan", img: "",
   he: { t:"ערב קיזומבה", v:"Love Space (ex Sushi Love)",
-    about:["ערב קיזומבה שבועי. השיעור והסושיאל מתחילים יחד בשמונה.",
+    about:["ערב קיזומבה שבועי — שיעור למתחילים ואחריו סושיאל.",
            "קיזומבה הוא ריקוד זוגי אנגולי, קרוב ואיטי. לא צריך בן או בת זוג."],
-    sched:["20:00 — שיעור וסושיאל"],
+    sched:["19:00 — שיעור מתחילים","20:00 — מתקדמים וסושיאל"],
+    price:PRICE.he, p:PLINE.he,
     facts:[["המקום","Love Space, לשעבר Sushi Love"],["אינסטגרם","@love_space_phangan"]],
-    note:"המחיר עדיין לא אצלנו." },
+    note:"" },
   en: { t:"Kizomba night", v:"Love Space (ex Sushi Love)",
-    about:["A weekly kizomba night. Class and social start together at eight.",
+    about:["A weekly kizomba night — a beginners class followed by a social.",
            "Kizomba is an Angolan partner dance, close and slow. You don't need to bring a partner."],
-    sched:["20:00 — class and social"],
+    sched:["19:00 — beginners class","20:00 — improvers and social"],
+    price:PRICE.en, p:PLINE.en,
     facts:[["Venue","Love Space, formerly Sushi Love"],["Instagram","@love_space_phangan"]],
-    note:"We don't have the price yet." }
+    note:"" }
 },
 
 "bachata-thursday": {
@@ -186,13 +210,15 @@ window.EVENTS = {
   he: { t:"ערב באצ׳טה", v:"Love Space (ex Sushi Love)",
     about:["הערב השני של השבוע לבאצ׳טה — שיעור למתחילים ואחריו סושיאל."],
     sched:["19:00 — שיעור מתחילים","20:00 — מתקדמים וסושיאל"],
+    price:PRICE.he, p:PLINE.he,
     facts:[["המקום","Love Space, לשעבר Sushi Love"],["אינסטגרם","@love_space_phangan"]],
-    note:"המחיר עדיין לא אצלנו." },
+    note:"" },
   en: { t:"Bachata night", v:"Love Space (ex Sushi Love)",
     about:["The week's second bachata night — a beginners class followed by a social."],
     sched:["19:00 — beginners class","20:00 — improvers and social"],
+    price:PRICE.en, p:PLINE.en,
     facts:[["Venue","Love Space, formerly Sushi Love"],["Instagram","@love_space_phangan"]],
-    note:"We don't have the price yet." }
+    note:"" }
 }
 
 };
@@ -211,11 +237,12 @@ window.WEEKLY = [
  {e:"salsa-sunday",       d:[0], t:"19:00", k:"beg"},
  {e:"bachata-monday",     d:[1], t:"19:00", k:"beg"},
  {e:"bachata-thursday",   d:[4], t:"19:00", k:"beg"},
+ {e:"kizomba-wednesday",  d:[3], t:"19:00", k:"beg"},
  {e:"rasta-home",         d:[1,5], t:"19:30"},
  {e:"zouk-tuesday",       d:[2], t:"19:30", k:"soc"},
  {e:"salsa-sunday",       d:[0], t:"20:00", k:"soc"},
  {e:"bachata-monday",     d:[1], t:"20:00", k:"soc"},
- {e:"kizomba-wednesday",  d:[3], t:"20:00"},
+ {e:"kizomba-wednesday",  d:[3], t:"20:00", k:"soc"},
  {e:"bachata-thursday",   d:[4], t:"20:00", k:"soc"}
 ];
 

@@ -171,6 +171,12 @@ section{padding:70px 0;scroll-margin-top:82px}
 .daypick input{background:var(--deep);border:1px solid var(--line);border-radius:999px;
   color:var(--sand);font:inherit;font-size:12.5px;padding:4px 9px;cursor:pointer;color-scheme:dark}
 a.evlink{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+/* the price hint under an event; a block of its own so it never runs into
+   the venue name or the map link beside it */
+.evprice{display:block;width:fit-content;margin-top:5px;font-size:12px;
+  color:var(--sand);background:rgba(255,194,71,.10);
+  border:1px solid rgba(255,194,71,.30);border-radius:6px;padding:2px 8px}
+.now .evprice{margin-top:5px}
 a.evlink:hover{border-bottom-color:var(--lagoon);color:var(--lagoon)}
 .ev h3 a.evlink:hover{color:var(--sand);border-bottom-color:var(--lagoon)}
 .dayhead{font-family:var(--display);font-weight:700;font-size:16px;color:var(--mango);margin:0 0 14px}
@@ -592,6 +598,11 @@ function rowVenue(row){
   return (row.v && row.v[LANG]) || E[LANG].v;
 }
 function rowHref(row){ return "event.html?id="+encodeURIComponent(row.e); }
+// a one-line price hint, only for the events we actually have a price for
+function rowPrice(row){
+  const E=ev(row); const p=E&&E[LANG].p;
+  return p ? `<span class="evprice">${p}</span>` : "";
+}
 function mapLink(row){
   const E=ev(row); const q=E&&E.q;
   if(!q) return "";
@@ -648,6 +659,7 @@ function renderDays(){
         <p class="t">${r.t}</p>
         <h3><a class="evlink" href="${rowHref(r)}">${rowTitle(r)}</a></h3>
         <p class="m">${rowVenue(r)}</p>
+        ${rowPrice(r)}
         ${mapLink(r)}</article>`).join("")
     : `<p class="sm dim">${t("day.none")}</p>`;
   const n=$("#dayNote"); if(n) n.innerHTML=t("day.note");
@@ -695,7 +707,7 @@ function render(){
   $("#nowList").innerHTML=today.length
     ? today.map(r=>`<div class="now"><b>${r.t}</b>
         <span><p><a class="evlink" href="${rowHref(r)}">${rowTitle(r)}</a></p>
-        <span>${rowVenue(r)}</span>${mapLink(r)}</span></div>`).join("")
+        <span>${rowVenue(r)}</span>${rowPrice(r)}${mapLink(r)}</span></div>`).join("")
       +`<div class="nowmore"><a href="#today" data-i18n="now.more">${t("now.more")}</a></div>`
     :`<div class="nowempty"><p>${t("now.e1")}</p><span>${t("now.e2")}</span>
       <a class="cta sm" href="#hosts" data-link="submitEvent">${t("now.e3")}</a></div>`;
