@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koh Phangan Today</title>
+<meta name="description" id="mDesc" content="What's on today on Koh Phangan.">
+<meta name="theme-color" content="#0A2C31">
+<meta name="robots" content="index, follow">
+<link rel="canonical" id="mCanon" href="https://kohphangantoday.com/event.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Koh Phangan Today">
+<meta property="og:title" id="mOgT" content="Koh Phangan Today">
+<meta property="og:description" id="mOgD" content="What's on today on Koh Phangan.">
+<meta property="og:image" content="og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A2C31'/%3E%3Ccircle cx='32' cy='26' r='11' fill='%23FFC247'/%3E%3Cpath d='M6 45c6-5 11-5 17 0s11 5 17 0 11-5 18 0' stroke='%2357D8C4' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&family=Rubik:wght@500;700;800&family=Assistant:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--sea:#0A2C31;--deep:#071F23;--line:#1C4A50;--sand:#F1E6D2;--dim:#A8B8B4;
+  --coral:#FF6B5A;--lagoon:#57D8C4;--mango:#FFC247;
+  --display:"Bricolage Grotesque",sans-serif;--body:"Inter Tight",Arial,sans-serif}
+html[lang="he"]{--display:"Rubik",sans-serif;--body:"Assistant",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--sea);color:var(--sand);font-family:var(--body);line-height:1.65;
+  -webkit-font-smoothing:antialiased}
+html[lang="he"] body{letter-spacing:normal}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px}
+a{color:var(--lagoon)}
+.bar{position:sticky;top:0;z-index:40;background:rgba(7,31,35,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:62px;max-width:1040px}
+.logo{display:flex;align-items:baseline;gap:7px;text-decoration:none;color:var(--sand);
+  font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.02em;flex:0 0 auto;direction:ltr}
+.logo span{color:var(--lagoon);font-size:12px;font-weight:700;letter-spacing:.06em}
+.bar-end{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--dim);font:inherit;font-size:12.5px;padding:7px 11px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--lagoon);color:var(--deep);font-weight:600}
+.cta{background:var(--coral);color:#180705;font-weight:600;padding:10px 17px;border-radius:9px;
+  text-decoration:none;font-size:14px;white-space:nowrap;display:inline-block}
+.cta:hover{filter:brightness(1.08)}
+.cta.ghost{background:none;border:1px solid var(--line);color:var(--sand)}
+.back{display:inline-block;margin:26px 0 0;font-size:13.5px;color:var(--dim);text-decoration:none}
+.back:hover{color:var(--sand)}
+.hero{margin-top:16px;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  background:
+    radial-gradient(70% 120% at 85% 0,rgba(255,107,90,.20),transparent 62%),
+    radial-gradient(60% 120% at 0 100%,rgba(87,216,196,.16),transparent 62%),
+    var(--deep);
+  padding:34px 28px 30px}
+.hero img{display:block;width:100%;height:auto;border-radius:12px;margin-bottom:22px}
+.kicker{font-size:12.5px;color:var(--mango);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+html[lang="he"] .kicker{letter-spacing:normal;text-transform:none}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,5.4vw,44px);
+  line-height:1.06;letter-spacing:-.03em;margin-top:9px}
+.venue{margin-top:12px;color:var(--dim);font-size:15.5px}
+.venue a{text-decoration:none;border-bottom:1px solid rgba(87,216,196,.4)}
+.when{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{background:rgba(87,216,196,.13);border:1px solid rgba(87,216,196,.3);color:var(--lagoon);
+  border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600}
+section.body{padding:34px 0 0}
+section.body p{margin-top:15px;font-size:16px}
+h2{font-family:var(--display);font-weight:800;font-size:19px;margin-top:34px;letter-spacing:-.02em}
+ul.sched{margin-top:14px;list-style:none}
+ul.sched li{padding:11px 0;border-bottom:1px solid rgba(28,74,80,.55);font-size:15px}
+ul.sched li:last-child{border-bottom:0}
+table.facts{width:100%;margin-top:14px;border-collapse:collapse}
+table.facts th{text-align:start;font-weight:600;color:var(--dim);font-size:13.5px;
+  padding:10px 14px 10px 0;vertical-align:top;white-space:nowrap}
+html[lang="he"] table.facts th{padding:10px 0 10px 14px}
+table.facts td{padding:10px 0;font-size:14.5px;border-bottom:1px solid rgba(28,74,80,.45)}
+table.facts tr:last-child td{border-bottom:0}
+.note{margin-top:22px;background:rgba(255,194,71,.07);border:1px solid rgba(255,194,71,.28);
+  border-radius:11px;padding:15px 17px;font-size:14px;color:var(--sand)}
+.cbox{margin:40px 0 0;border-top:1px solid var(--line);padding-top:26px}
+.cbox h2{margin-top:0}
+.cbox p{margin-top:9px;font-size:14.5px;color:var(--dim);max-width:52ch}
+.cbox .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+footer{padding:40px 0 60px;margin-top:40px;border-top:1px solid var(--line)}
+footer p{color:var(--dim);font-size:12.5px}
+footer a{color:var(--dim);text-decoration:underline;text-underline-offset:2px}
+.missing{padding:60px 0;text-align:center}
+.missing h1{font-size:28px}
+.missing p{margin-top:14px;color:var(--dim)}
+@media(max-width:560px){.wrap{padding:0 18px}.hero{padding:26px 20px 24px}.bar-end .cta{display:none}}
+@media print{.bar,.cbox{display:none}body{background:#fff;color:#000}.hero{background:#fff}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <a class="logo" href="index.html">KOH PHANGAN <span>TODAY</span></a>
+  <div class="bar-end">
+    <div class="lang" role="group" aria-label="Language">
+      <button id="bEn" onclick="setLang('en',1)" aria-pressed="true">EN</button>
+      <button id="bHe" onclick="setLang('he',1)" aria-pressed="false">&#1506;&#1489;</button>
+    </div>
+    <a class="cta" href="index.html" id="navToday">What's on today</a>
+  </div>
+</div></div>
+
+<div class="wrap"><main id="main"></main></div>
+
+<script src="events.js"></script>
+<script>
+var LANG="en", ID="";
+function $(s){return document.querySelector(s)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+var T={
+ en:{back:"← All of today", today:"What's on today", map:"Open in maps →",
+     when:"When", about:"About", details:"Details", every:"Every",
+     ctaH:"Is this your event?", ctaP:"Send us a correction, a price or a photo and it goes up the same day. Listing is free.",
+     ctaB:"Send an update", ctaB2:"All the places on the island",
+     miss:"We don't have that one.", missP:"It may have been renamed or removed.",
+     missB:"See what's on today", foot:"© 2026 Koh Phangan Today"},
+ he:{back:"← לכל מה שקורה היום", today:"מה קורה היום", map:"לפתוח במפות ←",
+     when:"מתי", about:"על האירוע", details:"פרטים", every:"כל",
+     ctaH:"זה האירוע שלכם?", ctaP:"שלחו לנו תיקון, מחיר או תמונה וזה עולה באותו יום. הפרסום בחינם.",
+     ctaB:"לשלוח עדכון", ctaB2:"כל המקומות באי",
+     miss:"את זה אין לנו.", missP:"ייתכן ששונה השם או שהאירוע הוסר.",
+     missB:"לראות מה קורה היום", foot:"© 2026 Koh Phangan Today"}};
+function t(k){return T[LANG][k]}
+
+var DAYNAMES={en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+              he:["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"]};
+
+function daysOf(id){
+  var set={};
+  (window.WEEKLY||[]).forEach(function(r){ if(r.e===id) r.d.forEach(function(n){set[n]=1}) });
+  return Object.keys(set).map(Number).sort(function(a,b){return a-b});
+}
+function daysLabel(id){
+  var d=daysOf(id);
+  if(!d.length) return "";
+  if(d.length===7) return LANG==="he"?"כל יום":"Every day";
+  // a run of three or more consecutive days reads better as a range
+  var run=d.length>2 && d[d.length-1]-d[0]===d.length-1;
+  if(run) return (LANG==="he"?"":"")+DAYNAMES[LANG][d[0]]+(LANG==="he"?" עד ":" to ")+DAYNAMES[LANG][d[d.length-1]];
+  return t("every")+" "+d.map(function(n){return DAYNAMES[LANG][n]}).join(", ");
+}
+function timesOf(id){
+  var ts={};
+  (window.WEEKLY||[]).forEach(function(r){ if(r.e===id) ts[r.t]=1 });
+  return Object.keys(ts).sort();
+}
+
+function render(){
+  var E=(window.EVENTS||{})[ID];
+  if(!E){
+    $("#main").innerHTML='<div class="missing"><h1>'+t("miss")+'</h1><p>'+t("missP")+
+      '</p><p style="margin-top:22px"><a class="cta" href="index.html">'+t("missB")+'</a></p></div>';
+    document.title="Koh Phangan Today"; return;
+  }
+  var L=E[LANG], mapUrl="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(E.q||L.v);
+
+  var h='<a class="back" href="index.html#today">'+t("back")+'</a>';
+  h+='<div class="hero">';
+  if(E.img) h+='<img src="'+esc(E.img)+'" alt="'+esc(L.t)+'">';
+  h+='<p class="kicker">'+esc(daysLabel(ID))+'</p>';
+  h+='<h1>'+esc(L.t)+'</h1>';
+  h+='<p class="venue">'+esc(L.v)+' · <a href="'+mapUrl+'" target="_blank" rel="noopener noreferrer">'+t("map")+'</a></p>';
+  var ts=timesOf(ID);
+  if(ts.length) h+='<div class="when">'+ts.map(function(x){return '<span class="pill">'+x+'</span>'}).join("")+'</div>';
+  h+='</div>';
+
+  h+='<section class="body">';
+  if(L.about && L.about.length){
+    h+='<h2>'+t("about")+'</h2>';
+    L.about.forEach(function(p){ h+='<p>'+esc(p)+'</p>' });
+  }
+  if(L.sched && L.sched.length){
+    h+='<h2>'+t("when")+'</h2><ul class="sched">';
+    L.sched.forEach(function(x){ h+='<li>'+esc(x)+'</li>' });
+    h+='</ul>';
+  }
+  if(L.facts && L.facts.length){
+    h+='<h2>'+t("details")+'</h2><table class="facts"><tbody>';
+    L.facts.forEach(function(f){ h+='<tr><th>'+esc(f[0])+'</th><td>'+esc(f[1])+'</td></tr>' });
+    h+='</tbody></table>';
+  }
+  if(L.note) h+='<p class="note">'+esc(L.note)+'</p>';
+  h+='</section>';
+
+  h+='<div class="cbox"><h2>'+t("ctaH")+'</h2><p>'+t("ctaP")+'</p><div class="row">'
+   + '<a class="cta" href="https://forms.gle/Lx1ZXq4LyLJMQca97" target="_blank" rel="noopener noreferrer">'+t("ctaB")+'</a>'
+   + '<a class="cta ghost" href="places.html">'+t("ctaB2")+'</a></div></div>';
+
+  h+='<footer><p>'+t("foot")+' · <a href="index.html">'+t("today")+'</a> · <a href="guide.html">'
+   + (LANG==="he"?"מדריך האי":"The island guide")+'</a> · <a href="legal.html">'
+   + (LANG==="he"?"פרטיות ותנאים":"Privacy &amp; terms")+'</a></p></footer>';
+
+  $("#main").innerHTML=h;
+
+  var title=L.t+" — "+L.v+" · Koh Phangan Today";
+  document.title=title;
+  var d=(L.about&&L.about[0])||title;
+  $("#mDesc").content=d; $("#mOgT").content=L.t+" — "+L.v; $("#mOgD").content=d;
+  $("#mCanon").href="https://kohphangantoday.com/event.html?id="+encodeURIComponent(ID);
+}
+
+function setLang(l,push){
+  LANG=(l==="he")?"he":"en";
+  var e=document.documentElement;
+  e.lang=LANG; e.dir=(LANG==="he")?"rtl":"ltr";
+  $("#bEn").setAttribute("aria-pressed",LANG==="en");
+  $("#bHe").setAttribute("aria-pressed",LANG==="he");
+  $("#navToday").textContent=t("today");
+  render();
+  try{localStorage.setItem("it_lang",LANG)}catch(err){}
+  if(push){try{var u=new URL(location.href);u.searchParams.set("lang",LANG);
+    history.replaceState(null,"",u)}catch(err){}}
+}
+
+(function(){
+  var l=null;
+  try{
+    var u=new URL(location.href);
+    ID=u.searchParams.get("id")||"";
+    l=u.searchParams.get("lang");
+  }catch(err){}
+  if(!l){try{l=localStorage.getItem("it_lang")}catch(err){}}
+  if(!l && navigator.language && navigator.language.toLowerCase().indexOf("he")===0) l="he";
+  setLang(l==="he"?"he":"en",0);
+})();
+</script>
+<noscript><p class="wrap" style="padding:40px 24px;color:#A8B8B4">This page needs JavaScript. <a href="index.html">Back to today</a>.</p></noscript>
+</body>
+</html>

@@ -35,4 +35,100 @@
     <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/legal.html?lang=he"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kohphangantoday.com/legal.html"/>
   </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=muay-thai</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=muay-thai"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=muay-thai&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=zipline</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=zipline"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=zipline&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=market-chaloklum</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=market-chaloklum"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=market-chaloklum&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=market-saturday</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=market-saturday"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=market-saturday&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=saudade</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=saudade"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=saudade&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=drum-circle</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=drum-circle"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=drum-circle&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=rasta-home</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=rasta-home"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=rasta-home&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=salsa-sunday</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=salsa-sunday"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=salsa-sunday&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=bachata-monday</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=bachata-monday"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=bachata-monday&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=zouk-tuesday</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=zouk-tuesday"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=zouk-tuesday&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=kizomba-wednesday</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=kizomba-wednesday"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=kizomba-wednesday&amp;lang=he"/>
+  </url>
+  <url>
+    <loc>https://kohphangantoday.com/event.html?id=bachata-thursday</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kohphangantoday.com/event.html?id=bachata-thursday"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://kohphangantoday.com/event.html?id=bachata-thursday&amp;lang=he"/>
+  </url>
 </urlset>

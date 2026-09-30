@@ -170,6 +170,9 @@ section{padding:70px 0;scroll-margin-top:82px}
   border-radius:999px;padding:5px 8px 5px 14px;color:var(--dim);font-size:12.5px;white-space:nowrap}
 .daypick input{background:var(--deep);border:1px solid var(--line);border-radius:999px;
   color:var(--sand);font:inherit;font-size:12.5px;padding:4px 9px;cursor:pointer;color-scheme:dark}
+a.evlink{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+a.evlink:hover{border-bottom-color:var(--lagoon);color:var(--lagoon)}
+.ev h3 a.evlink:hover{color:var(--sand);border-bottom-color:var(--lagoon)}
 .dayhead{font-family:var(--display);font-weight:700;font-size:16px;color:var(--mango);margin:0 0 14px}
 .maplink{display:inline-block;margin-top:6px;font-size:12px;color:var(--lagoon);text-decoration:none;
   border-bottom:1px solid rgba(87,216,196,.35);padding-bottom:1px}
@@ -395,6 +398,7 @@ body.live .demo-only{display:none!important}
   <p class="note" data-i18n="foot.note">© 2026 Koh Phangan Today · Surat Thani, Thailand · Privacy · Terms</p>
 </div></footer>
 
+<script src="events.js"></script>
 <script>
 /* ---------- static strings ---------- */
 const T={
@@ -570,41 +574,33 @@ const FEELINGS=[
  {s:"s3",en:["Held","Cacao ceremony, the Thai massage course, or breathwork with live music."],
         he:["עטופים","טקס קקאו, קורס העיסוי התאי, או עבודת נשימה עם מוזיקה חיה."]}
 ];
-/* Recurring events, straight from what the venues told us.
-   d = weekday numbers, 0 = Sunday. Times are island time. */
-const WEEKLY=[
- {q:"Rittisak Muay Thai Gym Koh Phangan",d:[1,2,3,4,5,6],t:"08:00",en:["Muay Thai group class","Rittisak · Chaysee"],he:["שיעור מוי תאי קבוצתי","Rittisak · Chaysee"]},
- {q:"Worawut Muay Thai Gym Koh Phangan",d:[1,2,3,4,5,6],t:"08:30",en:["Muay Thai group class","Worawut"],he:["שיעור מוי תאי קבוצתי","Worawut"]},
- {q:"Phangan Zipline Koh Phangan",d:[0,1,2,3,4,5,6],t:"10:00",en:["Zipline session — book a day ahead","Phangan Zipline"],he:["זיפליין — להזמין יום מראש","Phangan Zipline"]},
- {q:"Chaloklum Sunday Market Koh Phangan",d:[0],t:"17:00",en:["Sunday market","Chaloklum"],he:["שוק ראשון","צ׳אלוקלום"]},
- {q:"Thong Sala Walking Street Koh Phangan",d:[6],t:"17:00",en:["Walking Street market","Thong Sala"],he:["שוק ווקינג סטריט","תונג סאלה"]},
- {q:"Thong Sala Walking Street Koh Phangan",d:[6],t:"17:00",en:["Local market","Thong Sala"],he:["השוק המקומי","תונג סאלה"]},
- {q:"Rittisak Muay Thai Gym Koh Phangan",d:[1,2,3,4,5,6],t:"16:00",en:["Muay Thai group class","Rittisak · Chaysee · Worawut"],he:["שיעור מוי תאי קבוצתי","Rittisak · Chaysee · Worawut"]},
- {q:"SAUDADE Sunset Beach Bar Koh Phangan",d:[2],t:"18:00",en:["Sunset DJ set and fire show","SAUDADE Sunset Beach Bar"],he:["סנסט עם DJ ומופע אש","SAUDADE Sunset Beach Bar"]},
- {q:"Zen Beach Koh Phangan",d:[5],t:"18:00",en:["Drum circle","Zen Beach"],he:["מעגל תופים","זן ביץ׳"]},
- {q:"Rasta Home Koh Phangan",d:[1,5],t:"19:30",en:["Night session","Rasta Home"],he:["ערב מוזיקה","Rasta Home"]},
- /* Latin dance week at Love Space (ex Sushi Love) — @love_space_phangan */
- {q:"Haad Yao Bayview Resort Koh Phangan",d:[2],t:"18:30",en:["Zouk — absolute beginners class","Haad Yao Bayview Resort"],he:["זוק — שיעור למתחילים לגמרי","Haad Yao Bayview Resort"]},
- {q:"Haad Yao Bayview Resort Koh Phangan",d:[2],t:"19:30",en:["Zouk — improvers and social","Haad Yao Bayview Resort"],he:["זוק — מתקדמים וסושיאל","Haad Yao Bayview Resort"]},
- {q:"Love Space Koh Phangan",d:[0],t:"19:00",en:["Salsa — beginners class","Love Space (ex Sushi Love)"],he:["סלסה — שיעור מתחילים","Love Space (ex Sushi Love)"]},
- {q:"Love Space Koh Phangan",d:[0],t:"20:00",en:["Salsa — improvers and social","Love Space (ex Sushi Love)"],he:["סלסה — מתקדמים וסושיאל","Love Space (ex Sushi Love)"]},
- {q:"Love Space Koh Phangan",d:[1],t:"19:00",en:["Bachata — beginners class","Love Space (ex Sushi Love)"],he:["באצ׳טה — שיעור מתחילים","Love Space (ex Sushi Love)"]},
- {q:"Love Space Koh Phangan",d:[1],t:"20:00",en:["Bachata — improvers and social","Love Space (ex Sushi Love)"],he:["באצ׳טה — מתקדמים וסושיאל","Love Space (ex Sushi Love)"]},
- {q:"Love Space Koh Phangan",d:[3],t:"20:00",en:["Kizomba — class and social","Love Space (ex Sushi Love)"],he:["קיזומבה — שיעור וסושיאל","Love Space (ex Sushi Love)"]},
- {q:"Love Space Koh Phangan",d:[4],t:"19:00",en:["Bachata — beginners class","Love Space (ex Sushi Love)"],he:["באצ׳טה — שיעור מתחילים","Love Space (ex Sushi Love)"]},
- {q:"Love Space Koh Phangan",d:[4],t:"20:00",en:["Bachata — improvers and social","Love Space (ex Sushi Love)"],he:["באצ׳טה — מתקדמים וסושיאל","Love Space (ex Sushi Love)"]}
-];
 function todayOnIsland(){
   const s=new Date().toLocaleString("en-US",{timeZone:"Asia/Bangkok"});
   return new Date(s).getDay();
 }
-function mapLink(e){
-  if(!e.q) return "";
-  const u="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(e.q);
+/* Each row in a day's list points at an entry in EVENTS (events.js),
+   which is also what event.html renders as a full page. */
+function ev(row){ return (window.EVENTS||{})[row.e]||null; }
+function rowTitle(row){
+  const E=ev(row); if(!E) return "";
+  const base=E[LANG].t;
+  const stage=row.k && window.STAGE ? window.STAGE[LANG][row.k] : "";
+  return stage ? base+" — "+stage : base;
+}
+function rowVenue(row){
+  const E=ev(row); if(!E) return "";
+  return (row.v && row.v[LANG]) || E[LANG].v;
+}
+function rowHref(row){ return "event.html?id="+encodeURIComponent(row.e); }
+function mapLink(row){
+  const E=ev(row); const q=E&&E.q;
+  if(!q) return "";
+  const u="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
   return `<a class="maplink" href="${u}" target="_blank" rel="noopener noreferrer">${t("day.map")}</a>`;
 }
 function eventsOn(day){
-  return WEEKLY.filter(x=>x.d.indexOf(day)>-1).sort((a,b)=>a.t.localeCompare(b.t));
+  return (window.WEEKLY||[]).filter(x=>x.d.indexOf(day)>-1)
+         .sort((a,b)=>a.t.localeCompare(b.t));
 }
 function eventsToday(){ return eventsOn(todayOnIsland()); }
 
@@ -648,9 +644,11 @@ function renderDays(){
 
   const items=eventsOn(SEL.getDay());
   $("#evGrid").innerHTML=items.length
-    ? items.map(e=>`<article class="ev" style="--tc:var(--lagoon)">
-        <p class="t">${e.t}</p><h3>${e[LANG][0]}</h3><p class="m">${e[LANG][1]}</p>
-        ${mapLink(e)}</article>`).join("")
+    ? items.map(r=>`<article class="ev" style="--tc:var(--lagoon)">
+        <p class="t">${r.t}</p>
+        <h3><a class="evlink" href="${rowHref(r)}">${rowTitle(r)}</a></h3>
+        <p class="m">${rowVenue(r)}</p>
+        ${mapLink(r)}</article>`).join("")
     : `<p class="sm dim">${t("day.none")}</p>`;
   const n=$("#dayNote"); if(n) n.innerHTML=t("day.note");
 }
@@ -695,8 +693,9 @@ function render(){
 
   const today=eventsToday();
   $("#nowList").innerHTML=today.length
-    ? today.map(x=>`<div class="now"><b>${x.t}</b>
-        <span><p>${x[L][0]}</p><span>${x[L][1]}</span>${mapLink(x)}</span></div>`).join("")
+    ? today.map(r=>`<div class="now"><b>${r.t}</b>
+        <span><p><a class="evlink" href="${rowHref(r)}">${rowTitle(r)}</a></p>
+        <span>${rowVenue(r)}</span>${mapLink(r)}</span></div>`).join("")
       +`<div class="nowmore"><a href="#today" data-i18n="now.more">${t("now.more")}</a></div>`
     :`<div class="nowempty"><p>${t("now.e1")}</p><span>${t("now.e2")}</span>
       <a class="cta sm" href="#hosts" data-link="submitEvent">${t("now.e3")}</a></div>`;
