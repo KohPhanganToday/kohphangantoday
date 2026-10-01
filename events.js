@@ -27,6 +27,11 @@ var PLINE = {
   he:"400–600 באט · סושיאל בלבד 200",
   en:"400–600 THB · social only 200"
 };
+var PRICE_ZOUK = {
+  he:[["שיעור + סושיאל","400 באט"],["סושיאל בלבד","200 באט"]],
+  en:[["Class + social","400 THB"],["Social only","200 THB"]]
+};
+var PLINE_ZOUK = {he:"400 באט · סושיאל בלבד 200", en:"400 THB · social only 200"};
 
 window.EVENTS = {
 
@@ -177,14 +182,16 @@ window.EVENTS = {
     about:["ערב זוק שבועי בהאד יאו, בנוי בשלבים: שיעור למי שלא רקד זוק מעולם, ואחריו רמה ממשיכה וסושיאל.",
            "זוק הוא ריקוד זוגי ברזילאי, זורם ואיטי יותר מסלסה. לא צריך בן או בת זוג."],
     sched:["18:30 — שיעור למתחילים לגמרי","19:30 — מתקדמים וסושיאל"],
+    price:PRICE_ZOUK.he, p:PLINE_ZOUK.he,
     facts:[["המקום","Haad Yao Bayview Resort, על החוף"]],
-    note:"המחיר עדיין לא אצלנו." },
+    note:"" },
   en: { t:"Zouk night", v:"Haad Yao Bayview Resort",
     about:["A weekly zouk night at Haad Yao, built in stages: a class for people who have never danced zouk, then an improvers level and a social.",
            "Zouk is a Brazilian partner dance, slower and more flowing than salsa. You don't need to bring a partner."],
     sched:["18:30 — absolute beginners class","19:30 — improvers and social"],
+    price:PRICE_ZOUK.en, p:PLINE_ZOUK.en,
     facts:[["Venue","Haad Yao Bayview Resort, on the beach"]],
-    note:"We don't have the price yet." }
+    note:"" }
 },
 
 "kizomba-wednesday": {
