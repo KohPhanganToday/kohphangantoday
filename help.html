@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help &amp; emergencies — Koh Phangan Today</title>
+<meta name="description" content="Emergency numbers, hospitals, what to do after a scooter accident, and the insurance trap that catches most travellers on Koh Phangan.">
+<meta name="theme-color" content="#0A2C31">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kohphangantoday.com/help.html">
+<link rel="alternate" hreflang="en" href="https://kohphangantoday.com/help.html">
+<link rel="alternate" hreflang="he" href="https://kohphangantoday.com/help.html?lang=he">
+<link rel="alternate" hreflang="x-default" href="https://kohphangantoday.com/help.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A2C31'/%3E%3Ccircle cx='32' cy='26' r='11' fill='%23FFC247'/%3E%3Cpath d='M6 45c6-5 11-5 17 0s11 5 17 0 11-5 18 0' stroke='%2357D8C4' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&family=Rubik:wght@500;700;800&family=Assistant:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--sea:#0A2C31;--deep:#071F23;--line:#1C4A50;--sand:#F1E6D2;--dim:#A8B8B4;
+  --coral:#FF6B5A;--lagoon:#57D8C4;--mango:#FFC247;
+  --display:"Bricolage Grotesque",sans-serif;--body:"Inter Tight",Arial,sans-serif}
+html[lang="he"]{--display:"Rubik",sans-serif;--body:"Assistant",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--sea);color:var(--sand);font-family:var(--body);line-height:1.65;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+a{color:var(--lagoon)}
+
+/* the two language copies of the content live side by side in the markup and
+   are switched with CSS — far less fragile than rebuilding this much prose
+   from a dictionary at runtime */
+/* !important because more specific layout rules (e.g. .sos a.num span{display:block})
+   would otherwise out-rank these and show both languages at once */
+html[lang="en"] .he{display:none!important}
+html[lang="he"] .en{display:none!important}
+
+.bar{position:sticky;top:0;z-index:40;background:rgba(7,31,35,.93);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:62px}
+.logo{display:flex;align-items:baseline;gap:7px;text-decoration:none;color:var(--sand);
+  font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.02em;
+  flex:0 0 auto;direction:ltr}
+.logo span{color:var(--lagoon);font-size:12px;font-weight:700;letter-spacing:.06em}
+.bar-end{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--dim);font:inherit;font-size:12.5px;
+  padding:7px 11px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--lagoon);color:var(--deep);font-weight:600}
+.cta{background:var(--coral);color:#180705;font-weight:600;padding:9px 15px;border-radius:9px;
+  text-decoration:none;font-size:13.5px;white-space:nowrap}
+
+header.top{padding:52px 0 30px}
+header.top h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,7vw,44px);
+  line-height:1.1;letter-spacing:-.02em}
+header.top p.lede{margin-top:16px;color:var(--dim);font-size:16px;max-width:60ch}
+.checked{margin-top:14px;font-size:12.5px;color:var(--dim)}
+
+/* the emergency numbers are the reason someone opens this page at speed,
+   so they sit above everything and are tappable */
+.sos{margin:10px 0 8px;background:rgba(255,107,90,.09);border:1px solid rgba(255,107,90,.42);
+  border-radius:16px;padding:22px}
+.sos h2{font-family:var(--display);font-size:19px;font-weight:800;margin-bottom:4px}
+.sos .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:16px}
+.sos a.num{display:block;text-decoration:none;color:inherit;background:rgba(7,31,35,.5);
+  border:1px solid var(--line);border-radius:11px;padding:13px 15px}
+.sos a.num:hover{border-color:var(--coral)}
+.sos a.num b{display:block;font-family:var(--display);font-size:25px;font-weight:800;
+  color:var(--mango);letter-spacing:.01em;unicode-bidi:isolate}
+.sos a.num span{display:block;font-size:13px;color:var(--dim);margin-top:3px}
+
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2.sec{font-family:var(--display);font-weight:800;font-size:clamp(21px,4.4vw,27px);
+  letter-spacing:-.015em;margin-bottom:14px}
+h3{font-family:var(--display);font-weight:700;font-size:17px;margin:24px 0 8px}
+p{margin-bottom:13px}
+p.sm{font-size:14px;color:var(--dim)}
+ul,ol{margin:0 0 14px;padding-inline-start:22px}
+li{margin-bottom:8px}
+strong{color:#fff;font-weight:600}
+
+.warn{background:rgba(255,194,71,.08);border:1px solid rgba(255,194,71,.34);
+  border-radius:13px;padding:18px 20px;margin:18px 0}
+.warn h3{margin-top:0;color:var(--mango)}
+.warn p:last-child,.warn ul:last-child,.warn li:last-child{margin-bottom:0}
+
+.quote{border-inline-start:3px solid var(--lagoon);padding-inline-start:16px;margin:16px 0;
+  color:var(--dim);font-size:15px}
+.quote cite{display:block;margin-top:6px;font-size:12.5px;font-style:normal;color:var(--dim);opacity:.8}
+
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+th,td{text-align:start;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:600;font-size:13px}
+td.n{white-space:nowrap;unicode-bidi:isolate;font-weight:600}
+td.n a{text-decoration:none}
+
+/* the Thai column must keep its own direction inside the Hebrew page */
+table.phr td{padding:10px}
+table.phr td.th{direction:ltr;unicode-bidi:isolate;font-size:16px;white-space:nowrap}
+table.phr td.tr{direction:ltr;unicode-bidi:isolate;color:var(--lagoon);white-space:nowrap}
+
+.ftr{padding:34px 0 60px;border-top:1px solid var(--line)}
+.ftr p{color:var(--dim);font-size:12.5px}
+
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  header.top{padding:40px 0 24px}
+  section{padding:30px 0}
+  .bar .wrap{gap:9px}
+  .logo{font-size:15px;gap:5px}
+  .logo span{font-size:11px}
+  .bar-end{gap:7px}
+  .lang button{padding:6px 8px;font-size:11.5px}
+  .bar-end .cta{padding:8px 11px;font-size:12.5px}
+  .sos{padding:18px}
+  table.phr td.th{font-size:15px}
+}
+@media(max-width:430px){.bar-end .cta{display:none}}
+/* on the narrowest phones the three-column tables no longer fit; letting the
+   Thai and transliteration columns wrap is better than shifting the whole page */
+/* three columns of hospital detail are unreadable on a phone — each row
+   becomes a card instead, which also stops the mixed Hebrew/Latin names
+   from breaking one word per line */
+@media(max-width:620px){
+  table.hosp,table.hosp tbody,table.hosp tr,table.hosp td{display:block;width:100%}
+  table.hosp thead{display:none}
+  table.hosp{margin:14px 0}
+  table.hosp tr{padding:16px 0;border-bottom:1px solid var(--line)}
+  table.hosp tr:last-child{border-bottom:0}
+  table.hosp td{border:0;padding:0}
+  table.hosp td:first-child{font-weight:600;color:#fff;font-size:15.5px}
+  table.hosp td.n{margin:7px 0;font-size:18px}
+  table.hosp td.n a{color:var(--lagoon)}
+  table.hosp td:last-child{color:var(--dim);font-size:14px}
+}
+@media(max-width:400px){
+  th,td{padding:9px 6px;font-size:13.5px}
+  table.phr td.th,table.phr td.tr{white-space:normal}
+  table.phr td.th{font-size:14.5px}
+}
+@media print{.bar{display:none}body{background:#fff;color:#000}p,li,td{color:#000}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <a class="logo" href="index.html">KOH PHANGAN <span>TODAY</span></a>
+  <div class="bar-end">
+    <div class="lang" role="group">
+      <button id="bEn" onclick="setLang('en',1)" aria-pressed="true">EN</button>
+      <button id="bHe" onclick="setLang('he',1)" aria-pressed="false">עב</button>
+    </div>
+    <a class="cta" href="index.html" id="backCta">What's on today</a>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+<header class="top">
+  <div class="he">
+    <h1>עזרה ומצבי חירום בקופנגן</h1>
+    <p class="lede">מספרי חירום, בתי חולים, מה עושים אחרי תאונת קטנוע, ומלכודת הביטוח שתופסת כמעט כל מי שנופל על אופנוע באי. כל מה שכאן נבדק מול מקורות רשמיים — ומה שלא הצלחנו לאמת, כתבנו שלא הצלחנו.</p>
+    <p class="checked">נבדק לאחרונה: 1 באוקטובר 2026. זה מידע, לא ייעוץ רפואי או משפטי. מצאתם משהו לא נכון או מספר שהתחלף? <a href="mailto:info@kohphangantoday.com?subject=%D7%AA%D7%99%D7%A7%D7%95%D7%9F%20%D7%91%D7%A2%D7%9E%D7%95%D7%93%20%D7%94%D7%A2%D7%96%D7%A8%D7%94">תגידו לנו</a> ונתקן.</p>
+  </div>
+  <div class="en">
+    <h1>Help &amp; emergencies on Koh Phangan</h1>
+    <p class="lede">Emergency numbers, hospitals, what to do after a scooter accident, and the insurance trap that catches almost everyone who comes off a bike here. Everything on this page was checked against official sources — and where we could not confirm something, we say so.</p>
+    <p class="checked">Last checked: 1 October 2026. This is information, not medical or legal advice. Found something wrong, or a number that has changed? <a href="mailto:info@kohphangantoday.com?subject=%D7%AA%D7%99%D7%A7%D7%95%D7%9F%20%D7%91%D7%A2%D7%9E%D7%95%D7%93%20%D7%94%D7%A2%D7%96%D7%A8%D7%94">Tell us</a> and we will fix it.</p>
+  </div>
+</header>
+
+<div class="sos">
+  <div class="he">
+    <h2>מספרי חירום</h2>
+    <p class="sm">עובדים מכל טלפון בתאילנד, גם בלי חבילה מקומית.</p>
+  </div>
+  <div class="en">
+    <h2>Emergency numbers</h2>
+    <p class="sm">These work from any phone in Thailand, with or without a local SIM.</p>
+  </div>
+  <div class="grid">
+    <a class="num" href="tel:1669"><b>1669</b>
+      <span class="he">אמבולנס וחירום רפואי</span><span class="en">Ambulance / medical emergency</span></a>
+    <a class="num" href="tel:1155"><b>1155</b>
+      <span class="he">משטרת התיירות — דוברי אנגלית, 24 שעות</span><span class="en">Tourist Police — English-speaking, 24h</span></a>
+    <a class="num" href="tel:191"><b>191</b>
+      <span class="he">משטרה</span><span class="en">Police</span></a>
+    <a class="num" href="tel:199"><b>199</b>
+      <span class="he">כיבוי אש והצלה</span><span class="en">Fire and rescue</span></a>
+  </div>
+  <div class="he">
+    <p class="sm" style="margin-top:16px;margin-bottom:0"><strong>אם השפה היא הבעיה — תתקשרו ל־1155.</strong> זה הקו של משטרת התיירות והוא הקו היחיד שמובטח בו מענה באנגלית. המוקד של 1669 הוא מוקד האמבולנסים הארצי, אבל אל תניחו שמי שעונה שם דובר אנגלית שוטפת — אם יש תאילנדי לידכם, תנו לו לדבר.</p>
+  </div>
+  <div class="en">
+    <p class="sm" style="margin-top:16px;margin-bottom:0"><strong>If the language is the problem, call 1155.</strong> That is the Tourist Police line and the only one where English is guaranteed. 1669 is the national ambulance line, but do not assume the operator speaks fluent English — if there is a Thai person next to you, let them speak.</p>
+  </div>
+</div>
+
+<!-- ============ SCOOTERS ============ -->
+<section id="scooter">
+  <div class="he">
+    <h2 class="sec">תאונת קטנוע — מה עושים</h2>
+    <p>זה הסעיף הכי חשוב בעמוד הזה. לפי <a href="https://cdc.gov/yellow-book/hcp/asia/thailand.html" target="_blank" rel="noopener">מרכז הבקרה למחלות האמריקאי</a>, בתאילנד נהרגים כ־20,000 בני אדם בשנה בתאונות דרכים — אחד משיעורי ההרוגים הגבוהים בעולם — ו<strong>שלושה מכל ארבעה הרוגים הם רוכבי אופנועים וקטנועים</strong>.</p>
+
+    <h3>בזירה, לפי הסדר</h3>
+    <ol>
+      <li><strong>אל תזיזו את הקטנוע.</strong> גם אם התאונה נראית קטנה. עורכי דין תאילנדים אומרים את זה מפורשות — הזזת כלי הרכב לפני שהמשטרה או חברת הביטוח ראו אותו מסבכת את התביעה.</li>
+      <li><strong>תתקשרו למשטרה — 191.</strong> ואם מישהו נפגע, גם 1669.</li>
+      <li><strong>תצלמו הכול לפני שמשהו זז:</strong> מיקום שני כלי הרכב, הנזק, שתי לוחיות הרישוי, הפציעות, מצב הכביש.</li>
+      <li><strong>אל תתנצלו ואל תודו באשמה.</strong> גם לא מנומסות. זה משמש נגדכם אחר כך.</li>
+      <li><strong>אל תחתמו על שום דבר שאתם לא יכולים לקרוא.</strong></li>
+      <li>קחו פרטים של הצד השני ושל עדים, וצלמו את לוחית הרישוי והרישיון שלו גם אם הוא לא משתף פעולה.</li>
+      <li>שמרו כל מסמך מבית החולים — סיכומים, צילומי רנטגן, קבלות.</li>
+    </ol>
+
+    <h3>דוח המשטרה</h3>
+    <p>כשיש פציעה, <strong>דוח משטרה הוא דרישה חוקית</strong> לפי חוק התעבורה התאילנדי, והוא גם המסמך הכי חשוב לתביעת הביטוח. הרבה פוליסות דורשות שהדוח ייפתח <strong>תוך 24 שעות</strong> — תבדקו בפוליסה שלכם.</p>
+    <p>בקופנגן יש תחנת משטרה בתונג סאלה. <strong>את מספר הטלפון שלה לא הצלחנו לאמת ממקור אמין, ולכן לא נפרסם מספר שעלול להיות שגוי</strong> — תתקשרו ל־1155, משטרת התיירות תפנה אתכם, או שתגיעו לתחנה פיזית.</p>
+    <p class="sm">שווה לדעת מראש, מ<a href="https://www.smartraveller.gov.au/destinations/asia/thailand" target="_blank" rel="noopener">אתר משרד החוץ האוסטרלי</a>: אחרי תאונה המשטרה עשויה לעכב או לעצור אתכם עד שמסוכם פיצוי, ובמקרים של פציעה קשה ייתכן שתידרשו להישאר בתאילנד עד סיום ההליך.</p>
+
+    <div class="warn">
+      <h3>⚠️ מלכודת הביטוח — תקראו את זה לפני שאתם עולים על קטנוע</h3>
+      <p>זה הדבר היקר ביותר שאנשים לא יודעים, והוא מאומת גם ממקור ממשלתי וגם מהפוליסות של חברות הביטוח עצמן.</p>
+      <p class="quote">"אם אתם נוהגים ברכב או רוכבים על אופנוע בתאילנד בלי רישיון בתוקף, זה עלול לבטל את ביטוח הנסיעות שלכם ולא תוכלו לתבוע אם תיפגעו בתאונה."
+        <cite>— משרד החוץ הבריטי, <a href="https://www.gov.uk/foreign-travel-advice/thailand/safety-and-security" target="_blank" rel="noopener">הנחיות רשמיות לתאילנד</a></cite></p>
+      <p><strong>ארבעה דברים שמבטלים לכם את הכיסוי:</strong></p>
+      <ul>
+        <li><strong>רישיון שלא כולל אופנועים.</strong> רישיון רכב פרטי לא מספיק. צריך רישיון שתקף לאופנועים — ורישיון בינלאומי (IDP) שגם הוא כולל את קטגוריית האופנועים. חברות ההשכרה יגידו לכם שזה בסדר. זה לא בסדר, וזה לא הן שישלמו.</li>
+        <li><strong>בלי קסדה.</strong> גם אם החוק המקומי לא היה אוכף, הפוליסה דורשת קסדה. בתאילנד הקנס על נסיעה בלי קסדה הוא <strong>2,000 באט</strong> מאז יוני 2025 (עלה מ־500), והוא חל גם על הנוסע מאחור.</li>
+        <li><strong>נפח מנוע.</strong> בחלק מהפוליסות כל דבר מעל <strong>50 סמ״ק</strong> דורש הרחבה לספורט אתגרי. הקטנועים בקופנגן הם בדרך כלל 110–160 סמ״ק — כלומר מעל הסף.</li>
+        <li><strong>אלכוהול.</strong> אין פוליסה שמכסה רכיבה תחת השפעה, ובתאילנד נהיגה בשכרות עלולה להסתיים במאסר של שנתיים לפחות.</li>
+      </ul>
+      <p><strong>וגם כשהביטוח כן משלם — הוא לא מכסה שני דברים:</strong> את הנזק לקטנוע שלכם, ואת הנזק או הפציעה שגרמתם לאדם אחר. זה כסף מהכיס שלכם, תמיד. (מופיע מפורשות בתנאי הפוליסה של World Nomads ושל SafetyWing כאחד.)</p>
+    </div>
+
+    <h3>הדרכון בתור פיקדון</h3>
+    <p>חברות השכרה רבות באי מבקשות להשאיר דרכון. <strong>אל תעשו את זה.</strong> משרד החוץ האמריקאי כותב על כך במפורש:</p>
+    <p class="quote">"חברות רבות להשכרת אופנועים, אופנועי ים ורכבים יחזיקו את הדרכון שלכם עד שתשלמו עבור נזקים אמיתיים או מדומים… אל תשתמשו בדרכון שלכם כבטוחה."
+      <cite>— <a href="https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Thailand.html" target="_blank" rel="noopener">משרד החוץ האמריקאי, דף המידע על תאילנד</a></cite></p>
+    <p>תשאירו פיקדון במזומן או צילום של הדרכון. <strong>האם החזקת דרכון על ידי חנות השכרה היא עצמה לא חוקית בתאילנד — לא הצלחנו לאמת ממקור משפטי מוסמך</strong>, ולכן אנחנו לא טוענים את זה. אבל ההמלצה של הממשלות ברורה: לא משאירים דרכון.</p>
+    <p class="sm">ועוד נקודה ממשרד החוץ הבריטי: קטנועים להשכרה באזורי תיירות הם לא פעם <strong>לא רשומים כחוק</strong> ואסורים לנסיעה בכביש — והשכרת רכב לא רשום יכולה בפני עצמה לבטל את הביטוח. תבקשו לראות רישיון רכב.</p>
+  </div>
+
+  <div class="en">
+    <h2 class="sec">Scooter accidents — what to do</h2>
+    <p>This is the most important section on the page. According to the <a href="https://cdc.gov/yellow-book/hcp/asia/thailand.html" target="_blank" rel="noopener">US CDC</a>, around 20,000 people die on Thailand's roads each year — one of the highest rates in the world — and <strong>roughly three in four of those deaths are motorcycle and scooter crashes</strong>.</p>
+
+    <h3>At the scene, in order</h3>
+    <ol>
+      <li><strong>Do not move the bike</strong>, however minor it looks. Thai lawyers are explicit about this — moving the vehicle before the police or the insurer has seen it complicates the claim.</li>
+      <li><strong>Call the police on 191</strong>, and 1669 as well if anyone is hurt.</li>
+      <li><strong>Photograph everything before anything moves:</strong> the position of both vehicles, the damage, both number plates, the injuries, the road.</li>
+      <li><strong>Do not apologise and do not admit fault</strong>, not even politely. It is used against you later.</li>
+      <li><strong>Do not sign anything you cannot read.</strong></li>
+      <li>Take the other party's details and those of any witnesses, and photograph their plate and licence even if they will not cooperate.</li>
+      <li>Keep every hospital document — notes, X-ray reports, receipts.</li>
+    </ol>
+
+    <h3>The police report</h3>
+    <p>Where there is injury, <strong>a police report is legally required</strong> under Thailand's traffic law, and it is also the single most important document for an insurance claim. Many policies require it to be filed <strong>within 24 hours</strong> — check yours.</p>
+    <p>Koh Phangan has a district police station in Thong Sala. <strong>We could not verify its phone number from a reliable source and will not publish one that might be wrong</strong> — call 1155 and let the Tourist Police direct you, or go to the station in person.</p>
+    <p class="sm">Worth knowing in advance, from <a href="https://www.smartraveller.gov.au/destinations/asia/thailand" target="_blank" rel="noopener">the Australian government</a>: after an accident the police may detain you until compensation is agreed, and in serious-injury cases you may be required to stay in Thailand until the matter is resolved.</p>
+
+    <div class="warn">
+      <h3>⚠️ The insurance trap — read this before you get on a scooter</h3>
+      <p>This is the most expensive thing people do not know, and it is confirmed both by a government source and by the insurers' own policy wording.</p>
+      <p class="quote">"If you drive a car or ride a motorcycle in Thailand without a valid licence, it could invalidate your travel insurance and you'll be unable to claim if you have an accident or injury."
+        <cite>— UK Foreign Office, <a href="https://www.gov.uk/foreign-travel-advice/thailand/safety-and-security" target="_blank" rel="noopener">official Thailand travel advice</a></cite></p>
+      <p><strong>Four things that void your cover:</strong></p>
+      <ul>
+        <li><strong>A licence that does not cover motorcycles.</strong> A car licence is not enough. You need a licence valid for motorcycles — and an International Driving Permit that also carries the motorcycle category. Rental shops will tell you it is fine. It is not, and they are not the ones who pay.</li>
+        <li><strong>No helmet.</strong> Even where the local law is not enforced, your policy requires one. In Thailand the fine for riding without a helmet has been <strong>2,000 THB</strong> since June 2025, up from 500, and it applies to the passenger too.</li>
+        <li><strong>Engine size.</strong> On some policies anything over <strong>50cc</strong> needs the adventure-sports add-on. Koh Phangan rentals are typically 110–160cc — well over that line.</li>
+        <li><strong>Alcohol.</strong> No policy covers riding under the influence, and in Thailand drink-driving carries a minimum two-year prison sentence.</li>
+      </ul>
+      <p><strong>And even when the insurance does pay, it never covers two things:</strong> damage to the bike you rented, and injury or damage you cause to someone else. That is your own money, always. (Stated explicitly in both World Nomads' and SafetyWing's own policy conditions.)</p>
+    </div>
+
+    <h3>Your passport as a deposit</h3>
+    <p>Many rental shops here ask to hold your passport. <strong>Don't.</strong> The US State Department addresses this directly:</p>
+    <p class="quote">"Many rental motorbike, jet ski, and car companies will hold your passport until you pay for real or fictitious damages… Do not use your passport as collateral."
+      <cite>— <a href="https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Thailand.html" target="_blank" rel="noopener">US State Department, Thailand information page</a></cite></p>
+    <p>Leave a cash deposit or a photocopy instead. <strong>Whether a shop holding your passport is itself unlawful under Thai law is something we could not establish from an authoritative source</strong>, so we do not claim it. But the government advice is unambiguous: do not hand over the passport.</p>
+    <p class="sm">One more, from the UK Foreign Office: scooters rented in tourist areas are often <strong>not legally registered</strong> and cannot be used on a public road — and hiring an unregistered vehicle can invalidate your insurance on its own. Ask to see the registration book.</p>
+  </div>
+</section>
+
+<!-- ============ HOSPITALS ============ -->
+<section id="hospitals">
+  <div class="he">
+    <h2 class="sec">בתי חולים ומרפאות באי</h2>
+    <table class="hosp">
+      <thead><tr><th>מקום</th><th>טלפון</th><th>מה זה</th></tr></thead>
+      <tbody>
+        <tr><td>First Western Hospital<br><span class="sm">נקרא גם Thai International Hospital. אותו בניין, אותו טלפון.</span><br>תונג סאלה</td>
+            <td class="n"><a href="tel:+6677377474">077 377 474</a></td>
+            <td>פרטי. חדר מיון 24 שעות, טיפול נמרץ, חדרי ניתוח, אמבולנס, מעבדה, רנטגן, CT.</td></tr>
+        <tr><td>Phangan International Hospital<br><span class="sm">מקבוצת Bangkok Hospital Samui</span><br>באן טאי</td>
+            <td class="n"><a href="tel:+6677429559">077 429 559</a></td>
+            <td>פרטי. פתוח 24 שעות עם רופא מומחה לרפואה דחופה. מחובר לשרשרת ההפניות לסמוי ולבנגקוק.</td></tr>
+        <tr><td>Koh Phangan Hospital<br><span class="sm">בית החולים הממשלתי</span></td>
+            <td class="n"><a href="tel:+6677377034">077 377 034</a></td>
+            <td>ממשלתי, הזול ביותר. אנגלית מוגבלת. טיפול בסיסי וייצוב.</td></tr>
+        <tr><td>Ocean Medical Clinic<br><span class="sm">באן טאי, לכיוון האד רין</span></td>
+            <td class="n"><a href="tel:+6677374668">077 374 668</a></td>
+            <td>מרפאה, לא בית חולים. פתוח כל יום 09:00–24:00 — <strong>לא 24 שעות</strong>, בניגוד למה שכתוב בהרבה אתרים.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn">
+      <h3>תצפו לשלם מראש</h3>
+      <p class="quote">"בתי חולים ורופאים לרוב צריכים לאשר את הביטוח שלכם לפני שיטפלו בכם, גם במקרה חירום. אחרת ייתכן שתצטרכו לשלם במזומן מראש. העלויות יכולות להיות גבוהות מאוד."
+        <cite>— משרד החוץ האוסטרלי</cite></p>
+      <p>משרד החוץ הבריטי מנסח את זה קצר יותר: "כל בתי החולים דורשים ערבות לתשלום לפני שהם מטפלים." משרד החוץ האמריקאי מוסיף שתשלום בכרטיס אשראי לא תמיד אפשרי.</p>
+      <p><strong>המסקנה המעשית:</strong> שמרו את מספר חברת הביטוח ואת מספר הפוליסה בטלפון ובארנק, ותתקשרו אליהם מבית החולים. בית החולים הפרטי בתונג סאלה מפרסם שיש לו מחלקת ביטוח וש"ב־90% מהמקרים אין צורך לשלם מראש" — זו הצהרה שלהם, לא הבטחה שאומתה, ואל תבנו עליה.</p>
+    </div>
+
+    <h3>מתי חייבים לצאת מהאי</h3>
+    <p>בית החולים הפרטי הגדול באי מפרסם טיפול נמרץ, CT וחדרי ניתוח — אבל לא נוירוכירורגיה, לא ניתוחי לב ולא טראומה מורכבת, ואת ה־MRI הוא מתאר כשירות במיקום אחר.</p>
+    <p><strong>ההנחה הנכונה: באי מייצבים, לא מנתחים ניתוחים גדולים.</strong> פגיעות ראש, עמוד שדרה, בית חזה, שברים מורכבים או כל דבר שדורש טיפול נמרץ ממושך — מייצבים כאן ומעבירים לקוסמוי או לבנגקוק. היעד הפרטי הרגיל הוא Bangkok Hospital Samui.</p>
+    <p><strong>המעבורות עוצרות בערב.</strong> מתונג סאלה לנאתון בסמוי זה כ־30–45 דקות, אבל ההפלגה האחרונה היא בסביבות 17:00–18:00. מקרה חירום בלילה לא יכול להשתמש בהן — ההעברה תהיה בסירה פרטית או במסוק.</p>
+    <p class="sm">להעברה רפואית דחופה יש מוקד של קבוצת בתי החולים Bangkok Hospital — <a href="tel:1724">1724</a> בתוך תאילנד, או <a href="tel:+6622264565">+66 2 226 4565</a> מחו״ל — שמתאם העברות ביבשה, בים ובאוויר, 24 שעות. <strong>את העלות אי אפשר לדעת מראש</strong> — היא נקבעת לפי מקרה ואף חברה לא מפרסמת מחירון. בדיוק בשביל זה קיים סעיף הפינוי הרפואי בביטוח.</p>
+  </div>
+
+  <div class="en">
+    <h2 class="sec">Hospitals and clinics on the island</h2>
+    <table class="hosp">
+      <thead><tr><th>Place</th><th>Phone</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td>First Western Hospital<br><span class="sm">(also signposted as Thai International Hospital — same building)</span><br>Thong Sala</td>
+            <td class="n"><a href="tel:+6677377474">077 377 474</a></td>
+            <td>Private. 24h emergency room, ICU, operating theatres, ambulance, lab, X-ray, CT.</td></tr>
+        <tr><td>Phangan International Hospital<br><span class="sm">part of Bangkok Hospital Samui</span><br>Baan Tai</td>
+            <td class="n"><a href="tel:+6677429559">077 429 559</a></td>
+            <td>Private. Open 24h with an emergency-medicine specialist. Plugged into the referral chain to Samui and Bangkok.</td></tr>
+        <tr><td>Koh Phangan Hospital<br><span class="sm">the government hospital</span></td>
+            <td class="n"><a href="tel:+6677377034">077 377 034</a></td>
+            <td>Government, cheapest. Limited English. Basic and stabilising care.</td></tr>
+        <tr><td>Ocean Medical Clinic<br><span class="sm">Baan Tai, towards Haad Rin</span></td>
+            <td class="n"><a href="tel:+6677374668">077 374 668</a></td>
+            <td>A clinic, not a hospital. Open daily 09:00–24:00 — <strong>not 24 hours</strong>, whatever other sites say.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn">
+      <h3>Expect to pay up front</h3>
+      <p class="quote">"Hospitals and doctors often need to confirm your insurance before they'll treat you, even in an emergency. Otherwise, you may need to pay cash up-front. Costs can be very high."
+        <cite>— Australian government travel advice</cite></p>
+      <p>The UK Foreign Office puts it more briefly: "All hospitals require a guarantee of payment before treating patients." The US State Department adds that credit card payment is not always available.</p>
+      <p><strong>What this means in practice:</strong> keep your insurer's phone number and your policy number in your phone and in your wallet, and call them from the hospital. The private hospital in Thong Sala advertises an insurance department and says that "in 90% of cases you do not have to pay upfront" — that is their own claim, not something we could verify, so do not count on it.</p>
+    </div>
+
+    <h3>When you have to leave the island</h3>
+    <p>The island's largest private hospital advertises intensive care, CT and operating theatres — but not neurosurgery, cardiac surgery or major trauma surgery, and it describes MRI as an off-site service.</p>
+    <p><strong>Assume the island stabilises; it does not do major surgery.</strong> Head, spinal, chest, complex orthopaedic injuries, or anything needing sustained intensive care, are stabilised here and moved to Koh Samui or Bangkok. The usual private destination is Bangkok Hospital Samui.</p>
+    <p><strong>The ferries stop in the early evening.</strong> Thong Sala to Nathon on Samui is about 30–45 minutes, but the last sailing is around 17:00–18:00. An overnight emergency cannot use them — the transfer will be by private boat or helicopter.</p>
+    <p class="sm">For urgent medical transfer, the Bangkok Hospital group runs a 24h coordination line — <a href="tel:1724">1724</a> inside Thailand, or <a href="tel:+6622264565">+66 2 226 4565</a> from abroad — covering land, sea and air. <strong>The cost cannot be known in advance</strong>: it is quoted case by case and no operator publishes a price list. That is exactly what the medical-evacuation section of your insurance is for.</p>
+  </div>
+</section>
+
+<!-- ============ JELLYFISH ============ -->
+<section id="jellyfish">
+  <div class="he">
+    <h2 class="sec">מדוזת קופסה</h2>
+    <p>מדוזת קופסה היא סכנה אמיתית בחופי האי, ולא תיאורטית. <strong>באוגוסט 2021 ילד ישראלי בן תשע נעקץ בהאד רין ומת בדרך לבית החולים.</strong> הוא שחה מחוץ לאזור המוגן ברשת.</p>
+    <p>בחופים המרכזיים יש <strong>אזורי שחייה מגודרים ברשת</strong>, שלטי אזהרה בשלוש שפות, ו<strong>בקבוקי חומץ</strong> שמוצבים באזורים המגודרים בדיוק בשביל עקיצה.</p>
+    <ul>
+      <li><strong>תשחו בתוך הרשתות.</strong> זה כל הסיפור. הרשת היא ההגנה.</li>
+      <li>כשמגיעים לחוף, תראו איפה עומד החומץ. לדעת את זה אחרי העקיצה זה מאוחר מדי.</li>
+      <li><strong>בעקיצה: שופכים חומץ על האזור בשפע. לא משפשפים. לא מים מתוקים</strong> — מים מתוקים גורמים לתאי הארס הנותרים לירות.</li>
+      <li>מתקשרים ל־<a href="tel:1669">1669</a> מיד. לא מחכים לראות אם זה עובר.</li>
+    </ul>
+  </div>
+  <div class="en">
+    <h2 class="sec">Box jellyfish</h2>
+    <p>Box jellyfish are a real danger on this island's beaches, not a theoretical one. <strong>In August 2021 a nine-year-old Israeli boy was stung at Haad Rin and died on the way to hospital.</strong> He had been swimming outside the netted area.</p>
+    <p>The main beaches have <strong>netted swimming areas</strong>, warning signs in three languages, and <strong>bottles of vinegar</strong> placed at those netted areas for exactly this.</p>
+    <ul>
+      <li><strong>Swim inside the nets.</strong> That is the whole thing. The net is the protection.</li>
+      <li>When you arrive at a beach, note where the vinegar is. Finding out after a sting is too late.</li>
+      <li><strong>If stung: pour vinegar on it generously. Do not rub. Do not use fresh water</strong> — fresh water makes the remaining stinging cells fire.</li>
+      <li>Call <a href="tel:1669">1669</a> immediately. Do not wait to see whether it passes.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ BITES ============ -->
+<section id="rabies">
+  <div class="he">
+    <h2 class="sec">נשיכת כלב או קוף — כלבת</h2>
+    <p>באי יש הרבה כלבים חופשיים. <strong>כל נשיכה או שריטה שחודרת את העור נחשבת חשיפה לכלבת ודורשת טיפול באותו יום.</strong> כלבת היא קטלנית כמעט תמיד ברגע שמופיעים תסמינים, ומניעה אחרי חשיפה עובדת כמעט תמיד — אז אין שום סיבה לחכות. נשיכת קוף מטופלת בדיוק כמו נשיכת כלב.</p>
+    <ol>
+      <li><strong>לשטוף את הפצע במים זורמים ובסבון לפחות 15 דקות.</strong> זה לא זהירות יתר — זה החלק שמפחית את הסיכון הכי הרבה.</li>
+      <li>לא לסגור ולא לתפור את הפצע לבד.</li>
+      <li>ללכת לבית חולים <strong>באותו יום</strong>.</li>
+    </ol>
+    <p>הטיפול הוא סדרת חיסונים בימים 0, 3, 7 ו־14. בנשיכה שחדרה את העור נדרש גם <strong>אימונוגלובולין</strong> שמוזרק סביב הפצע ביום הראשון — וזה החלק הקריטי.</p>
+    <p>ה־CDC האמריקאי כותב שחיסון נגד כלבת ואימונוגלובולין <strong>"זמינים בכל בתי החולים המחוזיים וברוב בתי החולים האזוריים בתאילנד"</strong>. שימו לב ל"רוב". קופנגן הוא בית חולים אזורי, ו<strong>לא הצלחנו לאמת שיש בו מלאי אימונוגלובולין</strong>. תתקשרו לפני שאתם נוסעים, ותהיו מוכנים לנסוע לסמוי או לסוראט טאני אם צריך.</p>
+  </div>
+  <div class="en">
+    <h2 class="sec">Dog and monkey bites — rabies</h2>
+    <p>There are a lot of free-roaming dogs on the island. <strong>Any bite or scratch that breaks the skin counts as a rabies exposure and needs treatment the same day.</strong> Rabies is almost always fatal once symptoms appear, and post-exposure treatment almost always works — so there is no reason to wait. A monkey bite is treated exactly like a dog bite.</p>
+    <ol>
+      <li><strong>Wash the wound under running water with soap for at least 15 minutes.</strong> This is not excessive caution — it is the single step that reduces the risk most.</li>
+      <li>Do not close or stitch the wound yourself.</li>
+      <li>Get to a hospital <strong>the same day</strong>.</li>
+    </ol>
+    <p>Treatment is a vaccine course on days 0, 3, 7 and 14. For a bite that breaks the skin you also need <strong>immunoglobulin</strong> infiltrated around the wound on day one — and that is the critical part.</p>
+    <p>The US CDC states that rabies vaccine and immunoglobulin are <strong>"readily available in all provincial and most district hospitals throughout Thailand."</strong> Note the "most". Koh Phangan's is a district hospital, and <strong>we could not verify that it stocks immunoglobulin</strong>. Phone ahead, and be prepared to travel to Samui or Surat Thani if you need it.</p>
+  </div>
+</section>
+
+<!-- ============ DENGUE / DIVING ============ -->
+<section id="health">
+  <div class="he">
+    <h2 class="sec">דנגי, צלילה, ודברים קטנים יותר</h2>
+    <h3>דנגי</h3>
+    <p>דנגי אנדמי בכל תאילנד ומתפרץ בגלים כל כמה שנים. אין חיסון ואין תרופה מונעת — <strong>ההגנה היחידה היא לא להיעקץ</strong>. היתוש שמעביר דנגי עוקץ <strong>ביום</strong>, לא בלילה, אז דוחה יתושים ביום זה לא מיותר. החום מגיע בדרך כלל אחרי כמה ימים; אם יש חום גבוה, כאבי שרירים ופריחה — ללכת לרופא, ולא לקחת אספירין או איבופרופן עד שרופא אישר.</p>
+    <h3>מלריה</h3>
+    <p>באיים בדרום אין סיכון למלריה. <strong>לא צריך כדורים.</strong> הסיכון בתאילנד מרוכז באזורי היער בגבולות מיאנמר, קמבודיה ומלזיה.</p>
+    <h3>תא לחץ לצוללים</h3>
+    <p><strong>אין תא לחץ בקופנגן.</strong> התא הקרוב ביותר שאימתנו שפועל היום נמצא בקו טאו: <strong>SSS, מוקד 24 שעות <a href="tel:+66810819777">+66 81 081 9777</a></strong>.</p>
+    <p>הרבה אתרים מפרסמים שיש תא לחץ בקוסמוי. <strong>לא הצלחנו לאמת שהוא פועל</strong> — הרשת שמפעילה את התאים בתאילנד מציינת באתר שלה רק את פוקט וקו טאו. אל תתכננו על תא בסמוי.</p>
+    <h3>מים ואוכל</h3>
+    <p>מי הברז לא לשתייה. לשתות מבקבוקים סגורים, ולהיזהר מקרח בדוכנים שאין בהם מים זורמים.</p>
+    <h3>חיסונים</h3>
+    <p>את חיסוני הנסיעות — צהבת A ו־B, טיפוס ומה שרלוונטי לכם — <strong>עושים בישראל לפני הטיסה</strong>. לא הצלחנו לאמת שום מקום באי כמקור אמין לחיסונים.</p>
+  </div>
+  <div class="en">
+    <h2 class="sec">Dengue, diving, and smaller things</h2>
+    <h3>Dengue</h3>
+    <p>Dengue is endemic throughout Thailand and comes in waves every few years. There is no vaccine and no preventive medicine — <strong>the only protection is not getting bitten</strong>. The mosquito that carries it bites <strong>during the day</strong>, not at night, so daytime repellent is not wasted. Fever usually arrives after a few days; with high fever, muscle pain and a rash, see a doctor — and don't take aspirin or ibuprofen until one has cleared it.</p>
+    <h3>Malaria</h3>
+    <p>There is no malaria risk on the southern islands. <strong>You do not need tablets.</strong> Thailand's risk sits in forested areas along the Myanmar, Cambodian and Malaysian borders.</p>
+    <h3>Recompression chamber for divers</h3>
+    <p><strong>There is no chamber on Koh Phangan.</strong> The nearest one we could verify as currently operating is on Koh Tao: <strong>SSS, 24h emergency <a href="tel:+66810819777">+66 81 081 9777</a></strong>.</p>
+    <p>Many sites claim there is a chamber on Koh Samui. <strong>We could not confirm that one is operating</strong> — the network that runs Thailand's chambers lists only Phuket and Koh Tao on its own site. Do not plan on a Samui chamber.</p>
+    <h3>Water and food</h3>
+    <p>Tap water is not for drinking. Stick to sealed bottles, and be careful with ice at stalls without running water.</p>
+    <h3>Vaccines</h3>
+    <p>Get your travel vaccines — hepatitis A and B, typhoid, whatever applies to you — <strong>at home before you fly</strong>. We could not verify any facility on the island as a reliable source of them.</p>
+  </div>
+</section>
+
+<!-- ============ INSURANCE CHECKLIST ============ -->
+<section id="insurance">
+  <div class="he">
+    <h2 class="sec">מה לבדוק בביטוח שלכם</h2>
+    <p>אנחנו לא סוכני ביטוח, לא מוכרים פוליסות ולא ממליצים על חברה. מה שכן — אלה השאלות שכדאי לשאול את חברת הביטוח <strong>לפני</strong> הטיסה, כי כל אחת מהן היא מקרה שראינו בו אנשים נשארים עם חשבון.</p>
+    <ol>
+      <li><strong>"האם הפוליסה מכסה תאונת אופנוע, ומה התנאים?"</strong> תבקשו את זה בכתב. תשאלו מפורשות על רישיון, קסדה ונפח מנוע.</li>
+      <li><strong>"מאיזה נפח מנוע צריך הרחבה?"</strong> אם התשובה היא 50 סמ״ק, כל קטנוע שתשכרו כאן חורג.</li>
+      <li><strong>"מה משך הנסיעה המקסימלי?"</strong> הרבה פוליסות נקטעות אחרי 90 יום. אם אתם נשארים חצי שנה — זה הסעיף שיפיל אתכם.</li>
+      <li><strong>"אם אני עובד מרחוק מכאן, הכיסוי נשאר בתוקף?"</strong> חלק מהפוליסות מוגדרות לתיירות בלבד.</li>
+      <li><strong>"האם יש כיסוי לפינוי רפואי, ועד כמה?"</strong> העברה מהאי בסירה או במסוק היא בדיוק המצב שבשבילו זה קיים, והמחיר לא מפורסם מראש.</li>
+      <li><strong>"האם משלמים ישירות לבית החולים או שאני משלם ותובע?"</strong> ואם תובעים בדיעבד — אילו מסמכים דרושים ותוך כמה זמן.</li>
+      <li><strong>"מה עם צלילה, קייטסרף, אימוני מואי תאי?"</strong> ספורט אתגרי הוא כמעט תמיד הרחבה נפרדת.</li>
+    </ol>
+    <p class="warn" style="display:block">שני דברים ש<strong>אף פוליסת נסיעות לא מכסה</strong>, ולא משנה מה תשלמו: נזק לקטנוע שהשכרתם, ונזק או פציעה שגרמתם למישהו אחר. בשביל זה אין ביטוח נסיעות.</p>
+  </div>
+  <div class="en">
+    <h2 class="sec">What to check in your policy</h2>
+    <p>We are not insurance brokers, we do not sell policies and we do not recommend a company. What we can give you are the questions worth asking your insurer <strong>before</strong> you fly, because each one is a case where we have seen people left holding the bill.</p>
+    <ol>
+      <li><strong>"Does the policy cover a motorbike accident, and on what conditions?"</strong> Ask for it in writing. Ask explicitly about licence, helmet and engine size.</li>
+      <li><strong>"Above what engine size do I need an add-on?"</strong> If the answer is 50cc, every scooter you can rent here is over it.</li>
+      <li><strong>"What is the maximum trip length?"</strong> Many policies cut off at 90 days. If you are staying six months, this is the clause that catches you.</li>
+      <li><strong>"If I work remotely from there, am I still covered?"</strong> Some policies are written for tourism only.</li>
+      <li><strong>"Is medical evacuation covered, and up to what amount?"</strong> A boat or helicopter transfer off the island is exactly what this is for, and the price is not published in advance.</li>
+      <li><strong>"Do you pay the hospital directly, or do I pay and claim back?"</strong> And if it is a claim — which documents, and within how long.</li>
+      <li><strong>"What about diving, kitesurfing, Muay Thai training?"</strong> Adventure sports are almost always a separate add-on.</li>
+    </ol>
+    <p class="warn" style="display:block">Two things <strong>no travel policy covers</strong>, whatever you pay: damage to the scooter you rented, and damage or injury you cause to someone else. Travel insurance is not for that.</p>
+  </div>
+</section>
+
+<!-- ============ EMBASSY ============ -->
+<section id="embassy">
+  <div class="he">
+    <h2 class="sec">שגרירות ישראל</h2>
+    <p>שגרירות ישראל בתאילנד יושבת בבנגקוק, והיא הכתובת לדרכון אבוד או גנוב, למעצר, לאשפוז ממושך או למקרה מוות.</p>
+    <p><strong>לא נפרסם כאן מספר טלפון.</strong> לא הצלחנו לאמת אותו מהאתר הרשמי, ומספר שגוי לשגרירות במצב חירום גרוע ממספר שלא קיים. <strong>קחו את המספר מהאתר הרשמי</strong> — <a href="https://embassies.gov.il/bangkok" target="_blank" rel="noopener">embassies.gov.il/bangkok</a> — ו<strong>שמרו אותו בטלפון לפני הטיסה</strong>, יחד עם מספר הפוליסה. לשגרירויות יש קו חירום קונסולרי שפועל גם מחוץ לשעות העבודה.</p>
+    <p class="sm">לפני הטיסה: צלמו את הדרכון ושלחו לעצמכם במייל. בגניבת דרכון זה מקצר את התהליך משמעותית.</p>
+  </div>
+  <div class="en">
+    <h2 class="sec">Your embassy</h2>
+    <p>Most embassies for Thailand sit in Bangkok. That is the address for a lost or stolen passport, an arrest, a long hospital stay or a death.</p>
+    <p><strong>We are not publishing embassy phone numbers here.</strong> We could not verify them from the official sites, and a wrong number for an embassy in an emergency is worse than no number. <strong>Take the number from your own government's official site</strong> and <strong>save it in your phone before you fly</strong>, along with your policy number. Embassies run a consular emergency line that works outside office hours.</p>
+    <p class="sm">Before you fly: photograph your passport and email it to yourself. If it is stolen, that shortens the process considerably.</p>
+  </div>
+</section>
+
+<!-- ============ THAI ============ -->
+<section id="thai">
+  <div class="he">
+    <h2 class="sec">תאית שכדאי לדעת</h2>
+    <p>דבר אחד קודם כול: התאים מוסיפים מילת נימוס בסוף כל משפט. <strong>גבר אומר "קְראפּ", אישה אומרת "קָה"</strong>. זה לא קישוט — בלי זה המשפט נשמע חד. בטבלה כתבנו רק את המילה, תוסיפו אותה בעצמכם.</p>
+    <table class="phr">
+      <thead><tr><th>עברית</th><th>תאית</th><th>איך אומרים</th></tr></thead>
+      <tbody>
+        <tr><td>שלום / להתראות</td><td class="th">สวัสดี</td><td class="tr">sawatdee</td></tr>
+        <tr><td>תודה</td><td class="th">ขอบคุณ</td><td class="tr">kop kun</td></tr>
+        <tr><td>כמה זה עולה?</td><td class="th">เท่าไหร่</td><td class="tr">tao rai</td></tr>
+        <tr><td>אפשר להוריד קצת?</td><td class="th">ลดได้ไหม</td><td class="tr">lot dai mai</td></tr>
+        <tr><td>יקר מדי</td><td class="th">แพงไป</td><td class="tr">paeng pai</td></tr>
+        <tr><td>לא חריף</td><td class="th">ไม่เผ็ด</td><td class="tr">mai pet</td></tr>
+        <tr><td>בלי קרח</td><td class="th">ไม่ใส่น้ำแข็ง</td><td class="tr">mai sai nam keng</td></tr>
+        <tr><td>טעים</td><td class="th">อร่อย</td><td class="tr">aroi</td></tr>
+        <tr><td>הצילו!</td><td class="th">ช่วยด้วย</td><td class="tr">chuay duay</td></tr>
+        <tr><td>בית חולים</td><td class="th">โรงพยาบาล</td><td class="tr">rong payabaan</td></tr>
+        <tr><td>רופא</td><td class="th">หมอ</td><td class="tr">mor</td></tr>
+        <tr><td>כואב לי כאן</td><td class="th">เจ็บตรงนี้</td><td class="tr">jep trong nee</td></tr>
+        <tr><td>אני לא מבין</td><td class="th">ไม่เข้าใจ</td><td class="tr">mai kao jai</td></tr>
+        <tr><td>איפה השירותים?</td><td class="th">ห้องน้ำอยู่ไหน</td><td class="tr">hong nam yu nai</td></tr>
+        <tr><td>כן / לא</td><td class="th">ใช่ / ไม่</td><td class="tr">chai / mai</td></tr>
+      </tbody>
+    </table>
+    <p class="sm">על מיקוח: בשוק מקובל, בחנות עם מחירים כתובים פחות. תגידו את המחיר שלכם בחיוך, ואם אומרים לא — זה לא. תאילנדים לא אוהבים עימות, והתעקשות לא עוזרת.</p>
+  </div>
+  <div class="en">
+    <h2 class="sec">Thai worth knowing</h2>
+    <p>One thing first: Thai adds a politeness word at the end of a sentence. <strong>A man says "krap", a woman says "ka".</strong> It is not decoration — without it the sentence sounds blunt. The table gives only the phrase; add the particle yourself.</p>
+    <table class="phr">
+      <thead><tr><th>English</th><th>Thai</th><th>Say it</th></tr></thead>
+      <tbody>
+        <tr><td>Hello / goodbye</td><td class="th">สวัสดี</td><td class="tr">sawatdee</td></tr>
+        <tr><td>Thank you</td><td class="th">ขอบคุณ</td><td class="tr">kop kun</td></tr>
+        <tr><td>How much?</td><td class="th">เท่าไหร่</td><td class="tr">tao rai</td></tr>
+        <tr><td>Can you come down a bit?</td><td class="th">ลดได้ไหม</td><td class="tr">lot dai mai</td></tr>
+        <tr><td>Too expensive</td><td class="th">แพงไป</td><td class="tr">paeng pai</td></tr>
+        <tr><td>Not spicy</td><td class="th">ไม่เผ็ด</td><td class="tr">mai pet</td></tr>
+        <tr><td>No ice</td><td class="th">ไม่ใส่น้ำแข็ง</td><td class="tr">mai sai nam keng</td></tr>
+        <tr><td>Delicious</td><td class="th">อร่อย</td><td class="tr">aroi</td></tr>
+        <tr><td>Help!</td><td class="th">ช่วยด้วย</td><td class="tr">chuay duay</td></tr>
+        <tr><td>Hospital</td><td class="th">โรงพยาบาล</td><td class="tr">rong payabaan</td></tr>
+        <tr><td>Doctor</td><td class="th">หมอ</td><td class="tr">mor</td></tr>
+        <tr><td>It hurts here</td><td class="th">เจ็บตรงนี้</td><td class="tr">jep trong nee</td></tr>
+        <tr><td>I don't understand</td><td class="th">ไม่เข้าใจ</td><td class="tr">mai kao jai</td></tr>
+        <tr><td>Where is the toilet?</td><td class="th">ห้องน้ำอยู่ไหน</td><td class="tr">hong nam yu nai</td></tr>
+        <tr><td>Yes / no</td><td class="th">ใช่ / ไม่</td><td class="tr">chai / mai</td></tr>
+      </tbody>
+    </table>
+    <p class="sm">On haggling: normal at a market, less so in a shop with printed prices. Name your price with a smile, and if the answer is no, it is no. Thai people dislike confrontation, and pushing does not help.</p>
+  </div>
+</section>
+
+<footer class="ftr">
+  <p class="he">© 2026 Koh Phangan Today · <a href="index.html">מה קורה היום</a> · <a href="guide.html">מדריך האי</a> · <a href="places.html">המקומות</a> · <a href="legal.html">תנאים</a></p>
+  <p class="en">© 2026 Koh Phangan Today · <a href="index.html">What's on today</a> · <a href="guide.html">Island guide</a> · <a href="places.html">Places</a> · <a href="legal.html">Terms</a></p>
+</footer>
+
+</div>
+
+<script>
+let LANG="en";
+function setLang(lang,push){
+  LANG=(lang==="he")?"he":"en";
+  const h=document.documentElement;
+  h.lang=LANG; h.dir=(LANG==="he")?"rtl":"ltr";
+  document.getElementById("bEn").setAttribute("aria-pressed",LANG==="en");
+  document.getElementById("bHe").setAttribute("aria-pressed",LANG==="he");
+  document.getElementById("backCta").textContent=(LANG==="he")?"מה קורה היום":"What's on today";
+  document.title=(LANG==="he")
+    ? "עזרה ומצבי חירום — Koh Phangan Today"
+    : "Help & emergencies — Koh Phangan Today";
+  const d=document.querySelector('meta[name="description"]');
+  if(d) d.setAttribute("content",(LANG==="he")
+    ? "מספרי חירום, בתי חולים, מה עושים אחרי תאונת קטנוע, ומלכודת הביטוח שתופסת כמעט כל מי שנופל על אופנוע בקופנגן."
+    : "Emergency numbers, hospitals, what to do after a scooter accident, and the insurance trap that catches most travellers on Koh Phangan.");
+  try{localStorage.setItem("it_lang",LANG)}catch(e){}
+  if(push){ try{ const u=new URL(location.href);
+    u.searchParams.set("lang",LANG); history.replaceState(null,"",u); }catch(e){} }
+}
+(function(){
+  let l=null;
+  try{ l=new URL(location.href).searchParams.get("lang"); }catch(e){}
+  if(!l){ try{ l=localStorage.getItem("it_lang"); }catch(e){} }
+  if(!l && navigator.language && navigator.language.toLowerCase().indexOf("he")===0) l="he";
+  setLang(l==="he"?"he":"en",0);
+})();
+</script>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "528edc12440c48e8b5cb6951ded1c1e4"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>
