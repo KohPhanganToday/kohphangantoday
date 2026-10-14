@@ -1,0 +1,5 @@
+# Netlify reads this file before serving anything.
+#
+# BEFORE-LAUNCH.md is an internal checklist, not a page for visitors. It was
+# being served publicly; this sends it to the 404 page instead.
+/BEFORE-LAUNCH.md    /404.html    404
