@@ -159,6 +159,27 @@ window.EVENTS = {
     sched:["Monday and Friday, 19:30 until 02:00"], facts:[], note:"" }
 },
 
+"body-contact": {
+  q: "Ready To Move Koh Phangan", topic:"dance", img: "",
+  he: { t:"באדי קונטקט", v:"Ready To Move",
+    about:["באדי קונטקט הוא לא ריקוד שלומדים בו צעדים. אין כוריאוגרפיה, אין מוביל ומובל, ואין נכון ולא נכון — יש שני גופים שנשענים אחד על השני ומגלים לאן המשקל רוצה ללכת.",
+           "העיקרון הוא נקודת מגע אחת שנעה. כתף נשענת על גב, גב מתגלגל לירך, והתנועה ממשיכה משם. ברגע שמפסיקים לנסות להחליט מה יקרה, זה מתחיל לעבוד.",
+           "זה גם האימון הכי טוב שיש להקשבה. אי אפשר לזייף הקשבה כשכל המשקל שלך על מישהו אחר.",
+           "על גבולות, וזה החלק החשוב: בשיעור קונטקט אתה קובע מה מותר לגעת ומה לא, ומתי להפסיק. אומרים \"לא\" באמצע תנועה וזה לגמרי בסדר. מורה טוב פותח בזה את השיעור, ואם לא פתחו בזה — תגיד את זה בעצמך. אף אחד לא ייפגע.",
+           "לא צריך בן או בת זוג, לא צריך ניסיון, ולא צריך להיות גמיש. מגיעים בבגדים שמכסים — החיכוך בעור חשוף שורף — ובלי תכשיטים, רוכסנים או שעון."],
+    sched:["17:00–18:00 — שיעור"],
+    facts:[["המקום","Ready To Move"]],
+    note:"המחיר עדיין לא אצלנו — שווה לשאול אותם ישירות." },
+  en: { t:"Body contact", v:"Ready To Move",
+    about:["Body contact is not a dance where you learn steps. There is no choreography, no leader and follower, and no right or wrong — there are two bodies leaning on each other and finding out where the weight wants to go.",
+           "The principle is a single point of contact that moves. A shoulder rests on a back, the back rolls into a hip, and the movement carries on from there. The moment you stop trying to decide what happens next, it starts to work.",
+           "It is also the best listening practice there is. You cannot fake listening when all of your weight is on somebody else.",
+           "On boundaries, and this is the important part: in a contact class you decide what may be touched and what may not, and when to stop. Saying \"no\" in the middle of a movement is completely fine. A good teacher opens the class with this, and if nobody does, say it yourself. No one will be offended.",
+           "No partner needed, no experience needed, and you do not need to be flexible. Wear clothes that cover you — friction on bare skin burns — and no jewellery, zips or watches."],
+    sched:["17:00–18:00 — class"],
+    facts:[["Venue","Ready To Move"]],
+    note:"We don't have the price yet — worth asking them directly." }
+},
 "salsa-sunday": {
   q: "Love Space Koh Phangan", topic:"dance", img: "",
   he: { t:"ערב סלסה", v:"Love Space (ex Sushi Love)",
@@ -284,6 +305,7 @@ window.WEEKLY = [
  {e:"zouk-tuesday",       d:[2], t:"18:30", k:"beg"},
  {e:"salsa-sunday",       d:[0], t:"19:00", k:"beg"},
  {e:"bachata-monday",     d:[1], t:"19:00", k:"beg"},
+ {e:"body-contact",      d:[4], t:"17:00"},
  {e:"bachata-thursday",   d:[4], t:"19:00", k:"beg"},
  {e:"kizomba-wednesday",  d:[3], t:"19:00", k:"beg"},
  {e:"rasta-home",         d:[1,5], t:"19:30"},
