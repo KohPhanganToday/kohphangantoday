@@ -1,0 +1,24 @@
+# Netlify reads this file and sends these headers with every response.
+#
+# X-Frame-Options      stops another site embedding ours in a frame to trick visitors
+# X-Content-Type-Options  stops the browser guessing a file is a script when it isn't
+# Referrer-Policy      sends only our domain to other sites, not the full page address
+# Permissions-Policy   the site never needs camera, microphone or location, so it asks for none
+# Strict-Transport-Security  the browser remembers to use HTTPS and never plain HTTP
+#
+# The Content-Security-Policy below lists every place the site is allowed to load
+# from. If a new script, font or image source is ever added to a page, it has to be
+# added here too or the browser will block it.
+#   self            our own files
+#   fonts.googleapis.com / fonts.gstatic.com   the Rubik and Assistant webfonts
+#   static.cloudflareinsights.com              the visitor-count script
+#   cloudflareinsights.com                     where that script reports to
+#   'unsafe-inline'  the pages keep their styles and scripts inside the HTML file
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'

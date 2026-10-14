@@ -36,7 +36,7 @@ var PLINE_ZOUK = {he:"400 באט · סושיאל בלבד 200", en:"400 THB · s
 window.EVENTS = {
 
 "muay-thai": {
-  q: "Rittisak Muay Thai Gym Koh Phangan", img: "",
+  q: "Rittisak Muay Thai Gym Koh Phangan", topic:"sport", img: "",
   he: { t:"שיעורי מוי תאי קבוצתיים", v:"שלוש חדרי כושר באי",
     about:[
       "שלושה מקומות באי מריצים שיעורים קבוצתיים באותן שעות בערך, שני עד שבת — בוקר וסוף אחר הצהריים. אפשר להגיע לשיעור בודד בלי להירשם מראש.",
@@ -66,7 +66,7 @@ window.EVENTS = {
 },
 
 "zipline": {
-  q: "Phangan Zipline Koh Phangan", img: "",
+  q: "Phangan Zipline Koh Phangan", topic:"nature", img: "",
   he: { t:"זיפליין", v:"Phangan Zipline",
     about:["מסלול זיפליין אחד ביום, בעשר בבוקר. מגיעים 10–15 דקות לפני ההתחלה."],
     sched:["כל יום, 10:00 — מושב אחד ביום"],
@@ -80,7 +80,7 @@ window.EVENTS = {
 },
 
 "market-chaloklum": {
-  q: "Chaloklum Sunday Market Koh Phangan", img: "",
+  q: "Chaloklum Sunday Market Koh Phangan", topic:"food", img: "",
   he: { t:"שוק ראשון בצ׳אלוקלום", v:"צ׳אלוקלום",
     about:["שוק שבועי בכפר הדייגים בצפון האי. דוכני אוכל, ירקות, בגדים ודברים מקומיים.",
            "מגיעים ברגל או בסקוטר. בשעות הראשונות הכי נוח, אחר כך נהיה צפוף."],
@@ -92,7 +92,7 @@ window.EVENTS = {
 },
 
 "market-saturday": {
-  q: "Thong Sala Walking Street Koh Phangan", img: "",
+  q: "Thong Sala Walking Street Koh Phangan", topic:"food", img: "",
   he: { t:"שוק שבת בתונג סאלה", v:"תונג סאלה",
     about:["הרחוב המרכזי של תונג סאלה נסגר לתנועה ומתמלא בדוכני אוכל, פירות, בגדים ומלאכת יד. זה השוק הגדול של השבוע.",
            "בא לכאן כל האי, אז מוקדם עדיף. אוכל צמחוני וטבעוני יש בשפע."],
@@ -106,7 +106,7 @@ window.EVENTS = {
 },
 
 "saudade": {
-  q: "SAUDADE Sunset Beach Bar Koh Phangan", img: "",
+  q: "SAUDADE Sunset Beach Bar Koh Phangan", topic:"music", img: "",
   he: { t:"סנסט עם DJ ומופע אש", v:"SAUDADE Sunset Beach Bar",
     about:["בר על החוף עם מיטות שיזוף, קוקטיילים ואוכל. בשלישי יש סט DJ לשקיעה ומופע אש.",
            "בשני יש שם גם ערב סרטים על החוף — הסרט נבחר באינסטגרם שלהם."],
@@ -120,7 +120,7 @@ window.EVENTS = {
 },
 
 "drum-circle": {
-  q: "Zen Beach Koh Phangan", img: "",
+  q: "Zen Beach Koh Phangan", topic:"music", img: "",
   he: { t:"מעגל תופים בזן ביץ׳", v:"זן ביץ׳",
     about:["מעגל תופים שבועי על החוף בשקיעה. אנשים מביאים תופים, מישהו מרקיד, ומי שבא בלי כלום פשוט יושב או רוקד.",
            "אין מארגן ואין כרטיסים — זה פשוט קורה כל שישי."],
@@ -132,7 +132,7 @@ window.EVENTS = {
 },
 
 "rasta-home": {
-  q: "Rasta Home Koh Phangan", img: "",
+  q: "Rasta Home Koh Phangan", topic:"music", img: "",
   he: { t:"ערב מוזיקה ב-Rasta Home", v:"Rasta Home",
     about:["ערב מוזיקה שרץ עד השעות הקטנות, פעמיים בשבוע."],
     sched:["שני ושישי, 19:30 עד 02:00"], facts:[], note:"" },
@@ -142,7 +142,7 @@ window.EVENTS = {
 },
 
 "salsa-sunday": {
-  q: "Love Space Koh Phangan", img: "",
+  q: "Love Space Koh Phangan", topic:"dance", img: "",
   he: { t:"ערב סלסה", v:"Love Space (ex Sushi Love)",
     about:["ערב סלסה שבועי. מתחילים בשיעור למי שלא רקד מעולם, ואחר כך סושיאל פתוח לכולם.",
            "לא צריך להגיע עם בן או בת זוג — מחליפים בני זוג לאורך השיעור, וזה איך שלומדים."],
@@ -160,7 +160,7 @@ window.EVENTS = {
 },
 
 "bachata-monday": {
-  q: "Love Space Koh Phangan", img: "",
+  q: "Love Space Koh Phangan", topic:"dance", img: "",
   he: { t:"ערב באצ׳טה", v:"Love Space (ex Sushi Love)",
     about:["ערב באצ׳טה שבועי — שיעור למתחילים ואחריו סושיאל.",
            "לא צריך בן או בת זוג."],
@@ -177,7 +177,7 @@ window.EVENTS = {
 },
 
 "zouk-tuesday": {
-  q: "Haad Yao Bayview Resort Koh Phangan", img: "",
+  q: "Haad Yao Bayview Resort Koh Phangan", topic:"dance", img: "",
   he: { t:"ערב זוק", v:"Haad Yao Bayview Resort",
     about:["ערב זוק שבועי בהאד יאו, בנוי בשלבים: שיעור למי שלא רקד זוק מעולם, ואחריו רמה ממשיכה וסושיאל.",
            "זוק הוא ריקוד זוגי ברזילאי, זורם ואיטי יותר מסלסה. לא צריך בן או בת זוג."],
@@ -195,7 +195,7 @@ window.EVENTS = {
 },
 
 "kizomba-wednesday": {
-  q: "Love Space Koh Phangan", img: "",
+  q: "Love Space Koh Phangan", topic:"dance", img: "",
   he: { t:"ערב קיזומבה", v:"Love Space (ex Sushi Love)",
     about:["ערב קיזומבה שבועי — שיעור למתחילים ואחריו סושיאל.",
            "קיזומבה הוא ריקוד זוגי אנגולי, קרוב ואיטי. לא צריך בן או בת זוג."],
@@ -213,7 +213,7 @@ window.EVENTS = {
 },
 
 "bachata-thursday": {
-  q: "Love Space Koh Phangan", img: "",
+  q: "Love Space Koh Phangan", topic:"dance", img: "",
   he: { t:"ערב באצ׳טה", v:"Love Space (ex Sushi Love)",
     about:["הערב השני של השבוע לבאצ׳טה — שיעור למתחילים ואחריו סושיאל."],
     sched:["19:00 — שיעור מתחילים","20:00 — מתקדמים וסושיאל"],

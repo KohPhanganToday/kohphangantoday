@@ -14,15 +14,15 @@
 <meta property="og:site_name" content="Koh Phangan Today">
 <meta property="og:title" id="ogTitle" content="Koh Phangan Today — what's on, every day">
 <meta property="og:description" id="ogDesc" content="Classes, ceremonies, jams, markets and parties across Koh Phangan, collected every morning.">
-<meta property="og:image" id="ogImg" content="og.jpg">
+<meta property="og:image" id="ogImg" content="https://kohphangantoday.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" id="ogUrl" content="/">
+<meta property="og:url" id="ogUrl" content="https://kohphangantoday.com/">
 <meta property="og:locale" id="ogLocale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" id="twTitle" content="Koh Phangan Today — what's on, every day">
 <meta name="twitter:description" id="twDesc" content="Classes, ceremonies, jams, markets and parties across Koh Phangan, collected every morning.">
-<meta name="twitter:image" id="twImg" content="og.jpg">
+<meta name="twitter:image" id="twImg" content="https://kohphangantoday.com/og.jpg">
 
 <link rel="canonical" id="canonical" href="/">
 <link rel="alternate" hreflang="en" id="altEn" href="/?lang=en">
@@ -149,6 +149,15 @@ section{padding:70px 0;scroll-margin-top:82px}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:26px}
 .head p{color:var(--dim);font-size:15px;max-width:46ch;margin-top:10px}
 
+/* the strip that says which topic the day list is narrowed to */
+.filterbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0 4px;
+  background:rgba(87,216,196,.09);border:1px solid rgba(87,216,196,.32);
+  border-radius:10px;padding:9px 14px;font-size:13.5px}
+.filterbar b{color:var(--sand)}
+.filterbar button{background:none;border:0;color:var(--lagoon);font:inherit;font-size:13px;
+  text-decoration:underline;cursor:pointer;padding:0;margin-inline-start:auto}
+.tile[aria-current="true"]{border-color:var(--tc);background:rgba(255,255,255,.05)}
+.tile.empty{opacity:.55}
 .topics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 @media(max-width:900px){.topics{grid-template-columns:repeat(2,1fr)}}
 .tile{position:relative;overflow:hidden;text-align:start;border:1px solid var(--line);background:var(--deep);
@@ -325,6 +334,7 @@ body.live .demo-only{display:none!important}
     <p data-i18n="today.lead">What runs every week, by day. One-off events appear here as they come in.</p></div></div>
   <div class="daytabs" id="dayTabs" role="group"></div>
   <h3 class="dayhead" id="dayHead"></h3>
+  <div class="filterbar" id="filterBar" hidden></div>
   <div class="evgrid" id="evGrid"></div>
   <p class="sm dim" id="dayNote" style="margin-top:16px"></p>
 </section>
@@ -378,7 +388,7 @@ body.live .demo-only{display:none!important}
 </section>
 </div>
 
-<div class="wrap"><div class="banner" data-i18n="banner">Demo site. Every event, number and person here is invented to show how the product works.</div></div>
+<div class="wrap"><div class="banner demo-only" data-i18n="banner">Demo site. Every event, number and person here is invented to show how the product works.</div></div>
 
 <footer><div class="wrap">
   <div class="fgrid">
@@ -427,10 +437,13 @@ en:{
  "feel.pick":"Pick a word.",
  "topics.h2":"Browse by topic",
  "topics.lead":"Eleven topics, each with its own sub-categories, hosts and WhatsApp group.",
- "topics.count":"{n} this week",
+ "topics.count":"{n} this week","topics.none":"nothing yet",
+ "filter.showing":"Showing","filter.clear":"Show everything",
+ "feel.out":"Showing {t} below.","feel.empty":"Nothing listed under that yet.",
  "today.h2":"Today on the island","today.lead":"What runs every week, by day. One-off events appear here as they come in.",
  "day.today":"Today","day.tomorrow":"Tomorrow","day.pick":"Pick a date","day.map":"Where is it →",
  "day.none":"Nothing on the weekly schedule for this day yet.",
+ "day.noneTopic":"Nothing in this topic on this day. Try another day, or show everything.",
  "day.note":"These repeat every week. For a one-off event, <a href=\"#host\">send it to us</a> and it goes up the same day.",
  "today.cta":"See the full day","today.going":"{n} going","today.free":"Free",
  "now.e1":"No events collected for today yet.",
@@ -485,10 +498,13 @@ he:{
  "feel.pick":"בחרו מילה.",
  "topics.h2":"עיון לפי נושא",
  "topics.lead":"אחד-עשר נושאים, ולכל אחד תתי-נושאים, מארגנים וקבוצת וואטסאפ משלו.",
- "topics.count":"{n} השבוע",
+ "topics.count":"{n} השבוע","topics.none":"עדיין אין",
+ "filter.showing":"מציג","filter.clear":"להציג הכול",
+ "feel.out":"מציג {t} למטה.","feel.empty":"עדיין אין שום דבר בקטגוריה הזאת.",
  "today.h2":"היום באי","today.lead":"מה שרץ כל שבוע, לפי יום. אירועים חד-פעמיים מופיעים כאן ברגע שהם מגיעים.",
  "day.today":"היום","day.tomorrow":"מחר","day.pick":"בחרו תאריך","day.map":"איפה זה ←",
  "day.none":"עדיין אין ביום הזה משהו קבוע בלוח.",
+ "day.noneTopic":"אין בנושא הזה שום דבר ביום הזה. נסו יום אחר, או הציגו הכול.",
  "day.note":"אלה חוזרים כל שבוע. לאירוע חד-פעמי — <a href=\"#host\">שלחו לנו</a> והוא עולה באותו יום.",
  "today.cta":"ליום המלא","today.going":"{n} מגיעים","today.free":"חינם",
  "now.e1":"עדיין לא נאספו אירועים להיום.",
@@ -550,36 +566,28 @@ const CONFIG={
 
 /* ---------- bilingual data ---------- */
 const TOPICS=[
- {g:"💃",c:"#FF6B5A",k:12,en:["Dance","Zouk, salsa, ecstatic, contact"],he:["ריקוד","זוק, סלסה, אקסטטיק, קונטקט"]},
- {g:"🧘",c:"#B98CFF",k:5, en:["Meditation & breathwork","Sits, breath, sound, cacao"],he:["מדיטציה ונשימה","ישיבות, נשימה, סאונד, קקאו"]},
- {g:"🪷",c:"#57D8C4",k:4, en:["Yoga","Vinyasa, yin, aerial, trainings"],he:["יוגה","ויניאסה, יין, אווירית, הכשרות"]},
- {g:"🔊",c:"#FF8DC7",k:3, en:["Music & nightlife","Parties, live bands, open mic"],he:["מוזיקה וחיי לילה","מסיבות, הופעות חיות, במה פתוחה"]},
- {g:"🤲",c:"#FFC247",k:3, en:["Healing & bodywork","Massage, reiki, ice bath"],he:["ריפוי ובודיוורק","עיסוי, ריקי, אמבט קרח"]},
- {g:"🏺",c:"#8FD46A",k:4, en:["Workshops & craft","Pottery, cooking, art, jewellery"],he:["סדנאות ואומנות","קרמיקה, בישול, אמנות, תכשיטים"]},
- {g:"🥊",c:"#6FB6FF",k:5, en:["Sport & movement","Muay Thai, diving, acro, surf"],he:["ספורט ותנועה","מוי תאי, צלילה, אקרו, גלישה"]},
- {g:"🌴",c:"#4FBF8B",k:4, en:["Nature & outdoors","Hikes, waterfalls, boats, clean-ups"],he:["טבע וטיולים","מסלולים, מפלים, סירות, ניקיון חופים"]},
- {g:"🥭",c:"#FF9F45",k:3, en:["Food & markets","Night markets, supper clubs, vegan"],he:["אוכל ושווקים","שוקי לילה, ארוחות משותפות, טבעוני"]},
- {g:"🫱",c:"#9AD0FF",k:4, en:["Community & work","Meetups, language, volunteering, coworking"],he:["קהילה ועבודה","מפגשים, שפות, התנדבות, קוורקינג"]},
- {g:"🪁",c:"#FFD98A",k:2, en:["Kids & family","Classes and days out with children"],he:["ילדים ומשפחה","חוגים וימי כיף עם הילדים"]},
- {g:"✳️",c:"#A8B8B4",k:2, en:["Everything else","Talks, film nights, one-offs"],he:["כל השאר","הרצאות, ערבי סרט, אירועים חד-פעמיים"]}
+ {id:"dance",g:"💃",c:"#FF6B5A",en:["Dance","Zouk, salsa, ecstatic, contact"],he:["ריקוד","זוק, סלסה, אקסטטיק, קונטקט"]},
+ {id:"meditation",g:"🧘",c:"#B98CFF",en:["Meditation & breathwork","Sits, breath, sound, cacao"],he:["מדיטציה ונשימה","ישיבות, נשימה, סאונד, קקאו"]},
+ {id:"yoga",g:"🪷",c:"#57D8C4",en:["Yoga","Vinyasa, yin, aerial, trainings"],he:["יוגה","ויניאסה, יין, אווירית, הכשרות"]},
+ {id:"music",g:"🔊",c:"#FF8DC7",en:["Music & nightlife","Parties, live bands, open mic"],he:["מוזיקה וחיי לילה","מסיבות, הופעות חיות, במה פתוחה"]},
+ {id:"healing",g:"🤲",c:"#FFC247",en:["Healing & bodywork","Massage, reiki, ice bath"],he:["ריפוי ובודיוורק","עיסוי, ריקי, אמבט קרח"]},
+ {id:"workshops",g:"🏺",c:"#8FD46A",en:["Workshops & craft","Pottery, cooking, art, jewellery"],he:["סדנאות ואומנות","קרמיקה, בישול, אמנות, תכשיטים"]},
+ {id:"sport",g:"🥊",c:"#6FB6FF",en:["Sport & movement","Muay Thai, diving, acro, surf"],he:["ספורט ותנועה","מוי תאי, צלילה, אקרו, גלישה"]},
+ {id:"nature",g:"🌴",c:"#4FBF8B",en:["Nature & outdoors","Hikes, waterfalls, boats, clean-ups"],he:["טבע וטיולים","מסלולים, מפלים, סירות, ניקיון חופים"]},
+ {id:"food",g:"🥭",c:"#FF9F45",en:["Food & markets","Night markets, supper clubs, vegan"],he:["אוכל ושווקים","שוקי לילה, ארוחות משותפות, טבעוני"]},
+ {id:"community",g:"🫱",c:"#9AD0FF",en:["Community & work","Meetups, language, volunteering, coworking"],he:["קהילה ועבודה","מפגשים, שפות, התנדבות, קוורקינג"]},
+ {id:"kids",g:"🪁",c:"#FFD98A",en:["Kids & family","Classes and days out with children"],he:["ילדים ומשפחה","חוגים וימי כיף עם הילדים"]},
+ {id:"other",g:"✳️",c:"#A8B8B4",en:["Everything else","Talks, film nights, one-offs"],he:["כל השאר","הרצאות, ערבי סרט, אירועים חד-פעמיים"]}
 ];
 const FEELINGS=[
- {s:"s1",en:["Alive","Sunrise ecstatic dance at 07:00, Muay Thai at 16:00, and the beach social tonight."],
-        he:["מלאי חיים","אקסטטיק דאנס בזריחה ב-07:00, מוי תאי ב-16:00, והסושיאל על החוף הערב."]},
- {s:"s2",en:["Grounded","The 06:30 sit, the farm morning, or two hours up Khao Ra before sunrise."],
-        he:["מקורקעים","הישיבה של 06:30, הבוקר בחווה, או שעתיים במעלה קאו ראה לפני הזריחה."]},
- {s:"s1",en:["Connected","Beginner zouk at 17:30, the language exchange at 19:00, or the supper club."],
-        he:["מחוברים","זוק למתחילים ב-17:30, ערב חילופי שפות ב-19:00, או הארוחה המשותפת."]},
- {s:"s3",en:["Calm","Yin at 17:30, sound healing on the rocks at sunset, or a free evening sit at the temple."],
-        he:["רגועים","יין ב-17:30, ריפוי בסאונד על הסלעים בשקיעה, או ישיבת ערב חינם במקדש."]},
- {s:"s2",en:["Creative","Pottery at 14:00, the silver ring workshop, or open mic at Little Bird."],
-        he:["יצירתיים","קרמיקה ב-14:00, סדנת טבעות הכסף, או במה פתוחה ב-Little Bird."]},
- {s:"s3",en:["Strong","Ashtanga Mysore from 07:00, calisthenics in the park, or the free diving intro."],
-        he:["חזקים","אשטנגה מייסור מ-07:00, קליסתניקס בפארק, או היכרות עם צלילה חופשית."]},
- {s:"s2",en:["Playful","Partner acro, the family beach day, or salsa rotation at Casa Latina."],
-        he:["משוחררים","אקרו בזוגות, יום המשפחות על החוף, או רוטציית סלסה ב-Casa Latina."]},
- {s:"s3",en:["Held","Cacao ceremony, the Thai massage course, or breathwork with live music."],
-        he:["עטופים","טקס קקאו, קורס העיסוי התאי, או עבודת נשימה עם מוזיקה חיה."]}
+ {s:"s1",t:["dance","sport"],      en:"Alive",     he:"מלאי חיים"},
+ {s:"s2",t:["nature","yoga","meditation"], en:"Grounded", he:"מקורקעים"},
+ {s:"s1",t:["dance","community","food"], en:"Connected", he:"מחוברים"},
+ {s:"s3",t:["yoga","meditation","healing"], en:"Calm",   he:"רגועים"},
+ {s:"s2",t:["workshops","music"],   en:"Creative",  he:"יצירתיים"},
+ {s:"s3",t:["sport","yoga"],        en:"Strong",    he:"חזקים"},
+ {s:"s2",t:["dance","nature","kids"], en:"Playful", he:"משוחררים"},
+ {s:"s3",t:["healing","meditation","music"], en:"Held", he:"עטופים"}
 ];
 function todayOnIsland(){
   const s=new Date().toLocaleString("en-US",{timeZone:"Asia/Bangkok"});
@@ -610,8 +618,47 @@ function mapLink(row){
   const u="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
   return `<a class="maplink" href="${u}" target="_blank" rel="noopener noreferrer">${t("day.map")}</a>`;
 }
+// Which topics the day list is limited to. Empty = show everything.
+// Set by the topic tiles and by the mood words; both run through here.
+let TOPIC=[];
+function topicOf(row){ const E=ev(row); return (E&&E.topic)||""; }
+function inFilter(row){ return !TOPIC.length || TOPIC.indexOf(topicOf(row))>-1; }
+// how many times a topic appears across the whole week, for the tile counts
+function weekCount(id){
+  return (window.WEEKLY||[]).reduce(function(n,r){
+    const E=(window.EVENTS||{})[r.e];
+    return n + (E && E.topic===id ? r.d.length : 0);
+  },0);
+}
+function topicLabel(id){
+  const x=TOPICS.find(y=>y.id===id);
+  return x ? x[LANG][0] : id;
+}
+function setTopics(list, scroll){
+  TOPIC=list||[];
+  renderDays();
+  syncFilterUI();
+  if(scroll){ const el=$("#today"); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); }
+}
+function clearTopics(){
+  setTopics([],false);
+  $("#feels").querySelectorAll("[data-i]").forEach(x=>x.setAttribute("aria-pressed","false"));
+}
+// the one place that reflects the current filter back to the person
+function syncFilterUI(){
+  const bar=$("#filterBar"); if(!bar) return;
+  if(!TOPIC.length){ bar.hidden=true; bar.innerHTML=""; return; }
+  bar.hidden=false;
+  const names=TOPIC.map(topicLabel).join(", ");
+  bar.innerHTML='<span>'+t("filter.showing")+' <b>'+names+'</b></span>'
+    + '<button type="button" id="clearF">'+t("filter.clear")+'</button>';
+  $("#clearF").onclick=clearTopics;
+  document.querySelectorAll(".tile").forEach(function(a){
+    a.setAttribute("aria-current", TOPIC.length===1 && a.dataset.id===TOPIC[0] ? "true":"false");
+  });
+}
 function eventsOn(day){
-  return (window.WEEKLY||[]).filter(x=>x.d.indexOf(day)>-1)
+  return (window.WEEKLY||[]).filter(x=>x.d.indexOf(day)>-1 && inFilter(x))
          .sort((a,b)=>a.t.localeCompare(b.t));
 }
 function eventsToday(){ return eventsOn(todayOnIsland()); }
@@ -662,8 +709,9 @@ function renderDays(){
         <p class="m">${rowVenue(r)}</p>
         ${rowPrice(r)}
         ${mapLink(r)}</article>`).join("")
-    : `<p class="sm dim">${t("day.none")}</p>`;
+    : `<p class="sm dim">${TOPIC.length ? t("day.noneTopic") : t("day.none")}</p>`;
   const n=$("#dayNote"); if(n) n.innerHTML=t("day.note");
+  syncFilterUI();
 }
 const SCHED=[
  {en:["Beginner course","Thu 17:30 · 4 weeks · ฿1,400"],he:["קורס מתחילים","חמישי 17:30 · 4 שבועות · ฿1,400"]},
@@ -687,21 +735,39 @@ const t=k=>T[LANG][k];
 
 function render(){
   const L=LANG;
-  $("#topicGrid").innerHTML=TOPICS.map(x=>`<a class="tile" style="--tc:${x.c}" href="#today">
+  $("#topicGrid").innerHTML=TOPICS.map(x=>{
+    const n=weekCount(x.id);
+    // a topic with nothing in it says so, rather than filtering to an empty page
+    const count = n ? t("topics.count").replace("{n}",n) : t("topics.none");
+    return `<a class="tile${n?"":" empty"}" data-id="${x.id}" style="--tc:${x.c}" href="#today">
     <span class="g" aria-hidden="true">${x.g}</span><span><h3>${x[L][0]}</h3><p class="xs dim">${x[L][1]}</p>
-    <p class="n demo-only" style="color:${x.c}">${t("topics.count").replace("{n}",x.k)}</p></span></a>`).join("");
+    <p class="n" style="color:${n?x.c:"var(--dim)"}">${count}</p></span></a>`;
+  }).join("");
+  $("#topicGrid").querySelectorAll(".tile").forEach(a=>a.onclick=e=>{
+    e.preventDefault();
+    const id=a.dataset.id;
+    // clicking the topic already showing turns the filter off again
+    setTopics(TOPIC.length===1 && TOPIC[0]===id ? [] : [id], true);
+    $("#feels").querySelectorAll("[data-i]").forEach(x=>x.setAttribute("aria-pressed","false"));
+  });
 
   renderDays();
 
   $("#feels").innerHTML=FEELINGS.map((f,i)=>
-    `<button type="button" class="feel ${f.s}" data-i="${i}" aria-pressed="false">${f[L][0]}</button>`).join("");
+    `<button type="button" class="feel ${f.s}" data-i="${i}" aria-pressed="false">${f[L]}</button>`).join("");
   $("#feelOut").textContent=t("feel.pick");
   $("#feels").querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{
     const on=b.getAttribute("aria-pressed")==="true";
     $("#feels").querySelectorAll("[data-i]").forEach(x=>x.setAttribute("aria-pressed","false"));
-    if(on){$("#feelOut").textContent=t("feel.pick");return}
+    if(on){ $("#feelOut").textContent=t("feel.pick"); setTopics([],false); return; }
     b.setAttribute("aria-pressed","true");
-    $("#feelOut").textContent=FEELINGS[+b.dataset.i][LANG][1];
+    const f=FEELINGS[+b.dataset.i];
+    // only offer the topics that actually have something in them this week
+    const live=f.t.filter(id=>weekCount(id)>0);
+    setTopics(live.length?live:f.t, true);
+    $("#feelOut").textContent = live.length
+      ? t("feel.out").replace("{t}", live.map(topicLabel).join(", "))
+      : t("feel.empty");
   });
 
   const today=eventsToday();
@@ -737,7 +803,10 @@ function wireLinks(){
       if(!v){el.style.display="none";return}
       el.href="tel:"+v.replace(/[^\d+]/g,""); el.textContent=v; return;
     }
-    if(!v) return;                       // keep the in-page anchor
+    // With no URL configured yet, a button labelled "Instagram" or "Book a free
+    // taster" just scrolls to the signup — it promises something it cannot do.
+    // Hide it until there is a real destination.
+    if(!v){ el.style.display="none"; return; }
     el.href=v;
     if(/^https?:/i.test(v)){el.target="_blank"; el.rel="noopener noreferrer"}
   });
