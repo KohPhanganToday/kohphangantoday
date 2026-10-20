@@ -77,18 +77,17 @@ p{margin:0}
   max-width:1300px}
 .logo{font-family:"Bricolage Grotesque","Trebuchet MS",sans-serif;font-weight:800;font-size:19px;letter-spacing:-.04em;display:flex;align-items:baseline;gap:8px;flex:0 0 auto;direction:ltr}
 .logo span{font-family:var(--body);font-weight:400;font-size:12px;color:var(--lagoon);letter-spacing:0}
-.links{display:flex;gap:17px;font-size:14px;color:var(--dim);min-width:0}
+.links{display:flex;gap:13px;font-size:13px;color:var(--dim);min-width:0}
 .links a{white-space:nowrap}
 .links a:hover{color:var(--sand)}
 /* Nine links, and the Hebrew labels are the long ones. The bar gets more room
    than the page content so they fit on a laptop, and the gap and type tighten
    on the way down. Below 900px the nav is hidden anyway. */
-@media(max-width:1280px){.links{gap:13px;font-size:13px}}
-@media(max-width:1200px){.links{gap:9px;font-size:12px}}
-@media(max-width:1120px){.links{gap:7px;font-size:11.5px}}
+@media(max-width:1340px){.links{gap:9px;font-size:12px}}
+@media(max-width:1210px){.links{gap:7px;font-size:11.5px}}
 /* Narrower than this nothing fits, so the nav scrolls sideways instead of
    sliding under the language switch. */
-@media(max-width:1060px){.links{overflow-x:auto;scrollbar-width:none}
+@media(max-width:1140px){.links{overflow-x:auto;scrollbar-width:none}
   .links::-webkit-scrollbar{display:none}}
 .bar-end{display:flex;align-items:center;gap:12px;flex:0 0 auto}
 .cta{background:var(--coral);color:#180705;font-weight:600;padding:9px 17px;border-radius:9px;font-size:14px;white-space:nowrap}
@@ -290,6 +289,7 @@ body.live .demo-only{display:none!important}
     <a href="#topics" data-i18n="nav.topics">Topics</a>
     <a href="places.html" data-i18n="nav.places">Places</a>
     <a href="food.html" data-i18n="nav.food">Where to eat</a>
+    <a href="services.html" data-i18n="nav.services">Bars &amp; services</a>
     <a href="#school" data-i18n="nav.school">Dance school</a>
     <a href="guide.html" data-i18n="nav.guide">Island guide</a>
     <a href="help.html" data-i18n="nav.help">Help</a>
@@ -416,6 +416,7 @@ body.live .demo-only{display:none!important}
       <a href="#today" data-i18n="nav.today">Today</a><a href="#topics" data-i18n="nav.topics">Topics</a>
       <a href="places.html" data-i18n="nav.places">Places</a>
       <a href="food.html" data-i18n="nav.food">Where to eat</a>
+      <a href="services.html" data-i18n="nav.services">Bars &amp; services</a>
       <a href="#school" data-i18n="nav.school">Dance school</a><a href="guide.html" data-i18n="nav.guide">Island guide</a><a href="help.html" data-i18n="nav.help">Help</a><a href="#digest" data-i18n="nav.digest">Daily digest</a></div>
     <div><h4 data-i18n="foot.h2">For hosts</h4>
       <a href="#host" data-i18n="foot.l1">Add an event</a><a href="#host" data-i18n="foot.l2">Sell classes</a>
@@ -489,7 +490,7 @@ en:{
  "foot.l1":"Add an event","foot.l2":"Sell classes","foot.l3":"Teach online",
  "foot.l4":"WhatsApp channel","foot.l5":"Telegram",
  "foot.note":"© 2026 Koh Phangan Today · Surat Thani, Thailand · <a href=\"legal.html#privacy\">Privacy</a> · <a href=\"legal.html#terms\">Terms</a>",
- "nav.guide":"Island guide","nav.places":"Places","nav.food":"Where to eat","nav.help":"Help",
+ "nav.guide":"Island guide","nav.places":"Places","nav.food":"Where to eat","nav.services":"Bars &amp; services","nav.help":"Help",
  "a11y.skip":"Skip to content",
  "nojs":"This page needs JavaScript to show today's listings.",
  "a11y.lang":"Language"
@@ -550,7 +551,7 @@ he:{
  "foot.l1":"הוספת אירוע","foot.l2":"מכירת שיעורים","foot.l3":"ללמד אונליין",
  "foot.l4":"ערוץ וואטסאפ","foot.l5":"טלגרם",
  "foot.note":"© 2026 Koh Phangan Today · קופנגן, סוראת תאני · <a href=\"legal.html?lang=he#privacy\">פרטיות</a> · <a href=\"legal.html?lang=he#terms\">תנאי שימוש</a>",
- "nav.guide":"מדריך האי","nav.places":"מקומות באי","nav.food":"איפה אוכלים","nav.help":"עזרה",
+ "nav.guide":"מדריך האי","nav.places":"מקומות באי","nav.food":"איפה אוכלים","nav.services":"ברים ושירותים","nav.help":"עזרה",
  "a11y.skip":"דילוג לתוכן",
  "nojs":"הדף הזה צריך JavaScript כדי להציג את האירועים של היום.",
  "a11y.lang":"שפה"
