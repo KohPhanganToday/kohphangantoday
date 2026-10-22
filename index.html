@@ -338,7 +338,7 @@ body.live .demo-only{display:none!important}
 <div class="wrap">
 <section id="topics">
   <div class="head"><div><h2 data-i18n="topics.h2">Browse by topic</h2>
-    <p data-i18n="topics.lead">Eleven topics, each with its own sub-categories, hosts and WhatsApp group.</p></div></div>
+    <p data-i18n="topics.lead">Twelve topics. Tap one to see only what is on in it today.</p></div></div>
   <div class="topics" id="topicGrid"></div>
 </section>
 
@@ -451,7 +451,7 @@ en:{
  "feel.lead":"Most people don't know they want a cacao ceremony. They know they feel flat, or lonely, or wired. Start there instead.",
  "feel.pick":"Pick a word.",
  "topics.h2":"Browse by topic",
- "topics.lead":"Eleven topics, each with its own sub-categories, hosts and WhatsApp group.",
+ "topics.lead":"Twelve topics. Tap one to see only what is on in it today.",
  "topics.count":"{n} this week","topics.none":"nothing yet",
  "filter.showing":"Showing","filter.clear":"Show everything",
  "feel.out":"Showing {t} below.","feel.empty":"Nothing listed under that yet.",
@@ -512,7 +512,7 @@ he:{
  "feel.lead":"רוב האנשים לא יודעים שהם רוצים טקס קקאו. הם יודעים שהם מרגישים שטוחים, או בודדים, או דרוכים. תתחילו משם.",
  "feel.pick":"בחרו מילה.",
  "topics.h2":"עיון לפי נושא",
- "topics.lead":"אחד-עשר נושאים, ולכל אחד תתי-נושאים, מארגנים וקבוצת וואטסאפ משלו.",
+ "topics.lead":"שנים-עשר נושאים. לחצו על אחד כדי לראות רק מה קורה בו היום.",
  "topics.count":"{n} השבוע","topics.none":"עדיין אין",
  "filter.showing":"מציג","filter.clear":"להציג הכול",
  "feel.out":"מציג {t} למטה.","feel.empty":"עדיין אין שום דבר בקטגוריה הזאת.",
@@ -564,7 +564,7 @@ he:{
    ========================================================= */
 const CONFIG={
   domain:"https://kohphangantoday.com",   // no trailing slash
-  whatsappChannel:"https://wa.me/8618257916137",  // TODO: replace with the real WhatsApp CHANNEL invite link
+  whatsappChannel:"",        // placeholder was a +86 number; put the real channel invite link here
   telegram:"",               // https://t.me/...
   instagram:"",              // https://instagram.com/phangantoda
   facebook:"https://www.facebook.com/profile.php?id=61594810315122",
@@ -574,7 +574,7 @@ const CONFIG={
   onlineCourses:"",          // online courses page
   submitEvent:"https://forms.gle/Lx1ZXq4LyLJMQca97",
   email:"info@kohphangantoday.com",
-  phone:"+86 182 5791 6137",
+  phone:"",                  // placeholder was a +86 number; put the real Thai number here
   address:"Srithanu, Koh Phangan, Surat Thani",
   DEMO:false                 // set to false once every number on the page is real
 };
