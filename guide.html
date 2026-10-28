@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Koh Phangan guide — Koh Phangan Today</title>
-<meta name="description" content="How to get to Koh Phangan, how to get around, where to walk, and the rules that catch people out. Written on the island.">
+<title>The Koh Phangan guide &mdash; Koh Phangan Today</title>
+<meta name="description" content="How to get to Koh Phangan, how to get around, where to walk, and the rules that catch people out. In English and Hebrew, written on the island.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A2C31'/%3E%3Ccircle cx='32' cy='26' r='11' fill='%23FFC247'/%3E%3Cpath d='M6 45c6-5 11-5 17 0s11 5 17 0 11-5 18 0' stroke='%2357D8C4' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0A2C31">
+<link rel="canonical" href="https://kohphangantoday.com/guide.html">
+<link rel="alternate" hreflang="en" href="https://kohphangantoday.com/guide.html">
+<link rel="alternate" hreflang="he" href="https://kohphangantoday.com/guide.html?lang=he">
+<link rel="alternate" hreflang="x-default" href="https://kohphangantoday.com/guide.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Koh Phangan Today">
-<meta property="og:title" content="The Koh Phangan guide — Koh Phangan Today">
-<meta property="og:description" content="How to get to Koh Phangan, how to get around, where to walk, and the rules that catch people out.">
+<meta property="og:title" content="The Koh Phangan guide &mdash; Koh Phangan Today">
+<meta property="og:description" content="How to get there, how to get around, and the rules that catch people out.">
 <meta property="og:image" content="https://kohphangantoday.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:url" content="https://kohphangantoday.com/guide.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Koh Phangan guide">
 <meta name="twitter:description" content="How to get there, how to get around, and the rules that catch people out.">
 <meta name="twitter:image" content="https://kohphangantoday.com/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter+Tight:wght@400;500;600&family=Rubik:wght@500;700;800&family=Assistant:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --sea:#0A2C31;--deep:#072024;--line:#1C4A50;--sand:#F1E6D2;--dim:#A8B8B4;
@@ -29,6 +34,14 @@
   --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
   --body:"Inter Tight","Helvetica Neue",Arial,sans-serif;
 }
+html[lang="he"]{--display:"Rubik",sans-serif;--body:"Assistant",Arial,sans-serif}
+
+/* One page, both languages. Every block exists twice and the other one is
+   hidden - !important because the layout rules below are more specific than
+   these two selectors and would otherwise win. */
+html[lang="en"] .he{display:none!important}
+html[lang="he"] .en{display:none!important}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--sea);color:var(--sand);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -38,6 +51,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .wrap{position:relative;z-index:1;max-width:940px;margin:0 auto;padding:0 26px}
 a{color:var(--lagoon)}
 h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.03em;line-height:1.04}
+html[lang="he"] h1,html[lang="he"] h2,html[lang="he"] h3{letter-spacing:normal;line-height:1.15}
 h1{font-size:clamp(38px,6vw,72px);font-weight:800}
 h2{font-size:clamp(25px,3.2vw,36px);font-weight:700}
 h3{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
@@ -45,17 +59,31 @@ p{margin:0}
 .dim{color:var(--dim)}
 .sm{font-size:14.5px}
 .xs{font-size:12.5px}
+.ltr{direction:ltr;unicode-bidi:isolate}
+
+.skip{position:fixed;inset-inline-start:0;top:0;z-index:100;background:var(--mango);
+  color:var(--deep);padding:12px 18px;border-radius:0 0 10px 0;font-weight:600;
+  text-decoration:none;transform:translateY(-200%);transition:transform .14s}
+.skip:focus{transform:translateY(0)}
 
 .bar{position:sticky;top:0;z-index:20;background:rgba(10,44,49,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
-.logo{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.04em;text-decoration:none;color:var(--sand)}
-.logo span{font-family:var(--body);font-weight:400;font-size:12px;color:var(--lagoon);letter-spacing:0;margin-left:7px}
-.cta{background:var(--coral);color:#180705;font-weight:600;padding:8px 15px;border-radius:9px;font-size:13.5px;text-decoration:none}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
+.logo{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.04em;
+  text-decoration:none;color:var(--sand);flex:0 0 auto;direction:ltr}
+.logo span{font-family:var(--body);font-weight:400;font-size:12px;color:var(--lagoon);letter-spacing:0;margin-inline-start:7px}
+.bar-end{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;flex:0 0 auto}
+.lang button{background:none;border:0;color:var(--dim);font:inherit;font-size:12.5px;
+  padding:7px 11px;cursor:pointer;line-height:1}
+.lang button[aria-pressed="true"]{background:var(--lagoon);color:var(--deep);font-weight:600}
+.cta{background:var(--coral);color:#180705;font-weight:600;padding:8px 15px;border-radius:9px;
+  font-size:13.5px;text-decoration:none;white-space:nowrap}
+.cta:hover{filter:brightness(1.08)}
 
 header.hero{padding:72px 0 30px}
 header.hero h1{max-width:13ch}
 header.hero p{margin-top:20px;font-size:18px;color:var(--dim);max-width:52ch}
-.byline{margin-top:24px;font-size:13px;color:var(--dim);border-left:2px solid var(--mango);padding-left:12px}
+.byline{margin-top:24px;font-size:13px;color:var(--dim);border-inline-start:2px solid var(--mango);padding-inline-start:12px}
 
 nav.toc{margin:34px 0 10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;
   display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:4px 22px}
@@ -74,16 +102,17 @@ section > p{max-width:68ch;margin-top:16px}
 
 table{width:100%;border-collapse:collapse;margin-top:20px;font-size:14.5px}
 .scroller{overflow-x:auto}
-th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th,td{text-align:start;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-family:var(--display);font-weight:600;font-size:13.5px;color:var(--mango);white-space:nowrap}
 td:first-child{white-space:nowrap;font-weight:500}
 td.dimc{color:var(--dim)}
 
-.note{border-left:3px solid var(--warn);background:rgba(255,138,91,.07);border-radius:0 11px 11px 0;
-  padding:15px 18px;margin-top:22px;font-size:14.5px;max-width:70ch}
+.note{border-inline-start:3px solid var(--warn);background:rgba(255,138,91,.07);
+  border-radius:0 11px 11px 0;padding:15px 18px;margin-top:22px;font-size:14.5px;max-width:70ch}
+html[lang="he"] .note{border-radius:11px 0 0 11px}
 .note b{color:var(--warn)}
 .rule{display:flex;gap:15px;padding:17px 0;border-bottom:1px solid var(--line)}
-.rule:last-child{border-bottom:0}
+.rule:last-of-type{border-bottom:0}
 .rule .n{font-family:var(--display);font-weight:800;font-size:17px;color:var(--coral);min-width:26px}
 .rule p{color:var(--dim);font-size:14.5px;margin-top:5px;max-width:62ch}
 
@@ -93,53 +122,77 @@ td.dimc{color:var(--dim)}
 .cta-block .cta{display:inline-block;margin-top:20px;padding:11px 22px;font-size:15px}
 
 footer{border-top:1px solid var(--line);margin-top:56px;padding:34px 0 60px;font-size:13px;color:var(--dim)}
-.banner{background:rgba(255,194,71,.1);border:1px solid rgba(255,194,71,.35);border-radius:11px;
+footer a{color:var(--dim);text-decoration:underline;text-underline-offset:2px}
+footer a:hover{color:var(--sand)}
+footer p+p{margin-top:7px}
+.stamp{background:rgba(255,194,71,.1);border:1px solid rgba(255,194,71,.35);border-radius:11px;
   padding:13px 17px;font-size:13px;color:#FFD98A;margin-top:34px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.bar,.skip,.cta-block{display:none}body{background:#fff;color:#000}
+  .card,.note,.stamp{border-color:#ccc;background:#fff}.card p,.rule p{color:#333}}
 </style>
 </head>
 <body>
+<a class="skip" href="#arrive"><span class="en">Skip to the guide</span><span class="he">דילוג למדריך</span></a>
 
 <div class="bar"><div class="wrap">
   <a class="logo" href="index.html">KOH PHANGAN<span>TODAY</span></a>
-  <a class="cta" href="index.html">What's on today</a>
+  <div class="bar-end">
+    <div class="lang" role="group" aria-label="Language / שפה">
+      <button type="button" id="bEn" onclick="setLang('en',1)" aria-pressed="true">EN</button>
+      <button type="button" id="bHe" onclick="setLang('he',1)" aria-pressed="false">&#1506;&#1489;</button>
+    </div>
+    <a class="cta" href="index.html"><span class="en">What's on today</span><span class="he">מה קורה היום</span></a>
+  </div>
 </div></div>
 
 <div class="wrap" id="top">
 <header class="hero">
-  <h1>The island, explained.</h1>
-  <p>How to get here, how to get around, where to walk, and the handful of rules that catch people out. Written by people who live here, not by someone who came for a weekend.</p>
-  <p class="byline">Last checked September 2026. Ferry times, prices and laws change — this page gets updated, but check anything that matters before you rely on it.</p>
+  <h1><span class="en">The island, explained.</span><span class="he">האי, מוסבר.</span></h1>
+  <p class="en">How to get here, how to get around, where to walk, and the handful of rules that catch people out. Written by people who live here, not by someone who came for a weekend.</p>
+  <p class="he">איך מגיעים, איך מסתובבים, לאן הולכים, ואיזה כללים תופסים אנשים לא מוכנים. נכתב על ידי אנשים שגרים כאן, לא על ידי מישהו שבא לסוף שבוע.</p>
+  <p class="byline en">Last checked September 2026. Ferry times, prices and laws change — this page gets updated, but check anything that matters before you rely on it.</p>
+  <p class="byline he">נבדק לאחרונה בספטמבר 2026. זמני מעבורות, מחירים וחוקים משתנים — הדף הזה מתעדכן, אבל תבדקו כל דבר שחשוב לכם לפני שאתם סומכים עליו.</p>
 </header>
 
 <nav class="toc">
-  <a href="#arrive">Getting here</a>
-  <a href="#around">Getting around</a>
-  <a href="#areas">Where to stay</a>
-  <a href="#walks">Walks &amp; waterfalls</a>
-  <a href="#beaches">Beaches worth the ride</a>
-  <a href="#rules">Rules that catch people out</a>
-  <a href="#practical">Money, weather, health</a>
-  <a href="#moon">The party calendar</a>
+  <a href="#arrive"><span class="en">Getting here</span><span class="he">איך מגיעים</span></a>
+  <a href="#around"><span class="en">Getting around</span><span class="he">איך מסתובבים</span></a>
+  <a href="#areas"><span class="en">Where to stay</span><span class="he">איפה לישון</span></a>
+  <a href="#walks"><span class="en">Walks &amp; waterfalls</span><span class="he">מסלולים ומפלים</span></a>
+  <a href="#beaches"><span class="en">Beaches worth the ride</span><span class="he">חופים ששווה לנסוע אליהם</span></a>
+  <a href="#rules"><span class="en">Rules that catch people out</span><span class="he">הכללים שתופסים אנשים</span></a>
+  <a href="#practical"><span class="en">Money, weather, health</span><span class="he">כסף, מזג אוויר, בריאות</span></a>
+  <a href="#moon"><span class="en">The party calendar</span><span class="he">לוח המסיבות</span></a>
 </nav>
 
 <section id="arrive">
-  <h2>Getting here</h2>
-  <p class="lede">There is no airport on Koh Phangan. Every route ends with a boat, and the last boat of the day is earlier than you think.</p>
-  <div class="scroller"><table>
+  <h2><span class="en">Getting here</span><span class="he">איך מגיעים</span></h2>
+  <p class="lede en">There is no airport on Koh Phangan. Every route ends with a boat, and the last boat of the day is earlier than you think.</p>
+  <p class="lede he">אין שדה תעופה בקופנגן. כל מסלול נגמר בסירה, והסירה האחרונה של היום יוצאת מוקדם יותר ממה שנדמה לכם.</p>
+  <div class="scroller en"><table>
     <tr><th>From</th><th>How</th><th>Roughly</th></tr>
     <tr><td>Koh Samui</td><td>Fast ferry from Nathon, Maenam or Big Buddha pier to Thong Sala</td><td class="dimc">20–40 min. Most crossings of the day.</td></tr>
     <tr><td>Koh Tao</td><td>Fast ferry, usually continuing to Samui</td><td class="dimc">About 1.5 hours</td></tr>
     <tr><td>Surat Thani &amp; Donsak</td><td>Car ferry or fast boat from Donsak pier</td><td class="dimc">2.5–4.5 hours depending on the boat</td></tr>
     <tr><td>Bangkok</td><td>Flight to Samui, or overnight bus/train to Surat Thani, then the boat</td><td class="dimc">Half a day either way</td></tr>
   </table></div>
-  <div class="note"><b>Book the boat, not just the flight.</b> Around full moon, New Year and Songkran, ferries sell out and prices on the last crossings climb. Arriving in Surat Thani at 9pm with no boat booked means a night on the mainland.</div>
+  <div class="scroller he"><table>
+    <tr><th>מאיפה</th><th>איך</th><th>כמה זמן</th></tr>
+    <tr><td>קו סמוי <span class="ltr xs dim">Koh Samui</span></td><td>מעבורת מהירה מנאת׳ון, מאנם או מזח הבודהה הגדול לת׳ונג סאלה</td><td class="dimc">20–40 דקות. רוב ההפלגות של היום.</td></tr>
+    <tr><td>קו טאו <span class="ltr xs dim">Koh Tao</span></td><td>מעבורת מהירה, בדרך כלל ממשיכה לסמוי</td><td class="dimc">בערך שעה וחצי</td></tr>
+    <tr><td>סוראט ת׳אני ודונסאק</td><td>מעבורת מכוניות או סירה מהירה ממזח דונסאק</td><td class="dimc">2.5–4.5 שעות, תלוי בסירה</td></tr>
+    <tr><td>בנגקוק</td><td>טיסה לסמוי, או אוטובוס/רכבת לילה לסוראט ת׳אני ואז הסירה</td><td class="dimc">חצי יום בכל מקרה</td></tr>
+  </table></div>
+  <div class="note en"><b>Book the boat, not just the flight.</b> Around full moon, New Year and Songkran, ferries sell out and prices on the last crossings climb. Arriving in Surat Thani at 9pm with no boat booked means a night on the mainland.</div>
+  <div class="note he"><b>תזמינו את הסירה, לא רק את הטיסה.</b> סביב ירח מלא, ראש השנה וסונגקראן המעבורות נמכרות עד הסוף והמחירים בהפלגות האחרונות מזנקים. להגיע לסוראט ת׳אני בתשע בערב בלי סירה מוזמנת זה לילה ביבשת.</div>
 </section>
 
 <section id="around">
-  <h2>Getting around</h2>
-  <p class="lede">The island is about 20km across, the main roads are good, and a few of the roads that matter are genuinely dangerous.</p>
-  <div class="grid2">
+  <h2><span class="en">Getting around</span><span class="he">איך מסתובבים</span></h2>
+  <p class="lede en">The island is about 20km across, the main roads are good, and a few of the roads that matter are genuinely dangerous.</p>
+  <p class="lede he">האי הוא בערך 20 ק״מ מקצה לקצה, הכבישים הראשיים טובים, וכמה מהכבישים שחשובים באמת מסוכנים.</p>
+  <div class="grid2 en">
     <div class="card"><span class="tag">Scooter</span><h3>Cheap, and the main way people get hurt here</h3>
       <p>Wear the helmet — it's the law and it's also the difference between a scare and a hospital. Photograph the bike from every angle before you ride off. Take the insurance question seriously: most travel policies don't cover you without the right licence.</p></div>
     <div class="card"><span class="tag">Roads to respect</span><h3>Haad Rin hill, Bottle Beach, Haad Yuan</h3>
@@ -149,11 +202,21 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:34px 0 60px;font
     <div class="card"><span class="tag">Boats</span><h3>The only sane way to reach some beaches</h3>
       <p>Longtails run to Bottle Beach, Haad Yuan and Haad Thian in calm weather. In the windy months they simply don't go, and no amount of asking changes that.</p></div>
   </div>
+  <div class="grid2 he">
+    <div class="card"><span class="tag">קטנוע</span><h3>זול, וגם הדרך העיקרית שאנשים נפצעים כאן</h3>
+      <p>תחבשו קסדה — זה החוק, וזה גם ההבדל בין בהלה לבין בית חולים. צלמו את האופנוע מכל זווית לפני שאתם נוסעים. ותתייחסו ברצינות לשאלת הביטוח: רוב פוליסות הנסיעות לא מכסות אתכם בלי רישיון מתאים.</p></div>
+    <div class="card"><span class="tag">כבישים שדורשים כבוד</span><h3>העלייה להאד רין, בוטל ביץ׳, האד יואן</h3>
+      <p>העלייה להאד רין והדרכים לחופים הרחוקים תלולות, מחליקות, ומפילות קטנועים כל שבוע. אם אתם לא בטוחים בעצמכם, קחו מונית או סירה. אין בזה שום בושה, והמקומיים יסכימו אתכם.</p></div>
+    <div class="card"><span class="tag">מוניות</span><h3>טנדרים משותפים, מחירים פחות או יותר קבועים</h3>
+      <p>הסונגטאו נוסעים במסלולים קבועים מת׳ונג סאלה וגובים לפי אדם. סכמו מחיר לפני שאתם עולים. מאוחר בלילה, אחרי שהמזח והמסיבות נסגרים, תצפו לשלם פי כמה מהתעריף של היום.</p></div>
+    <div class="card"><span class="tag">סירות</span><h3>הדרך השפויה היחידה להגיע לכמה חופים</h3>
+      <p>סירות לונגטייל נוסעות לבוטל ביץ׳, האד יואן והאד ת׳יאן במזג אוויר רגוע. בחודשי הרוחות הן פשוט לא יוצאות, ושום שכנוע לא ישנה את זה.</p></div>
+  </div>
 </section>
 
 <section id="areas">
-  <h2>Where to stay, and what each place is actually like</h2>
-  <div class="scroller"><table>
+  <h2><span class="en">Where to stay, and what each place is actually like</span><span class="he">איפה לישון, ואיך כל מקום באמת מרגיש</span></h2>
+  <div class="scroller en"><table>
     <tr><th>Area</th><th>It suits you if</th><th>It doesn't if</th></tr>
     <tr><td>Srithanu</td><td>You're here for yoga, dance, ceremonies, healthy food and a community that talks to strangers</td><td class="dimc">You want nightlife, or you find the wellness scene a lot</td></tr>
     <tr><td>Thong Sala</td><td>You want the pier, the markets, the banks, cheap Thai food and everything open late</td><td class="dimc">You came for a beach outside your door</td></tr>
@@ -163,12 +226,23 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:34px 0 60px;font
     <tr><td>Haad Yao &amp; Haad Salad</td><td>You want a swimmable beach, sunsets, and a short ride to Srithanu</td><td class="dimc">You want to walk everywhere</td></tr>
     <tr><td>Thong Nai Pan</td><td>You want the prettiest bay on the island and don't mind being far from everything</td><td class="dimc">You'll want to leave the bay often</td></tr>
   </table></div>
+  <div class="scroller he"><table>
+    <tr><th>אזור</th><th>מתאים לכם אם</th><th>לא מתאים אם</th></tr>
+    <tr><td>סריטאנו <span class="ltr xs dim">Srithanu</span></td><td>באתם ליוגה, ריקוד, טקסים, אוכל בריא וקהילה שמדברת עם זרים</td><td class="dimc">אתם רוצים חיי לילה, או שסצנת הוולנס היא קצת יותר מדי בשבילכם</td></tr>
+    <tr><td>ת׳ונג סאלה <span class="ltr xs dim">Thong Sala</span></td><td>אתם רוצים את המזח, השווקים, הבנקים, אוכל תאילנדי זול והכול פתוח עד מאוחר</td><td class="dimc">באתם בשביל חוף מחוץ לדלת</td></tr>
+    <tr><td>באן טאי <span class="ltr xs dim">Ban Tai</span></td><td>אתם רוצים את האמצע: חוף רגוע, קרוב למסיבות, נסיעה קלה לשני הכיוונים</td><td class="dimc">אתם רוצים אחד מהקצוות</td></tr>
+    <tr><td>האד רין <span class="ltr xs dim">Haad Rin</span></td><td>באתם בשביל מסיבת הירח המלא והקהל שמגיע איתה</td><td class="dimc">אתם רוצים לישון, ברוב לילות החודש</td></tr>
+    <tr><td>צ׳אלוקלום ומאי האד</td><td>אתם רוצים כפר דייגים, את השנורקלינג הכי טוב, ואת הצפון השקט</td><td class="dimc">לא בא לכם לנסוע 25 דקות לכל דבר אחר</td></tr>
+    <tr><td>האד יאו והאד סאלאד</td><td>אתם רוצים חוף שאפשר לשחות בו, שקיעות, ונסיעה קצרה לסריטאנו</td><td class="dimc">אתם רוצים ללכת ברגל לכל מקום</td></tr>
+    <tr><td>ת׳ונג נאי פאן <span class="ltr xs dim">Thong Nai Pan</span></td><td>אתם רוצים את המפרץ הכי יפה באי ולא מפריע לכם להיות רחוק מהכול</td><td class="dimc">תרצו לצאת מהמפרץ לעתים קרובות</td></tr>
+  </table></div>
 </section>
 
 <section id="walks">
-  <h2>Walks and waterfalls</h2>
-  <p class="lede">Most of the island's interior is national park, and almost nobody walks it. Go early, take twice the water you think you need, and tell someone where you went.</p>
-  <div class="grid2">
+  <h2><span class="en">Walks and waterfalls</span><span class="he">מסלולים ומפלים</span></h2>
+  <p class="lede en">Most of the island's interior is national park, and almost nobody walks it. Go early, take twice the water you think you need, and tell someone where you went.</p>
+  <p class="lede he">רוב פנים האי הוא פארק לאומי, וכמעט אף אחד לא הולך בו. צאו מוקדם, קחו פי שניים מים ממה שנראה לכם שצריך, ותגידו למישהו לאן הלכתם.</p>
+  <div class="grid2 en">
     <div class="card"><span class="tag">Half a day · hard</span><h3>Khao Ra, the island's high point</h3>
       <p>A steep climb through jungle to about 630m, with a view over the whole island and out to Samui on a clear morning. Two hours up if you're fit. Start at dawn — by 9am the heat makes it a different walk. Guided groups go most weeks.</p></div>
     <div class="card"><span class="tag">2 hours · moderate</span><h3>Bottle Beach over the headland</h3>
@@ -178,12 +252,23 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:34px 0 60px;font
     <div class="card"><span class="tag">Half a day · moderate</span><h3>Than Sadet, on the east coast</h3>
       <p>A river running down through boulders to the sea, with pools you can sit in and rocks carved by generations of Thai kings. The road in is steep; the walk up the river is the good part.</p></div>
   </div>
-  <div class="note"><b>Two things that go wrong on these walks.</b> People run out of water, and people set off at 11am. The jungle holds the heat and there is no shop at the top of anything. Also: several trails sit inside national park land, where a ranger may charge an entry fee — carry some cash.</div>
+  <div class="grid2 he">
+    <div class="card"><span class="tag">חצי יום · קשה</span><h3>קאו רא, הנקודה הגבוהה באי</h3>
+      <p>טיפוס תלול דרך ג׳ונגל לגובה של כ‑630 מטר, עם נוף על כל האי ועד סמוי בבוקר בהיר. שעתיים למעלה אם אתם בכושר. צאו עם אור ראשון — בתשע בבוקר החום הופך את זה למסלול אחר לגמרי. יש קבוצות מודרכות ברוב השבועות.</p></div>
+    <div class="card"><span class="tag">שעתיים · בינוני</span><h3>בוטל ביץ׳ מעל הרכס</h3>
+      <p>השביל מצ׳אלוקלום עולה ויורד מעל הרכס לאחד החופים האחרונים שאין אליהם כביש. נעליים סגורות, לא כפכפים. רוב האנשים הולכים לכיוון אחד וחוזרים בסירה.</p></div>
+    <div class="card"><span class="tag">שעה־שעתיים · קל</span><h3>מפל פאנג ותצפית דומסילה</h3>
+      <p>המפל שהכי קל להגיע אליו, במרכז האי, עם שביל מסומן שממשיך למעלה לתצפית על החוף המערבי. בעונה הגשומה המפל שווה את זה, בעונה היבשה הוא טפטוף.</p></div>
+    <div class="card"><span class="tag">חצי יום · בינוני</span><h3>ת׳אן סאדט, בחוף המזרחי</h3>
+      <p>נחל שיורד בין סלעים אל הים, עם בריכות שאפשר לשבת בהן וסלעים שחרטו בהם דורות של מלכי תאילנד. הכביש פנימה תלול; ההליכה במעלה הנחל היא החלק הטוב.</p></div>
+  </div>
+  <div class="note en"><b>Two things that go wrong on these walks.</b> People run out of water, and people set off at 11am. The jungle holds the heat and there is no shop at the top of anything. Also: several trails sit inside national park land, where a ranger may charge an entry fee — carry some cash.</div>
+  <div class="note he"><b>שני דברים שמשתבשים במסלולים האלה.</b> לאנשים נגמרים המים, ואנשים יוצאים באחת עשרה בבוקר. הג׳ונגל אוגר את החום ואין חנות בפסגה של שום דבר. ועוד משהו: כמה מהשבילים נמצאים בשטח פארק לאומי, ששם פקח עשוי לגבות דמי כניסה — קחו מזומן.</div>
 </section>
 
 <section id="beaches">
-  <h2>Beaches worth the ride</h2>
-  <div class="grid2">
+  <h2><span class="en">Beaches worth the ride</span><span class="he">חופים ששווה לנסוע אליהם</span></h2>
+  <div class="grid2 en">
     <div class="card"><h3>Mae Haad &amp; Koh Ma</h3><p>A sandbar you can walk across to a small island at low tide, and the best snorkelling on Koh Phangan around its edge. Go on a rising tide and bring your own mask.</p></div>
     <div class="card"><h3>Bottle Beach</h3><p>No road, a handful of bungalows, and the feeling of the island thirty years ago. Boat from Chaloklum, or walk the headland.</p></div>
     <div class="card"><h3>Secret Beach &amp; Haad Son</h3><p>West coast, so the sunsets land here. Small, rocky at the edges, and busy at 6pm for exactly that reason.</p></div>
@@ -191,36 +276,58 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:34px 0 60px;font
     <div class="card"><h3>Haad Yuan &amp; Haad Thian</h3><p>Reachable by boat from Haad Rin, or a hard track. Quiet bays with their own small scenes.</p></div>
     <div class="card"><h3>Thong Nai Pan Noi</h3><p>The classic curve of pale sand in the northeast. Swimmable most of the year, and far enough that it never feels crowded.</p></div>
   </div>
+  <div class="grid2 he">
+    <div class="card"><h3>מאי האד וקו מא</h3><p>לשון חול שאפשר לחצות ברגל לאי קטן בשפל, והשנורקלינג הכי טוב בקופנגן מסביב לקצה שלו. לכו בגאות עולה ותביאו מסכה משלכם.</p></div>
+    <div class="card"><h3>בוטל ביץ׳</h3><p>אין כביש, קומץ בונגלוס, והתחושה של האי לפני שלושים שנה. סירה מצ׳אלוקלום, או הליכה מעל הרכס.</p></div>
+    <div class="card"><h3>סיקרט ביץ׳ והאד סון</h3><p>חוף מערבי, אז השקיעות נוחתות כאן. קטן, סלעי בקצוות, ועמוס בשש בערב בדיוק מהסיבה הזאת.</p></div>
+    <div class="card"><h3>זן ביץ׳</h3><p>לא בדיוק חוף, יותר טקס. כולם מתאספים לשקיעה, מישהו מביא תופים, מישהו מביא אש. זו השעה הכי קופנגנית בשבוע.</p></div>
+    <div class="card"><h3>האד יואן והאד ת׳יאן</h3><p>מגיעים בסירה מהאד רין, או בדרך עפר קשה. מפרצים שקטים עם סצנות קטנות משלהם.</p></div>
+    <div class="card"><h3>ת׳ונג נאי פאן נוי</h3><p>הקשת הקלאסית של חול בהיר בצפון־מזרח. אפשר לשחות בו רוב השנה, ורחוק מספיק כדי שלעולם לא ירגיש עמוס.</p></div>
+  </div>
 </section>
 
 <section id="rules">
-  <h2>The rules that catch people out</h2>
-  <p class="lede">None of this is dramatic. It's the short list of things that turn a good trip into a police station, and most visitors arrive with out-of-date information about at least one of them.</p>
+  <h2><span class="en">The rules that catch people out</span><span class="he">הכללים שתופסים אנשים לא מוכנים</span></h2>
+  <p class="lede en">None of this is dramatic. It's the short list of things that turn a good trip into a police station, and most visitors arrive with out-of-date information about at least one of them.</p>
+  <p class="lede he">שום דבר כאן הוא לא דרמטי. זו הרשימה הקצרה של הדברים שהופכים טיול טוב לתחנת משטרה, ורוב המבקרים מגיעים עם מידע לא מעודכן לפחות על אחד מהם.</p>
 
-  <div class="rule"><span class="n">1</span><div><h3>Cannabis is medical-only now, whatever you read in 2023</h3>
+  <div class="rule en"><span class="n">1</span><div><h3>Cannabis is medical-only now, whatever you read in 2023</h3>
     <p>Thailand decriminalised cannabis in 2022, then reversed course. Since June 2025 cannabis flower is a controlled herb: buying it legally requires a prescription from a Thai-licensed practitioner, issued after a real consultation. A medical card from your own country doesn't count. Rules tightened again in 2026. Smoking in public is separately prohibited, and taking any of it across a border — in either direction, on any flight — is a serious offence. Shops that sell you flower without the paperwork are breaking the rules, not proving they don't exist.</p></div></div>
+  <div class="rule he"><span class="n">1</span><div><h3>קנאביס הוא לשימוש רפואי בלבד היום, לא משנה מה קראתם ב‑2023</h3>
+    <p>תאילנד ביטלה את ההפללה של קנאביס ב‑2022, ואז חזרה בה. מיוני 2025 תפרחת קנאביס היא צמח מפוקח: קנייה חוקית דורשת מרשם ממטפל בעל רישיון תאילנדי, שניתן אחרי בדיקה אמיתית. כרטיס רפואי מהמדינה שלכם לא נחשב. ב‑2026 הכללים הוחמרו שוב. עישון במקום ציבורי אסור בנפרד, והעברה של כל כמות דרך גבול — לכל כיוון, בכל טיסה — היא עבירה חמורה. חנויות שמוכרות לכם תפרחת בלי ניירת מפרות את הכללים, לא מוכיחות שהם לא קיימים.</p></div></div>
 
-  <div class="rule"><span class="n">2</span><div><h3>Vapes and e-cigarettes are illegal in Thailand</h3>
+  <div class="rule en"><span class="n">2</span><div><h3>Vapes and e-cigarettes are illegal in Thailand</h3>
     <p>Not restricted — illegal to import, sell or possess. Enforcement is inconsistent, which is exactly what makes people careless. Fines and confiscation are the common outcome.</p></div></div>
+  <div class="rule he"><span class="n">2</span><div><h3>וייפים וסיגריות אלקטרוניות אסורים בתאילנד</h3>
+    <p>לא מוגבלים — אסורים ביבוא, במכירה ובהחזקה. האכיפה לא עקבית, וזה בדיוק מה שגורם לאנשים להתרשל. קנסות והחרמה הן התוצאה הרגילה.</p></div></div>
 
-  <div class="rule"><span class="n">3</span><div><h3>Helmets, licences and the roadside stop</h3>
+  <div class="rule en"><span class="n">3</span><div><h3>Helmets, licences and the roadside stop</h3>
     <p>Helmets are required. Riding without one, or without a licence that actually covers a motorbike, is the most common fine on the island — and the reason an insurance claim gets refused after an accident.</p></div></div>
+  <div class="rule he"><span class="n">3</span><div><h3>קסדות, רישיונות, והעצירה בצד הדרך</h3>
+    <p>קסדה היא חובה. נסיעה בלי קסדה, או בלי רישיון שבאמת מכסה אופנוע, היא הקנס הכי נפוץ באי — וגם הסיבה שתביעת ביטוח נדחית אחרי תאונה.</p></div></div>
 
-  <div class="rule"><span class="n">4</span><div><h3>Temples, and what to wear at them</h3>
+  <div class="rule en"><span class="n">4</span><div><h3>Temples, and what to wear at them</h3>
     <p>Shoulders and knees covered, shoes off where the signs say so, and don't climb on or pose in front of Buddha images. Wat Phu Khao Noi and the forest temples are working religious sites, not backdrops.</p></div></div>
+  <div class="rule he"><span class="n">4</span><div><h3>מקדשים, ומה לובשים בהם</h3>
+    <p>כתפיים וברכיים מכוסות, נעליים בחוץ איפה שהשלטים אומרים, ואל תטפסו על פסלי בודהה ואל תצטלמו מולם בפוזות. ואט פו קאו נוי ומקדשי היער הם אתרים דתיים פעילים, לא רקע לתמונה.</p></div></div>
 
-  <div class="rule"><span class="n">5</span><div><h3>National park fees and marine park rules</h3>
+  <div class="rule en"><span class="n">5</span><div><h3>National park fees and marine park rules</h3>
     <p>Some waterfalls and viewpoints sit in protected land with an entry fee for foreign visitors. Around the reefs, standing on coral and feeding fish are prohibited. Bring cash; card is rarely an option at a ranger hut.</p></div></div>
+  <div class="rule he"><span class="n">5</span><div><h3>דמי כניסה לפארקים לאומיים וכללי הפארק הימי</h3>
+    <p>חלק מהמפלים והתצפיות נמצאים בשטח מוגן עם דמי כניסה למבקרים זרים. סביב השוניות, עמידה על אלמוגים והאכלת דגים אסורות. קחו מזומן; כרטיס אשראי כמעט אף פעם לא אופציה בבקתת פקחים.</p></div></div>
 
-  <div class="rule"><span class="n">6</span><div><h3>Drinks you didn't watch being poured</h3>
+  <div class="rule en"><span class="n">6</span><div><h3>Drinks you didn't watch being poured</h3>
     <p>At the big parties, buckets are strong, cheap and easy to lose track of. Watch your drink being made, don't leave it, and swim later rather than after. The sea around Haad Rin at 3am has taken people.</p></div></div>
+  <div class="rule he"><span class="n">6</span><div><h3>משקאות שלא ראיתם איך מוזגים אותם</h3>
+    <p>במסיבות הגדולות הדליים חזקים, זולים וקל לאבד בהם ספירה. תראו את המשקה שלכם מוכן, אל תשאירו אותו, ואל תיכנסו לים אחרי. הים סביב האד רין בשלוש לפנות בוקר לקח אנשים.</p></div></div>
 
-  <div class="note"><b>This is a plain-English summary, not legal advice.</b> Thai law around cannabis in particular has changed several times in three years and is still moving. Check the Ministry of Public Health or your embassy for anything you're going to act on.</div>
+  <div class="note en"><b>This is a plain-English summary, not legal advice.</b> Thai law around cannabis in particular has changed several times in three years and is still moving. Check the Ministry of Public Health or your embassy for anything you're going to act on.</div>
+  <div class="note he"><b>זה סיכום בשפה פשוטה, לא ייעוץ משפטי.</b> החוק התאילנדי, במיוחד בנושא קנאביס, השתנה כמה פעמים בשלוש שנים ועדיין זז. בדקו מול משרד הבריאות התאילנדי או מול השגרירות כל דבר שאתם מתכוונים לפעול לפיו.</div>
 </section>
 
 <section id="practical">
-  <h2>Money, weather and getting looked after</h2>
-  <div class="grid2">
+  <h2><span class="en">Money, weather and getting looked after</span><span class="he">כסף, מזג אוויר, ומי מטפל בכם</span></h2>
+  <div class="grid2 en">
     <div class="card"><span class="tag">Money</span><h3>Bring cash, expect ATM fees</h3>
       <p>Foreign-card ATM withdrawals carry a fixed fee per withdrawal, so take out larger amounts less often. Plenty of restaurants, bars and every market stall are cash only, including some that look like they wouldn't be.</p></div>
     <div class="card"><span class="tag">Seasons</span><h3>The wet months are real</h3>
@@ -230,28 +337,73 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding:34px 0 60px;font
     <div class="card"><span class="tag">Bites &amp; stings</span><h3>Mosquitoes, sandflies, jellyfish</h3>
       <p>Dengue exists here, so repellent in the evening is worth the habit. Sandflies on some beaches leave itchy bites for a week. Jellyfish appear seasonally — if there's vinegar on a post at the beach, there's a reason.</p></div>
   </div>
+  <div class="grid2 he">
+    <div class="card"><span class="tag">כסף</span><h3>תביאו מזומן, תצפו לעמלות בכספומט</h3>
+      <p>משיכה בכספומט עם כרטיס זר גוררת עמלה קבועה לכל משיכה, אז משכו סכומים גדולים יותר ופחות פעמים. המון מסעדות, ברים וכל דוכן בשוק הם מזומן בלבד, כולל חלק שנראים כאילו הם לא.</p></div>
+    <div class="card"><span class="tag">עונות</span><h3>חודשי הגשם הם אמיתיים</h3>
+      <p>בערך מאוקטובר עד דצמבר יורדים הגשמים הכבדים ביותר והים הכי סוער, סירות לחופים הרחוקים מפסיקות לצאת וחלק מהמקומות נסגרים. שאר השנה חם, עם סופות קצרות. העונה הגבוהה והראות הכי טובה לצלילה הן בחודשים הראשונים של השנה.</p></div>
+    <div class="card"><span class="tag">בריאות</span><h3>מרפאות כאן, בית חולים בסמוי</h3>
+      <p>יש מרפאות ובית חולים בת׳ונג סאלה לבעיות יומיומיות — חתכים מזוהמים, בטן, שפשופי אספלט מקטנוע. כל דבר רציני הולך לסמוי, וזה אומר סירה. ביטוח נסיעות הוא לא אופציונלי באי הזה.</p></div>
+    <div class="card"><span class="tag">עקיצות</span><h3>יתושים, זבובי חול, מדוזות</h3>
+      <p>דנגי קיים כאן, אז דוחה יתושים בערב שווה כהרגל. זבובי חול בחלק מהחופים משאירים עקיצות מגרדות לשבוע. מדוזות מופיעות לפי עונה — אם יש חומץ על עמוד בחוף, יש לזה סיבה.</p></div>
+  </div>
+  <p class="sm en" style="margin-top:22px">More on hospitals, insurance and what to do after a scooter accident is on the <a href="help.html">help and emergencies page</a>.</p>
+  <p class="sm he" style="margin-top:22px">עוד על בתי חולים, ביטוח ומה עושים אחרי תאונת קטנוע נמצא <a href="help.html">בדף העזרה והחירום</a>.</p>
 </section>
 
 <section id="moon">
-  <h2>The party calendar, for people who want to plan around it</h2>
-  <p class="lede">The Full Moon Party at Haad Rin is the island's biggest night, and the island reorganises itself around it. Rooms cost more, ferries fill, and the whole south coast is awake until sunrise.</p>
-  <p class="sm dim" style="margin-top:18px;max-width:68ch">In the days either side there are half-moon, jungle and beach parties in Ban Tai and the inland venues. If that's why you came, book the ferry and the room a month ahead. If it isn't, the north of the island barely notices — Chaloklum, Thong Nai Pan and Mae Haad stay completely quiet, and you can happily spend a full moon there without hearing a thing.</p>
-  <div class="note"><b>Dates move.</b> Parties follow the lunar calendar and shift for Buddhist holidays, when alcohol sales are restricted island-wide. Check the dates for your month rather than assuming.</div>
+  <h2><span class="en">The party calendar, for people who want to plan around it</span><span class="he">לוח המסיבות, למי שרוצה לתכנן סביבו</span></h2>
+  <p class="lede en">The Full Moon Party at Haad Rin is the island's biggest night, and the island reorganises itself around it. Rooms cost more, ferries fill, and the whole south coast is awake until sunrise.</p>
+  <p class="lede he">מסיבת הירח המלא בהאד רין היא הלילה הגדול של האי, והאי מארגן את עצמו מחדש סביבה. חדרים מתייקרים, מעבורות מתמלאות, וכל החוף הדרומי ער עד הזריחה.</p>
+  <p class="sm dim en" style="margin-top:18px;max-width:68ch">In the days either side there are half-moon, jungle and beach parties in Ban Tai and the inland venues. If that's why you came, book the ferry and the room a month ahead. If it isn't, the north of the island barely notices — Chaloklum, Thong Nai Pan and Mae Haad stay completely quiet, and you can happily spend a full moon there without hearing a thing.</p>
+  <p class="sm dim he" style="margin-top:18px;max-width:68ch">בימים שלפני ואחרי יש מסיבות חצי ירח, ג׳ונגל וחוף בבאן טאי ובמתחמים הפנימיים. אם בשביל זה באתם, תזמינו מעבורת וחדר חודש מראש. אם לא — הצפון של האי כמעט לא מרגיש בזה. צ׳אלוקלום, ת׳ונג נאי פאן ומאי האד נשארים שקטים לגמרי, ואפשר להעביר שם ירח מלא בלי לשמוע כלום.</p>
+  <div class="note en"><b>Dates move.</b> Parties follow the lunar calendar and shift for Buddhist holidays, when alcohol sales are restricted island-wide. Check the dates for your month rather than assuming.</div>
+  <div class="note he"><b>התאריכים זזים.</b> המסיבות הולכות לפי הלוח הירחי וזזות בגלל חגים בודהיסטיים, שבהם מכירת אלכוהול מוגבלת בכל האי. תבדקו את התאריכים לחודש שלכם במקום להניח.</div>
 </section>
 
-<div class="cta-block" id="today">
-  <h2>Now — what's actually on today?</h2>
-  <p>Classes, ceremonies, jams, markets and parties across the island, collected every morning.</p>
-  <a class="cta" href="#top">See today's list</a>
+<div class="cta-block">
+  <h2><span class="en">Now — what's actually on today?</span><span class="he">ועכשיו — מה באמת קורה היום?</span></h2>
+  <p class="en">Classes, ceremonies, jams, markets and parties across the island, collected every morning.</p>
+  <p class="he">שיעורים, טקסים, ג׳אמים, שווקים ומסיבות מכל רחבי האי, נאספים כל בוקר.</p>
+  <a class="cta" href="index.html"><span class="en">See today's list</span><span class="he">לרשימה של היום</span></a>
 </div>
 
-<div class="banner">Demo page. The guidance here is accurate as far as we could check it in September 2026, but ferry times, park fees and Thai law all change — verify anything you're going to act on.</div>
+<div class="stamp en">Checked in September 2026. Ferry times, park fees and Thai law all change — verify anything you are going to act on.</div>
+<div class="stamp he">נבדק בספטמבר 2026. זמני מעבורות, דמי כניסה לפארקים והחוק התאילנדי — כולם משתנים. תאמתו כל דבר שאתם מתכוונים לפעול לפיו.</div>
 </div>
 
 <footer><div class="wrap">
-  <p>Koh Phangan Today · Surat Thani, Thailand</p>
-  <p style="margin-top:7px">Something here out of date? Tell us and we'll fix it the same week.</p>
+  <p class="en">&copy; 2026 Koh Phangan Today · <a href="index.html">What's on today</a> · <a href="food.html">Where to eat</a> · <a href="services.html">Bars &amp; services</a> · <a href="places.html">All the places</a> · <a href="help.html">Help</a> · <a href="legal.html">Privacy &amp; terms</a></p>
+  <p class="en">Something here out of date? Tell us and we'll fix it the same week.</p>
+  <p class="he">&copy; 2026 Koh Phangan Today · <a href="index.html">מה קורה היום</a> · <a href="food.html">איפה אוכלים</a> · <a href="services.html">ברים ושירותים</a> · <a href="places.html">כל המקומות</a> · <a href="help.html">עזרה</a> · <a href="legal.html">פרטיות ותנאים</a></p>
+  <p class="he">משהו כאן לא מעודכן? תגידו לנו ונתקן באותו שבוע.</p>
 </div></footer>
+
+<script>
+function setLang(l, push){
+  var he = (l === "he");
+  var h = document.documentElement;
+  h.lang = he ? "he" : "en";
+  h.dir  = he ? "rtl" : "ltr";
+  document.getElementById("bEn").setAttribute("aria-pressed", String(!he));
+  document.getElementById("bHe").setAttribute("aria-pressed", String(he));
+  document.title = he
+    ? "מדריך האי — Koh Phangan Today"
+    : "The Koh Phangan guide — Koh Phangan Today";
+  try{ localStorage.setItem("it_lang", h.lang); }catch(e){}
+  if(push){
+    try{ var u = new URL(location.href); u.searchParams.set("lang", h.lang);
+         history.replaceState(null, "", u); }catch(e){}
+  }
+}
+(function(){
+  var l = null;
+  try{ l = new URL(location.href).searchParams.get("lang"); }catch(e){}
+  if(!l){ try{ l = localStorage.getItem("it_lang"); }catch(e){} }
+  if(!l && navigator.language && navigator.language.toLowerCase().indexOf("he") === 0) l = "he";
+  setLang(l === "he" ? "he" : "en", 0);
+})();
+</script>
 
 <!-- Cloudflare Web Analytics -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "528edc12440c48e8b5cb6951ded1c1e4"}'></script>
