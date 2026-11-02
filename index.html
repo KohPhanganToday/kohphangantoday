@@ -332,7 +332,7 @@ body.live .demo-only{display:none!important}
         <a class="cta" href="#digest" data-i18n="hero.cta1">Join the daily digest</a>
         <a class="cta ghost" href="#topics" data-i18n="hero.cta2">Browse by topic</a>
       </div>
-      <p class="xs dim demo-only" style="margin-top:18px" data-i18n="hero.note">Free. 47 events listed this week across 11 topics.</p>
+      <p class="xs dim" id="heroNote" style="margin-top:18px"></p>
     </div>
     <div class="live">
       <div class="top"><b data-i18n="live.now"><span class="pulse"></span>On right now</b><span id="clock">—</span></div>
@@ -373,12 +373,12 @@ body.live .demo-only{display:none!important}
 <section id="better" style="padding-top:20px">
   <div class="head"><div><h2 data-i18n="better.h2">What this does that a listings page doesn't</h2></div></div>
   <div class="two">
-    <div class="card"><h3 data-i18n="better.c1h">You can see who's going</h3>
-      <p data-i18n="better.c1p">Every event shows who else is coming and who ticked "open to meeting someone". Travelling alone stops being a reason not to go.</p>
-      <ul data-i18n="better.c1l"><li>Join the event's own WhatsApp group in one tap</li><li>Say hi before you arrive</li><li>Organisers see real numbers instead of guessing</li></ul></div>
-    <div class="card"><h3 data-i18n="better.c2h">Teachers can teach you from anywhere</h3>
-      <p data-i18n="better.c2p">Anyone listed here can run live classes online and sell recorded courses. You keep learning after you leave, and they keep earning in low season.</p>
-      <ul data-i18n="better.c2l"><li>Live classes with island times and replays</li><li>Solo courses that need no partner and no studio</li><li>One profile covers the studio and the screen</li></ul></div>
+    <div class="card"><h3 data-i18n="better.c1h">Today, in the order things start</h3>
+      <p data-i18n="better.c1p">The day's events on island time, earliest first. Pick a day, pick a topic, or see only what is still open right now.</p>
+      <ul data-i18n="better.c1l"><li>Island time, so &ldquo;tonight&rdquo; means tonight</li><li>Twelve topics, from dance to pottery</li><li>No app to install and nothing to sign up for</li></ul></div>
+    <div class="card"><h3 data-i18n="better.c2h">And the rest of the island</h3>
+      <p data-i18n="better.c2p">Over four hundred places: food, bars and markets, massage and barbers, laundry, scooters, pharmacies, hotels and hostels.</p>
+      <ul data-i18n="better.c2l"><li>Opening hours, and a filter for what is open now</li><li>A map link that opens in your own maps app</li><li>The whole site in Hebrew and English</li></ul></div>
   </div>
 </section>
 
@@ -387,9 +387,9 @@ body.live .demo-only{display:none!important}
     <div>
       <p class="sm" style="color:var(--coral);font-weight:600" data-i18n="school.eyebrow">The dance school behind it</p>
       <h2 style="margin-top:10px">Phangan Paradise</h2>
-      <p class="sm dim" style="margin-top:14px;max-width:42ch" data-i18n="school.p">Brazilian Zouk in Srithanu, open all year. Beginner courses start every Thursday. Come alone — we rotate partners, and half the room arrived on the island last week.</p>
+      <p class="sm dim" style="margin-top:14px;max-width:42ch" data-i18n="school.p">Brazilian Zouk in Srithanu, open all year. Write to us and we'll send you the current timetable.</p>
       <div class="row" style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
-        <a class="cta" href="#digest" data-link="schoolBooking" data-i18n="school.cta1">Book a free taster</a>
+        <a class="cta" href="#digest" data-link="schoolBooking" data-i18n="school.cta1">Ask for the timetable</a>
         <a class="cta ghost" href="#digest" data-link="onlineCourses" data-i18n="school.cta2">See online courses</a>
       </div>
     </div>
@@ -402,24 +402,23 @@ body.live .demo-only{display:none!important}
     <p data-i18n="host.lead">Listing is free, forever. It takes about a minute.</p></div></div>
   <div class="two">
     <div class="card"><h3 data-i18n="host.c1h">Add your event</h3>
-      <p data-i18n="host.c1p">Name it, place it, price it, and say how people should feel afterwards. Approved events appear in tomorrow morning's digest and in the app.</p>
+      <p data-i18n="host.c1p">Name it, place it, price it. We check it and put it on the day it happens, in both languages.</p>
       <p style="margin-top:18px"><a class="cta" href="#digest" data-link="submitEvent" data-i18n="host.c1b">Add an event</a></p></div>
-    <div class="card"><h3 data-i18n="host.c2h">Sell your classes</h3>
-      <p data-i18n="host.c2p">Take bookings and payments through your own page, run live classes online, and keep a mailing list of everyone who ever danced with you.</p>
-      <p style="margin-top:18px"><a class="cta ghost" href="#digest" data-i18n="host.c2b">How it works for hosts</a></p></div>
+    <div class="card"><h3 data-i18n="host.c2h">Or get your place on the lists</h3>
+      <p data-i18n="host.c2p">A restaurant, a bar, a massage place, a laundry, a scooter rental, a hostel — send the name, the hours and a photo, and it goes on the list with a map link.</p>
+      <p style="margin-top:18px"><a class="cta ghost" href="#digest" data-link="submitEvent" data-i18n="host.c2b">Send your details</a></p></div>
   </div>
 </section>
 
 <section id="digest" style="padding-top:20px">
   <div class="digest">
-    <h2 data-i18n="digest.h2">One message every morning</h2>
-    <p class="sm dim" style="margin-top:14px;max-width:46ch;margin-inline:auto" data-i18n="digest.p">Today's list, sent at 8am island time. No chat, no forwards, no spam. Leave whenever you like.</p>
+    <h2 data-i18n="digest.h2">Where to find us</h2>
+    <p class="sm dim" style="margin-top:14px;max-width:46ch;margin-inline:auto" data-i18n="digest.p">The list is here every day, free, no sign-up. New places and events go up as they reach us.</p>
     <div class="chans" id="chans"></div>
   </div>
 </section>
 </div>
 
-<div class="wrap"><div class="banner demo-only" data-i18n="banner">Demo site. Every event, number and person here is invented to show how the product works.</div></div>
 
 <footer><div class="wrap">
   <div class="fgrid">
@@ -460,7 +459,7 @@ en:{
  "hero.h1":"Everything happening on the island, today.",
  "hero.sub":"Classes, ceremonies, jams, markets and parties across Koh Phangan — collected every morning, sorted by topic, and searchable by how you want to feel.",
  "hero.cta1":"Join the daily digest","hero.cta2":"Browse by topic",
- "hero.note":"Free. 47 events listed this week across 11 topics.",
+ "hero.note":"Free. {n} events listed this week across {m} topics.",
  "live.now":"<span class=\"pulse\"></span>On right now",
  "live.foot":"Updates through the day. Island time.",
  "clock.suffix":"island time",
@@ -482,27 +481,26 @@ en:{
  "now.e2":"We are just starting. The list fills up as island businesses send us what they are running.",
  "now.e3":"Send us your event — free",
  "now.more":"The full day →",
- "better.h2":"What this does that a listings page doesn't",
- "better.c1h":"You can see who's going",
- "better.c1p":"Every event shows who else is coming and who ticked “open to meeting someone”. Travelling alone stops being a reason not to go.",
- "better.c1l":"<li>Join the event's own WhatsApp group in one tap</li><li>Say hi before you arrive</li><li>Organisers see real numbers instead of guessing</li>",
- "better.c2h":"Teachers can teach you from anywhere",
- "better.c2p":"Anyone listed here can run live classes online and sell recorded courses. You keep learning after you leave, and they keep earning in low season.",
- "better.c2l":"<li>Live classes with island times and replays</li><li>Solo courses that need no partner and no studio</li><li>One profile covers the studio and the screen</li>",
+ "better.h2":"What you get here",
+ "better.c1h":"Today, in the order things start",
+ "better.c1p":"The day's events on island time, earliest first. Pick a day, pick a topic, or see only what is still open right now.",
+ "better.c1l":"<li>Island time, so &ldquo;tonight&rdquo; means tonight</li><li>Twelve topics, from dance to pottery</li><li>No app to install and nothing to sign up for</li>",
+ "better.c2h":"And the rest of the island",
+ "better.c2p":"Over four hundred places: food, bars and markets, massage and barbers, laundry, scooters, pharmacies, hotels and hostels.",
+ "better.c2l":"<li>Opening hours, and a filter for what is open now</li><li>A map link that opens in your own maps app</li><li>The whole site in Hebrew and English</li>",
  "school.eyebrow":"The dance school behind it",
- "school.p":"Brazilian Zouk in Srithanu, open all year. Beginner courses start every Thursday. Come alone — we rotate partners, and half the room arrived on the island last week.",
- "school.cta1":"Book a free taster","school.cta2":"See online courses",
+ "school.p":"Brazilian Zouk in Srithanu, open all year. Write to us and we'll send you the current timetable.",
+ "school.cta1":"Ask for the timetable","school.cta2":"See online courses",
  "host.h2":"Running something here?","host.lead":"Listing is free, forever. It takes about a minute.",
  "host.c1h":"Add your event",
- "host.c1p":"Name it, place it, price it, and say how people should feel afterwards. Approved events appear in tomorrow morning's digest and in the app.",
+ "host.c1p":"Name it, place it, price it. We check it and put it on the day it happens, in both languages.",
  "host.c1b":"Add an event",
- "host.c2h":"Sell your classes",
- "host.c2p":"Take bookings and payments through your own page, run live classes online, and keep a mailing list of everyone who ever danced with you.",
- "host.c2b":"How it works for hosts",
- "digest.h2":"One message every morning",
- "digest.p":"Today's list, sent at 8am island time. No chat, no forwards, no spam. Leave whenever you like.",
- "banner":"Demo site. Every event, number and person here is invented to show how the product works.",
- "foot.about":"Made on the island by the people who run Phangan Paradise. If something's missing, send it to us and it'll be in tomorrow's list.",
+ "host.c2h":"Or get your place on the lists",
+ "host.c2p":"A restaurant, a bar, a massage place, a laundry, a scooter rental, a hostel — send the name, the hours and a photo, and it goes on the list with a map link.",
+ "host.c2b":"Send your details",
+ "digest.h2":"Where to find us",
+ "digest.p":"The list is here every day, free, no sign-up. New places and events go up as they reach us.",
+  "foot.about":"Made on the island by the people who run Phangan Paradise. If something's missing, send it to us and it'll be in tomorrow's list.",
  "foot.h1":"Explore","foot.h2":"For hosts","foot.h3":"Follow",
  "foot.l1":"Add an event","foot.l2":"Sell classes","foot.l3":"Teach online",
  "foot.l4":"WhatsApp channel","foot.l5":"Telegram",
@@ -521,7 +519,7 @@ he:{
  "hero.h1":"כל מה שקורה באי, היום.",
  "hero.sub":"שיעורים, טקסים, ג'אמים, שווקים ומסיבות מכל רחבי קופנגן — נאספים כל בוקר, מסודרים לפי נושא, ואפשר לחפש בהם לפי איך שבא לכם להרגיש.",
  "hero.cta1":"הצטרפו לרשימה היומית","hero.cta2":"עיון לפי נושא",
- "hero.note":"חינם. 47 אירועים השבוע, ב-11 נושאים.",
+ "hero.note":"חינם. {n} אירועים השבוע, ב-{m} נושאים.",
  "live.now":"<span class=\"pulse\"></span>קורה עכשיו",
  "live.foot":"מתעדכן לאורך היום, לפי שעון האי.",
  "clock.suffix":"שעון האי",
@@ -543,27 +541,26 @@ he:{
  "now.e2":"אנחנו רק מתחילים. הרשימה מתמלאת ככל שעסקים באי שולחים לנו מה הם מריצים.",
  "now.e3":"שלחו לנו אירוע — בחינם",
  "now.more":"היום המלא ←",
- "better.h2":"מה שיש כאן ואין בלוח אירועים רגיל",
- "better.c1h":"רואים מי מגיע",
- "better.c1p":"בכל אירוע רואים מי עוד מגיע ומי סימן שהוא פתוח להכיר אנשים. לבוא לבד מפסיק להיות סיבה לא לבוא.",
- "better.c1l":"<li>להצטרף לקבוצת הוואטסאפ של האירוע בלחיצה אחת</li><li>להגיד שלום עוד לפני שהגעתם</li><li>המארגנים רואים מספרים אמיתיים במקום לנחש</li>",
- "better.c2h":"המורים יכולים ללמד אתכם מכל מקום",
- "better.c2p":"כל מי שרשום כאן יכול להעביר שיעורים חיים אונליין ולמכור קורסים מוקלטים. אתם ממשיכים ללמוד גם אחרי שעזבתם, והם ממשיכים להתפרנס בעונה המתה.",
- "better.c2l":"<li>שיעורים חיים לפי שעון האי, עם הקלטה שנשארת</li><li>קורסים לתרגול לבד — בלי בן/בת זוג ובלי סטודיו</li><li>פרופיל אחד מכסה גם את הסטודיו וגם את המסך</li>",
+ "better.h2":"מה יש כאן",
+ "better.c1h":"היום, לפי סדר ההתחלה",
+ "better.c1p":"האירועים של היום לפי שעון האי, מהמוקדם למאוחר. אפשר לבחור יום, לבחור נושא, או לראות רק מה שפתוח עכשיו.",
+ "better.c1l":"<li>שעון האי, כך ש”היום בערב” הוא באמת היום בערב</li><li>שנים עשר נושאים, מריקוד עד קרמיקה</li><li>בלי אפליקציה להתקין ובלי הרשמה</li>",
+ "better.c2h":"וכל השאר באי",
+ "better.c2p":"יותר מארבע מאות מקומות: אוכל, ברים ושווקים, מסאז' ומספרות, כיבוס, אופנועים, בתי מרקחת, מלונות והוסטלים.",
+ "better.c2l":"<li>שעות פתיחה, ומסנן למה שפתוח עכשיו</li><li>קישור למפה שנפתח באפליקציית המפות שלכם</li><li>כל האתר בעברית ובאנגלית</li>",
  "school.eyebrow":"בית הספר לריקוד שמאחורי זה",
- "school.p":"זוק ברזילאי בשריתאנו, פתוח כל השנה. קורסי מתחילים נפתחים כל יום חמישי. בואו לבד — אנחנו מחליפים בני זוג, וחצי מהחדר נחת באי בשבוע שעבר.",
- "school.cta1":"לשיעור טעימה חינם","school.cta2":"לקורסים האונליין",
+ "school.p":"זוק ברזילאי בשריתאנו, פתוח כל השנה. כתבו לנו ונשלח לכם את לוח השיעורים המעודכן.",
+ "school.cta1":"לקבלת לוח השיעורים","school.cta2":"לקורסים האונליין",
  "host.h2":"מארגנים משהו באי?","host.lead":"הרישום חינם, תמיד. זה לוקח בערך דקה.",
  "host.c1h":"הוסיפו את האירוע שלכם",
- "host.c1p":"שם, מקום, מחיר, ואיך אנשים אמורים להרגיש אחר כך. אירועים שאושרו מופיעים ברשימה של מחר בבוקר ובאפליקציה.",
+ "host.c1p":"שם, מקום, מחיר. אנחנו בודקים ומכניסים לרשימה של היום שבו זה קורה, בשתי השפות.",
  "host.c1b":"להוספת אירוע",
- "host.c2h":"מכרו את השיעורים שלכם",
- "host.c2p":"קבלו הרשמות ותשלומים דרך העמוד שלכם, העבירו שיעורים חיים אונליין, ושמרו רשימת תפוצה של כל מי שאי פעם רקד אתכם.",
- "host.c2b":"איך זה עובד למארגנים",
- "digest.h2":"הודעה אחת כל בוקר",
- "digest.p":"רשימת היום, נשלחת ב-8 בבוקר שעון האי. בלי צ'אט, בלי פורוורדים, בלי ספאם. אפשר לצאת מתי שרוצים.",
- "banner":"אתר הדגמה. כל אירוע, מספר ואדם כאן מומצאים, כדי להראות איך המוצר עובד.",
- "foot.about":"נעשה באי, על ידי האנשים שמפעילים את Phangan Paradise. אם משהו חסר — שלחו לנו, וזה יהיה ברשימה של מחר.",
+ "host.c2h":"או שהעסק שלכם ייכנס לרשימות",
+ "host.c2p":"מסעדה, בר, מסאז', כיבוס, השכרת אופנועים, הוסטל — שלחו שם, שעות ותמונה, וזה נכנס לרשימה עם קישור למפה.",
+ "host.c2b":"לשליחת הפרטים",
+ "digest.h2":"איפה מוצאים אותנו",
+ "digest.p":"הרשימה כאן כל יום, חינם, בלי הרשמה. מקומות ואירועים חדשים נכנסים ברגע שהם מגיעים אלינו.",
+  "foot.about":"נעשה באי, על ידי האנשים שמפעילים את Phangan Paradise. אם משהו חסר — שלחו לנו, וזה יהיה ברשימה של מחר.",
  "foot.h1":"ניווט","foot.h2":"למארגנים","foot.h3":"עקבו אחרינו",
  "foot.l1":"הוספת אירוע","foot.l2":"מכירת שיעורים","foot.l3":"ללמד אונליין",
  "foot.l4":"ערוץ וואטסאפ","foot.l5":"טלגרם",
@@ -587,7 +584,7 @@ const CONFIG={
   facebook:"https://www.facebook.com/profile.php?id=61594810315122",
   emailSignup:"",            // newsletter signup page
   installApp:"",             // link to the PWA / app page
-  schoolBooking:"",          // booking link for the free taster
+  schoolBooking:"mailto:info@kohphangantoday.com?subject=Zouk%20timetable",
   onlineCourses:"",          // online courses page
   submitEvent:"https://forms.gle/Lx1ZXq4LyLJMQca97",
   email:"info@kohphangantoday.com",
@@ -759,18 +756,20 @@ function renderDays(){
   syncFilterUI();
 }
 const SCHED=[
- {en:["Beginner course","Thu 17:30 · 4 weeks · ฿1,400"],he:["קורס מתחילים","חמישי 17:30 · 4 שבועות · ฿1,400"]},
- {en:["Technique — styling","Tue 16:00 · ฿450"],he:["טכניקה — סטיילינג","שלישי 16:00 · ฿450"]},
- {en:["Connection intensive","Wed 10:00 · ฿1,200"],he:["אינטנסיב חיבור","רביעי 10:00 · ฿1,200"]},
- {en:["Musicality workshop","Sun 15:00 · ฿700"],he:["סדנת מוזיקליות","ראשון 15:00 · ฿700"]},
- {en:["Beach social","Fri & Sat 21:00 · free"],he:["סושיאל על החוף","שישי ושבת 21:00 · חינם"]},
- {en:["Online, live from the studio","Mon & Wed 18:00 · ฿250"],he:["אונליין, בשידור מהסטודיו","שני ורביעי 18:00 · ฿250"]}
+ /* Only facts we can stand behind. The real timetable changes with the season,
+    so it is sent on request instead of being guessed at here. */
+ {en:["Style","Brazilian Zouk"],he:["סטייל","זוק ברזילאי"]},
+ {en:["Where","Srithanu, Koh Phangan"],he:["איפה","שריתאנו, קופנגן"]},
+ {en:["Season","Open all year"],he:["עונה","פתוח כל השנה"]},
+ {en:["Timetable","On request — write to us"],he:["לוח שיעורים","לפי בקשה — כתבו לנו"]}
 ];
 const CHANS=[
- {k:"whatsappChannel",v:"2.4k",en:"WhatsApp channel",he:"ערוץ וואטסאפ"},
- {k:"telegram",      v:"890", en:"Telegram",he:"טלגרם"},
- {k:"emailSignup",   v:"1.2k",en:"Email",he:"מייל"},
- {k:"installApp",    v:"free",en:"Install the app",he:"התקנת האפליקציה"}
+ /* Only channels that actually exist. Add a row here when a real link exists;
+    an empty CONFIG value hides the row by itself. */
+ {k:"facebook",       en:"Facebook",        he:"פייסבוק"},
+ {k:"submitEvent",    en:"Add something",   he:"להוספת מקום או אירוע"},
+ {k:"whatsappChannel",en:"WhatsApp channel",he:"ערוץ וואטסאפ"},
+ {k:"telegram",       en:"Telegram",        he:"טלגרם"}
 ];
 
 /* ---------- render ---------- */
@@ -827,9 +826,14 @@ function render(){
 
   $("#sched").innerHTML=SCHED.map(x=>`<div><b>${x[L][0]}</b><span>${x[L][1]}</span></div>`).join("");
 
+  // Counted from the data, so the sentence cannot drift away from the list.
+  const hn=$("#heroNote");
+  if(hn) hn.textContent=t("hero.note")
+      .replace("{n}",TOPICS.reduce((s,x)=>s+weekCount(x.id),0))
+      .replace("{m}",TOPICS.length);
+
   $("#chans").innerHTML=CHANS.map(c=>
-    `<a class="chan" href="#digest" data-link="${c.k}"><b>${c[L]}</b>` +
-    `<em class="${c.v==="free"?"":"demo-only"}">${c.v==="free"?t("today.free"):c.v}</em></a>`).join("");
+    `<a class="chan" href="#digest" data-link="${c.k}"><b>${c[L]}</b></a>`).join("");
 }
 
 function tick(){

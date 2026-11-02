@@ -89,6 +89,28 @@ p{margin:0}
 .cta{background:var(--coral);color:#180705;font-weight:600;padding:8px 15px;border-radius:9px;
   font-size:13.5px;text-decoration:none;white-space:nowrap}
 .cta:hover{filter:brightness(1.08)}
+.lbl-s{display:none}
+
+/* The header is logo + language switch + button. Below ~620px the three stop
+   fitting on one line, and the whole page then scrolls sideways - so the type
+   steps down, and under 470px the button keeps only its last word. */
+@media(max-width:620px){
+  .wrap{padding:0 18px}
+  .bar .wrap{gap:10px}
+  .logo{font-size:16px}
+  .logo span{font-size:11px;margin-inline-start:5px}
+  .bar-end{gap:7px}
+  .lang button{padding:6px 9px;font-size:12px}
+  .cta{padding:7px 12px;font-size:12.5px}
+  table{font-size:13.5px}
+  th,td{padding:9px 8px}
+  th{white-space:normal}
+}
+@media(max-width:470px){
+  .logo span{display:none}
+  .lbl-l{display:none}
+  .lbl-s{display:inline}
+}
 
 header.hero{padding:72px 0 30px}
 header.hero h1{max-width:13ch}
@@ -152,7 +174,7 @@ footer p+p{margin-top:7px}
       <button type="button" id="bEn" onclick="setLang('en',1)" aria-pressed="true">EN</button>
       <button type="button" id="bHe" onclick="setLang('he',1)" aria-pressed="false">&#1506;&#1489;</button>
     </div>
-    <a class="cta" href="index.html"><span class="en">What's on today</span><span class="he">מה קורה היום</span></a>
+    <a class="cta" href="index.html"><span class="en"><span class="lbl-l">What's on today</span><span class="lbl-s">Today</span></span><span class="he"><span class="lbl-l">מה קורה היום</span><span class="lbl-s">היום</span></span></a>
   </div>
 </div></div>
 
