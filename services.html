@@ -104,6 +104,17 @@ main{padding:28px 0 20px}
 .group h2 b{color:var(--dim);font-weight:500;font-size:13px;font-family:var(--body)}
 .grid{display:grid;gap:11px;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));
   margin-top:14px;align-items:start}
+/* Every card keeps a square slot for a photo. Until a business sends one it
+   holds the category mark on a tint of that group's colour, so a card with no
+   photo looks deliberate rather than broken. Fixed size, so nothing shifts
+   when a real photo loads in. */
+.cardtop{display:flex;gap:12px;align-items:flex-start}
+.cardhead{flex:1;min-width:0}
+.thumb{flex:0 0 auto;width:72px;height:72px;border-radius:11px;overflow:hidden;
+  display:grid;place-items:center;font-size:27px;line-height:1;
+  border:1px solid var(--line);background:rgba(87,216,196,.09)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:560px){.thumb{width:62px;height:62px;font-size:23px}}
 .card{background:rgba(28,74,80,.26);border:1px solid var(--line);border-radius:13px;
   padding:15px 16px;display:flex;flex-direction:column;gap:8px}
 .card.hit{border-color:var(--mango);box-shadow:0 0 0 3px rgba(255,194,71,.18)}
@@ -281,6 +292,43 @@ function areaBox(){
   sel.onchange=function(){AREA=parseInt(sel.value,10);chips();render();};
 }
 
+var TINT={rest:"255,107,90",cafe:"255,194,71",veg:"87,216,196",world:"185,140,255",
+          market:"255,141,199",night:"185,140,255",spa:"87,216,196",hair:"255,141,199",
+          daily:"255,194,71",health:"255,107,90",stay:"143,211,255"};
+/* The photo slot: a real picture when the business has sent one, otherwise
+   the group's own mark. alt="" because the mark carries no information the
+   card's text does not already give. */
+/* The mark is chosen from the kind label, so a bakery does not look like a
+   noodle shop. First rule that matches wins, and the group's own mark is the
+   fallback. */
+var MARKS=[[/sushi|japanese/,"\uD83C\uDF63"],[/pizza|italian/,"\uD83C\uDF55"],
+  [/burger/,"\uD83C\uDF54"],[/indian/,"\uD83C\uDF5B"],[/burmese|halal/,"\uD83E\uDD59"],
+  [/seafood/,"\uD83E\uDD90"],[/thai bbq|bbq/,"\uD83C\uDF56"],[/thai/,"\uD83C\uDF72"],
+  [/bakery|gelato|dessert/,"\uD83E\uDD50"],[/roastery|coffee/,"\u2615"],
+  [/juice|smoothie/,"\uD83E\uDDC3"],[/vegan|vegetarian|health food/,"\uD83E\uDD57"],
+  [/market/,"\uD83E\uDDFA"],[/cafe|caf\u00e9/,"\u2615"],
+  [/live music|karaoke|open mic|dj/,"\uD83C\uDFB5"],[/nightclub|club|party/,"\uD83C\uDF89"],
+  [/beach/,"\uD83C\uDF34"],[/bar|pub/,"\uD83C\uDF78"],
+  [/sauna|ice bath/,"\uD83E\uDDD6"],[/massage|spa/,"\uD83D\uDC86"],
+  [/tattoo|sak yant|hand-poke/,"\uD83E\uDEA1"],[/nails/,"\uD83D\uDC85"],
+  [/hair|beauty/,"\uD83D\uDC88"],[/laundry/,"\uD83E\uDDFA"],
+  [/pharmacy|clinic/,"\uD83D\uDC8A"],[/scooter|bike/,"\uD83D\uDEF5"],
+  [/tailor|repair/,"\uD83E\uDDF5"],[/grocery|minimart|shop/,"\uD83D\uDED2"],
+  [/hostel/,"\uD83C\uDFD5\uFE0F"],[/hotel|resort/,"\uD83C\uDFE8"],
+  [/restaurant|adults only|on the beach/,"\uD83C\uDF7D\uFE0F"]];
+function markFor(it,g){
+  var k=(it.ke||"").toLowerCase();
+  for(var i=0;i<MARKS.length;i++) if(MARKS[i][0].test(k)) return MARKS[i][1];
+  return g?g.g:"\u2022";
+}
+function thumb(it){
+  var g=D.groups.filter(function(x){return x.k===it.g;})[0];
+  var tint=TINT[it.g]||"87,216,196";
+  if(it.i) return '<div class="thumb"><img src="'+esc(it.i)+'" alt="'+esc(it.n)+'" '
+    +'loading="lazy" decoding="async" width="72" height="72"></div>';
+  return '<div class="thumb" style="background:linear-gradient(145deg,rgba('+tint+',.30),rgba('+tint+',.10));'
+    +'border-color:rgba('+tint+',.42)" aria-hidden="true">'+markFor(it,g)+'</div>';
+}
 function card(it){
   var r=(it.r!=null)
     ? '<span class="rate">\u2605 <b>'+esc(it.r.toFixed ? it.r.toFixed(1) : it.r)+'</b>'
@@ -293,8 +341,9 @@ function card(it){
   var links='<a href="'+esc(it.m)+'" target="_blank" rel="noopener noreferrer">'+t("map")+' \u2192</a>';
   if(it.p) links+='<a href="https://wa.me/'+esc(it.p)+'" target="_blank" rel="noopener noreferrer">'+t("wa")+'</a>';
   if(it.u) links+='<a href="'+esc(it.u)+'" target="_blank" rel="noopener noreferrer">'+t("site")+'</a>';
-  return '<article class="card" id="'+esc(slug(it.n))+'"><h3>'+esc(it.n)+'</h3>'
-    +'<div class="meta">'+r+kind+area+own+'</div>'
+  return '<article class="card" id="'+esc(slug(it.n))+'">'
+    +'<div class="cardtop">'+thumb(it)+'<div class="cardhead"><h3>'+esc(it.n)+'</h3>'
+    +'<div class="meta">'+r+kind+area+own+'</div></div></div>'
     +hoursHtml(it)
     +'<div class="links">'+links+'</div></article>';
 }

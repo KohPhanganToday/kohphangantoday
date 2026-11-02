@@ -94,6 +94,16 @@ main{padding:30px 0 20px}
 .grid{display:grid;gap:11px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));margin-top:14px}
 /* the card someone was linked to directly, so they land on themselves */
 .card.hit{border-color:var(--mango);box-shadow:0 0 0 3px rgba(255,194,71,.18)}
+/* A square photo slot on every card. Until a place sends a picture it holds
+   that topic's mark on a tint of its own colour, so an empty slot reads as a
+   choice. Fixed size, so a photo arriving later shifts nothing. */
+.cardtop{display:flex;gap:12px;align-items:flex-start}
+.cardhead{flex:1;min-width:0}
+.thumb{flex:0 0 auto;width:72px;height:72px;border-radius:11px;overflow:hidden;
+  display:grid;place-items:center;font-size:27px;line-height:1;
+  border:1px solid var(--line);background:rgba(87,216,196,.09)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:560px){.thumb{width:62px;height:62px;font-size:23px}}
 .card{background:rgba(28,74,80,.26);border:1px solid var(--line);border-radius:13px;
   padding:15px 16px;display:flex;flex-direction:column;gap:7px}
 .card h3{font-family:var(--display);font-weight:700;font-size:15.5px;line-height:1.25}
@@ -189,6 +199,18 @@ function chips(){
     b.onclick=function(){FILTER=b.dataset.k;chips();render();};});
 }
 
+var TINT={yoga:"87,216,196",muaythai:"255,107,90",gym:"255,194,71",water:"143,211,255",
+  cooking:"255,194,71",food:"255,141,199",markets:"255,194,71",nightlife:"185,140,255",
+  craft:"255,141,199",work:"143,211,255",community:"87,216,196"};
+/* The photo slot: the place's own picture once it sends one, the topic mark
+   until then. alt="" on the mark - it repeats what the card already says. */
+function thumb(p,c){
+  var tint=TINT[p.c]||"87,216,196";
+  if(p.img) return '<div class="thumb"><img src="'+esc(p.img)+'" alt="'+esc(p.n)+'" '
+    +'loading="lazy" decoding="async" width="72" height="72"></div>';
+  return '<div class="thumb" style="background:linear-gradient(145deg,rgba('+tint+',.30),rgba('+tint+',.10));'
+    +'border-color:rgba('+tint+',.42)" aria-hidden="true">'+c.g+'</div>';
+}
 function render(){
   var out=[];
   CATS.forEach(function(c){
@@ -205,7 +227,9 @@ function render(){
           var link=p.u
             ? '<a class="go" href="'+esc(p.u)+'" target="_blank" rel="noopener noreferrer">'+t("go")+' &rarr;</a>'
             : '<span class="nolink">'+t("nolink")+'</span>';
-          return '<article class="card" id="'+esc(p.id)+'"><h3>'+esc(p.n)+'</h3>'+ht+link+'</article>';
+          return '<article class="card" id="'+esc(p.id)+'">'
+            +'<div class="cardtop">'+thumb(p,c)+'<div class="cardhead"><h3>'+esc(p.n)+'</h3></div></div>'
+            +ht+link+'</article>';
         }).join("")
       + '</div></section>');
   });
