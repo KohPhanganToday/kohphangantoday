@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Choose the language before anything paints. Without this the page renders
+   in English, then the script at the bottom flips it to Hebrew and the whole
+   layout jumps - direction, font and text all change at once. */
+(function(){var l=null;
+ try{l=new URL(location.href).searchParams.get("lang")}catch(e){}
+ if(!l){try{l=localStorage.getItem("it_lang")}catch(e){}}
+ if(!l&&navigator.language&&navigator.language.toLowerCase().indexOf("he")===0)l="he";
+ var h=document.documentElement,he=(l==="he");h.lang=he?"he":"en";h.dir=he?"rtl":"ltr";})();
+</script>
 <title>Bars, spas and services on Koh Phangan &mdash; Koh Phangan Today</title>
 <meta name="description" content="199 hotels, hostels, bars, spas, hairdressers, laundries, minimarts, pharmacies and scooter rentals on Koh Phangan, with ratings, opening hours and a map link for each.">
 <meta name="theme-color" content="#0A2C31">
@@ -83,6 +93,10 @@ select.area:focus-visible{outline:2px solid var(--lagoon);outline-offset:1px}
   color:var(--deep);font-weight:600}
 .dot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.55}
 .toggle[aria-pressed="true"] .dot{opacity:1}
+/* Until the script fills the list, hold the viewport open: otherwise
+   the first paint is an empty page and everything below jumps down
+   when the cards arrive. The class comes off the moment it renders. */
+#list.pre{min-height:94vh}
 main{padding:28px 0 20px}
 .group{margin-bottom:36px}
 .group h2{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;
@@ -144,8 +158,8 @@ footer a:hover{color:var(--sand)}
 <div class="wrap">
   <header class="top">
     <h1 data-i18n="h1">Bars, spas and everything else.</h1>
-    <p class="lede" data-i18n="lede"></p>
-    <p class="stamp" data-i18n="stamp"></p>
+    <p class="lede" data-i18n="lede">199 places on the island that are not food: hotels and hostels, bars and clubs, massage and sauna, hairdressers and tattoo studios, laundries, minimarts, pharmacies and scooter hire.</p>
+    <p class="stamp" data-i18n="stamp">Ratings and hours from Google Maps, collected in October 2026. Some places have no area recorded, so they only show under “Anywhere on the island”. Hours here change with the season — if you are making a trip for something, message first.</p>
   </header>
 </div>
 
@@ -158,7 +172,7 @@ footer a:hover{color:var(--sand)}
 </div></div>
 
 <div class="wrap">
-  <main id="list"></main>
+  <main id="list" class="pre"></main>
 
   <div class="cbox">
     <h2 data-i18n="cb.h">Run a bar, a spa, a shop or a guesthouse here?</h2>
@@ -289,7 +303,8 @@ function slug(n){return n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-
 function render(){
   var items=D.items.filter(passes);
   if(!items.length){
-    $("#list").innerHTML='<p class="empty">'+esc(OPEN?t("noneopen"):t("none"))+'</p>';
+    $("#list").classList.remove("pre");
+  $("#list").innerHTML='<p class="empty">'+esc(OPEN?t("noneopen"):t("none"))+'</p>';
     return;
   }
   var out=[];

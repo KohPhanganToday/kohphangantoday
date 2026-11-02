@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Choose the language before anything paints. Without this the page renders
+   in English, then the script at the bottom flips it to Hebrew and the whole
+   layout jumps - direction, font and text all change at once. */
+(function(){var l=null;
+ try{l=new URL(location.href).searchParams.get("lang")}catch(e){}
+ if(!l){try{l=localStorage.getItem("it_lang")}catch(e){}}
+ if(!l&&navigator.language&&navigator.language.toLowerCase().indexOf("he")===0)l="he";
+ var h=document.documentElement,he=(l==="he");h.lang=he?"he":"en";h.dir=he?"rtl":"ltr";})();
+</script>
 <title>Privacy &amp; Terms — Koh Phangan Today</title>
 <meta name="description" content="What Koh Phangan Today collects, why, and how to have it deleted. Plus the terms for using the site.">
 <meta name="theme-color" content="#0A2C31">

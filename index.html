@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Choose the language before anything paints. Without this the page renders
+   in English, then the script at the bottom flips it to Hebrew and the whole
+   layout jumps - direction, font and text all change at once. */
+(function(){var l=null;
+ try{l=new URL(location.href).searchParams.get("lang")}catch(e){}
+ if(!l){try{l=localStorage.getItem("it_lang")}catch(e){}}
+ if(!l&&navigator.language&&navigator.language.toLowerCase().indexOf("he")===0)l="he";
+ var h=document.documentElement,he=(l==="he");h.lang=he?"he":"en";h.dir=he?"rtl":"ltr";})();
+</script>
 <title>Koh Phangan Today — what's on, every day</title>
 <meta name="description" id="metaDesc" content="Classes, ceremonies, jams, markets and parties across Koh Phangan, collected every morning.">
 <meta name="theme-color" content="#0A2C31">
@@ -169,6 +179,13 @@ section{padding:70px 0;scroll-margin-top:82px}
   text-decoration:underline;cursor:pointer;padding:0;margin-inline-start:auto}
 .tile[aria-current="true"]{border-color:var(--tc);background:rgba(255,255,255,.05)}
 .tile.empty{opacity:.55}
+/* These three are empty in the markup and filled by the script. Without a
+   reserved height the first paint is a collapsed page and everything
+   below slams down when they fill. The classes come off on render. */
+#topicGrid.pre{min-height:560px}
+#dayTabs.pre{min-height:46px}
+#evGrid.pre{min-height:420px}
+@media(max-width:900px){#topicGrid.pre{min-height:980px}#evGrid.pre{min-height:620px}}
 .topics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 @media(max-width:900px){.topics{grid-template-columns:repeat(2,1fr)}}
 .tile{position:relative;overflow:hidden;text-align:start;border:1px solid var(--line);background:var(--deep);
@@ -276,6 +293,7 @@ body.live .demo-only{display:none!important}
   .card,.tile,.ev,.live,.school,.digest{border-color:#ccc;background:#fff}
 }
 </style>
+<script src="events.js"></script>
 </head>
 <body>
 <a class="skip" href="#top" data-i18n="a11y.skip">Skip to content</a>
@@ -339,16 +357,16 @@ body.live .demo-only{display:none!important}
 <section id="topics">
   <div class="head"><div><h2 data-i18n="topics.h2">Browse by topic</h2>
     <p data-i18n="topics.lead">Twelve topics. Tap one to see only what is on in it today.</p></div></div>
-  <div class="topics" id="topicGrid"></div>
+  <div class="topics pre" id="topicGrid"></div>
 </section>
 
 <section id="today" style="padding-top:0">
   <div class="head"><div><h2 data-i18n="today.h2">Today on the island</h2>
     <p data-i18n="today.lead">What runs every week, by day. One-off events appear here as they come in.</p></div></div>
-  <div class="daytabs" id="dayTabs" role="group"></div>
+  <div class="daytabs pre" id="dayTabs" role="group"></div>
   <h3 class="dayhead" id="dayHead"></h3>
   <div class="filterbar" id="filterBar" hidden></div>
-  <div class="evgrid" id="evGrid"></div>
+  <div class="evgrid pre" id="evGrid"></div>
   <p class="sm dim" id="dayNote" style="margin-top:16px"></p>
 </section>
 
@@ -430,7 +448,6 @@ body.live .demo-only{display:none!important}
   <p class="note" data-i18n="foot.note">© 2026 Koh Phangan Today · Surat Thani, Thailand · Privacy · Terms</p>
 </div></footer>
 
-<script src="events.js"></script>
 <script>
 /* ---------- static strings ---------- */
 const T={
@@ -640,10 +657,14 @@ function topicOf(row){ const E=ev(row); return (E&&E.topic)||""; }
 function inFilter(row){ return !TOPIC.length || TOPIC.indexOf(topicOf(row))>-1; }
 // how many times a topic appears across the whole week, for the tile counts
 function weekCount(id){
-  return (window.WEEKLY||[]).reduce(function(n,r){
-    const E=(window.EVENTS||{})[r.e];
-    return n + (E && E.topic===id ? r.d.length : 0);
+  const topicOfId=e=>{const E=(window.EVENTS||{})[e]; return E&&E.topic;};
+  let n=(window.WEEKLY||[]).reduce(function(a,r){
+    return a + (topicOfId(r.e)===id ? r.d.length : 0);
   },0);
+  // one-offs count too, but only the ones still ahead in the next seven days
+  const from=ymd(islandToday()), to=ymd(addDays(islandToday(),6));
+  n += (window.ONCE||[]).filter(r=>r.date>=from && r.date<=to && topicOfId(r.e)===id).length;
+  return n;
 }
 function topicLabel(id){
   const x=TOPICS.find(y=>y.id===id);
@@ -672,11 +693,18 @@ function syncFilterUI(){
     a.setAttribute("aria-current", TOPIC.length===1 && a.dataset.id===TOPIC[0] ? "true":"false");
   });
 }
-function eventsOn(day){
-  return (window.WEEKLY||[]).filter(x=>x.d.indexOf(day)>-1 && inFilter(x))
+/* A day's list is the recurring week for that weekday, minus anything SKIP
+   cancels on that date, plus anything ONCE adds to it. Takes a Date, not a
+   weekday number, because a one-off only happens on its own date. */
+function eventsOn(date){
+  const day=date.getDay(), key=ymd(date);
+  const cancelled=(window.SKIP||[]).filter(x=>x.date===key).map(x=>x.e);
+  const weekly=(window.WEEKLY||[]).filter(x=>x.d.indexOf(day)>-1 && cancelled.indexOf(x.e)<0);
+  const once=(window.ONCE||[]).filter(x=>x.date===key);
+  return weekly.concat(once).filter(inFilter)
          .sort((a,b)=>a.t.localeCompare(b.t));
 }
-function eventsToday(){ return eventsOn(todayOnIsland()); }
+function eventsToday(){ return eventsOn(islandToday()); }
 
 /* ---------- the day picker under "Today on the island" ---------- */
 const DAYNAMES={en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
@@ -703,6 +731,7 @@ function renderDays(){
   const tabs=$("#dayTabs"); if(!tabs) return;
   if(!SEL || offsetOf(SEL)<0) SEL=islandToday();
   const off=offsetOf(SEL);
+  tabs.classList.remove("pre");
   tabs.innerHTML=[0,1,2,3,4,5,6].map(o=>
       `<button type="button" class="daytab" data-o="${o}" aria-pressed="${off===o}">${dayLabel(o)}</button>`).join("")
     +`<label class="daypick">${t("day.pick")}
@@ -716,7 +745,8 @@ function renderDays(){
   };
   const hd=$("#dayHead"); if(hd) hd.textContent=longDate(SEL);
 
-  const items=eventsOn(SEL.getDay());
+  const items=eventsOn(SEL);
+  $("#evGrid").classList.remove("pre");
   $("#evGrid").innerHTML=items.length
     ? items.map(r=>`<article class="ev" style="--tc:var(--lagoon)">
         <p class="t">${r.t}</p>
@@ -750,6 +780,7 @@ const t=k=>T[LANG][k];
 
 function render(){
   const L=LANG;
+  $("#topicGrid").classList.remove("pre");
   $("#topicGrid").innerHTML=TOPICS.map(x=>{
     const n=weekCount(x.id);
     // a topic with nothing in it says so, rather than filtering to an empty page

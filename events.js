@@ -35,6 +35,33 @@ var PLINE_ZOUK = {he:"400 באט · סושיאל בלבד 200", en:"400 THB · s
 
 window.EVENTS = {
 
+/* A one-night special, not part of the recurring week. It lives in EVENTS
+   like everything else so it gets its own page, but it is scheduled from
+   ONCE (a date) rather than WEEKLY (a weekday). */
+"feminine-dance-rihanna": {
+  q: "Love Space Koh Phangan", topic:"dance", img: "",
+  he: { t:"ריקוד נשי וכוריאוגרפיה לריהאנה", v:"Love Space (ex Sushi Love)",
+    about:["זה לא שיעור שבו עומדים בשורות ומשננים צעדים לקראת הופעה. ריקוד נשי הוא עבודה על איך הגוף זז כשאף אחד לא מתקן אותו — איך משקל עובר באגן, מה היד עושה כשהיא לא מנסה להיות יפה, ואיפה בדיוק נמצא הקצב בתוך הגוף ולא רק באוזניים.",
+           "הערב לומדים כוריאוגרפיה אחת לשיר של ריהאנה. מפרקים אותה לחלקים קטנים, חוזרים על כל חלק עד שהוא יושב, ומחברים. בסוף תשעים דקות רוקדים אותה מהתחלה ועד הסוף. זו הסיבה שזה עובד גם למי שמעולם לא רקד — לא צריך רקע, צריך רק להישאר בחדר.",
+           "״פתוח לכל הרמות״ זה לא נימוס. מי שרוקד שנים ימצא בניואנסים של התנועה עבודה אמיתית, ומי שנכנס בפעם הראשונה ילמד את הכוריאוגרפיה כמו כולם. המורה האורחת חדשה אצלנו, וזה הערב הראשון שלה כאן.",
+           "ב‑21:30 נגמר השיעור ומתחילה מסיבת הסלסה, וכדאי להישאר. זו הדרך הכי טובה להוציא את מה שלמדת מהראש אל הרגליים. מה להביא: משהו שאפשר להזיע בו, בקבוק מים, ונעליים שמחליקות קצת על הרצפה — נעלי ספורט נתקעות. יש מסעדה במקום, אז אפשר לאכול לפני או אחרי."],
+    sched:["20:00 — שיעור: ריקוד נשי וכוריאוגרפיה","21:30 — מסיבת סלסה"],
+    price:[["שיעור + מסיבת סלסה","300 באט"],["בעלי כרטיס KP Tribe ותושבי קבע","200 באט"]],
+    p:"300 באט · 200 לבעלי כרטיס KP Tribe",
+    facts:[["המקום","Love Space, לשעבר Sushi Love"],["רמה","פתוח לכל הרמות, בלי ניסיון קודם"],["אינסטגרם","@love_space_phangan"]],
+    note:"ערב חד־פעמי. בשאר ימי ראשון רצים שיעורי הסלסה הרגילים ב‑19:00 וב‑20:00." },
+  en: { t:"Feminine dance & a Rihanna choreography", v:"Love Space (ex Sushi Love)",
+    about:["This is not a class where you stand in rows and drill steps towards a performance. Feminine dance is work on how the body moves when nobody is correcting it — how weight travels through the hips, what the hand does when it stops trying to look pretty, and where the beat actually sits in the body rather than only in your ears.",
+           "Tonight you learn one choreography, to a Rihanna song. It gets broken into small pieces, each piece repeated until it sits, then joined up. By the end of ninety minutes you dance it from the top. That is why it works for people who have never danced: you do not need a background, you only need to stay in the room.",
+           "“Open to all levels” is not politeness here. Dancers of years will find real work in the detail of the movement, and someone walking in for the first time learns the same choreography as everyone else. The guest teacher is new to us, and this is her first night here.",
+           "At 21:30 the class ends and the salsa party starts, and it is worth staying. It is the best way to get what you just learned out of your head and into your feet. What to bring: something you can sweat in, water, and shoes that slide a little on the floor — trainers grip and catch. There is a restaurant on site, so you can eat before or after."],
+    sched:["20:00 — class: feminine dance & choreography","21:30 — salsa social party"],
+    price:[["Class + salsa party","300 THB"],["KP Tribe Card holders & long-term residents","200 THB"]],
+    p:"300 THB · 200 with a KP Tribe Card",
+    facts:[["Venue","Love Space, formerly Sushi Love"],["Level","All levels, no experience needed"],["Instagram","@love_space_phangan"]],
+    note:"A one-night special. On other Sundays the usual salsa classes run at 19:00 and 20:00." }
+},
+
 "muay-thai": {
   q: "Rittisak Muay Thai Gym Koh Phangan", topic:"sport", img: "",
   he: { t:"שיעורי מוי תאי קבוצתיים", v:"שלוש חדרי כושר באי",
@@ -318,7 +345,21 @@ window.WEEKLY = [
  {e:"bachata-thursday",   d:[4], t:"20:00", k:"soc"}
 ];
 
+/* ONCE = things that happen on one date only. SKIP = weekly rows that do
+   not run on that date, because the one-off has taken their place. Both are
+   safe to leave here after the date passes: the day list only ever looks at
+   the date being shown. */
+window.ONCE = [
+ {e:"feminine-dance-rihanna", date:"2026-11-01", t:"20:00"},
+ {e:"feminine-dance-rihanna", date:"2026-11-01", t:"21:30", k:"party"}
+];
+window.SKIP = [
+ /* Sunday 1 Nov the regular 19:00 and 20:00 salsa classes give way to the
+    special night at the same venue. */
+ {e:"salsa-sunday", date:"2026-11-01"}
+];
+
 window.STAGE = {
-  he:{beg:"שיעור מתחילים", soc:"מתקדמים וסושיאל"},
-  en:{beg:"beginners class", soc:"improvers and social"}
+  he:{beg:"שיעור מתחילים", soc:"מתקדמים וסושיאל", party:"מסיבת סלסה"},
+  en:{beg:"beginners class", soc:"improvers and social", party:"salsa party"}
 };

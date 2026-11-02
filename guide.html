@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Choose the language before anything paints. Without this the page renders
+   in English, then the script at the bottom flips it to Hebrew and the whole
+   layout jumps - direction, font and text all change at once. */
+(function(){var l=null;
+ try{l=new URL(location.href).searchParams.get("lang")}catch(e){}
+ if(!l){try{l=localStorage.getItem("it_lang")}catch(e){}}
+ if(!l&&navigator.language&&navigator.language.toLowerCase().indexOf("he")===0)l="he";
+ var h=document.documentElement,he=(l==="he");h.lang=he?"he":"en";h.dir=he?"rtl":"ltr";})();
+</script>
 <title>The Koh Phangan guide &mdash; Koh Phangan Today</title>
 <meta name="description" content="How to get to Koh Phangan, how to get around, where to walk, and the rules that catch people out. In English and Hebrew, written on the island.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A2C31'/%3E%3Ccircle cx='32' cy='26' r='11' fill='%23FFC247'/%3E%3Cpath d='M6 45c6-5 11-5 17 0s11 5 17 0 11-5 18 0' stroke='%2357D8C4' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
