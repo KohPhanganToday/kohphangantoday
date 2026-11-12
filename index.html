@@ -413,7 +413,7 @@ body.live .demo-only{display:none!important}
 <section id="digest" style="padding-top:20px">
   <div class="digest">
     <h2 data-i18n="digest.h2">Where to find us</h2>
-    <p class="sm dim" style="margin-top:14px;max-width:46ch;margin-inline:auto" data-i18n="digest.p">The list is here every day, free, no sign-up. New places and events go up as they reach us.</p>
+    <p class="sm dim" style="margin-top:14px;max-width:46ch;margin-inline:auto" data-i18n="digest.p">Join the island WhatsApp group — that is where we post what is on. The daily list here stays free, with no sign-up.</p>
     <div class="chans" id="chans"></div>
   </div>
 </section>
@@ -441,7 +441,7 @@ body.live .demo-only{display:none!important}
     <div><h4 data-i18n="foot.h3">Follow</h4>
       <a href="#digest" data-link="instagram">Instagram</a>
       <a href="#digest" data-link="facebook">Facebook</a>
-      <a href="#digest" data-link="whatsappChannel" data-i18n="foot.l4">WhatsApp channel</a>
+      <a href="#digest" data-link="whatsappChannel" data-i18n="foot.l4">WhatsApp group</a>
       <a href="#digest" data-link="telegram" data-i18n="foot.l5">Telegram</a></div>
   </div>
   <p class="note" data-i18n="foot.note">© 2026 Koh Phangan Today · Surat Thani, Thailand · Privacy · Terms</p>
@@ -499,11 +499,11 @@ en:{
  "host.c2p":"A restaurant, a bar, a massage place, a laundry, a scooter rental, a hostel — send the name, the hours and a photo, and it goes on the list with a map link.",
  "host.c2b":"Send your details",
  "digest.h2":"Where to find us",
- "digest.p":"The list is here every day, free, no sign-up. New places and events go up as they reach us.",
+ "digest.p":"Join the island WhatsApp group — that is where we post what is on. The daily list here stays free, with no sign-up.",
   "foot.about":"Made on the island by the people who run Phangan Paradise. If something's missing, send it to us and it'll be in tomorrow's list.",
  "foot.h1":"Explore","foot.h2":"For hosts","foot.h3":"Follow",
  "foot.l1":"Add an event","foot.l2":"Sell classes","foot.l3":"Teach online",
- "foot.l4":"WhatsApp channel","foot.l5":"Telegram",
+ "foot.l4":"WhatsApp group","foot.l5":"Telegram",
  "foot.note":"© 2026 Koh Phangan Today · Surat Thani, Thailand · <a href=\"legal.html#privacy\">Privacy</a> · <a href=\"legal.html#terms\">Terms</a>",
  "nav.guide":"Island guide","nav.places":"Places","nav.food":"Where to eat","nav.services":"Bars &amp; services","nav.help":"Help",
  "a11y.skip":"Skip to content",
@@ -559,11 +559,11 @@ he:{
  "host.c2p":"מסעדה, בר, מסאז', כיבוס, השכרת אופנועים, הוסטל — שלחו שם, שעות ותמונה, וזה נכנס לרשימה עם קישור למפה.",
  "host.c2b":"לשליחת הפרטים",
  "digest.h2":"איפה מוצאים אותנו",
- "digest.p":"הרשימה כאן כל יום, חינם, בלי הרשמה. מקומות ואירועים חדשים נכנסים ברגע שהם מגיעים אלינו.",
+ "digest.p":"הצטרפו לקבוצת הוואטסאפ של האי — שם אנחנו מפרסמים מה קורה באי. הרשימה היומית כאן נשארת חינם ובלי הרשמה.",
   "foot.about":"נעשה באי, על ידי האנשים שמפעילים את Phangan Paradise. אם משהו חסר — שלחו לנו, וזה יהיה ברשימה של מחר.",
  "foot.h1":"ניווט","foot.h2":"למארגנים","foot.h3":"עקבו אחרינו",
  "foot.l1":"הוספת אירוע","foot.l2":"מכירת שיעורים","foot.l3":"ללמד אונליין",
- "foot.l4":"ערוץ וואטסאפ","foot.l5":"טלגרם",
+ "foot.l4":"קבוצת וואטסאפ","foot.l5":"טלגרם",
  "foot.note":"© 2026 Koh Phangan Today · קופנגן, סוראת תאני · <a href=\"legal.html?lang=he#privacy\">פרטיות</a> · <a href=\"legal.html?lang=he#terms\">תנאי שימוש</a>",
  "nav.guide":"מדריך האי","nav.places":"מקומות באי","nav.food":"איפה אוכלים","nav.services":"ברים ושירותים","nav.help":"עזרה",
  "a11y.skip":"דילוג לתוכן",
@@ -578,7 +578,7 @@ he:{
    ========================================================= */
 const CONFIG={
   domain:"https://kohphangantoday.com",   // no trailing slash
-  whatsappChannel:"",        // placeholder was a +86 number; put the real channel invite link here
+  whatsappChannel:"https://chat.whatsapp.com/EblPut37qLM9HRuSK6l0fC",
   telegram:"",               // https://t.me/...
   instagram:"",              // https://instagram.com/phangantoda
   facebook:"https://www.facebook.com/profile.php?id=61594810315122",
@@ -766,9 +766,9 @@ const SCHED=[
 const CHANS=[
  /* Only channels that actually exist. Add a row here when a real link exists;
     an empty CONFIG value hides the row by itself. */
+ {k:"whatsappChannel",en:"The island WhatsApp group",he:"קבוצת הוואטסאפ של האי"},
  {k:"facebook",       en:"Facebook",        he:"פייסבוק"},
  {k:"submitEvent",    en:"Add something",   he:"להוספת מקום או אירוע"},
- {k:"whatsappChannel",en:"WhatsApp channel",he:"ערוץ וואטסאפ"},
  {k:"telegram",       en:"Telegram",        he:"טלגרם"}
 ];
 
